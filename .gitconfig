@@ -3,3 +3,5 @@
 	email = yeebenja@umich.edu
 [credential]
 	helper = store
+[core]
+	editor = nvim
