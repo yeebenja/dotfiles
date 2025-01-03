@@ -870,7 +870,11 @@ require('lazy').setup({
   },
 
   -- NOTE: Theme
-
+  {
+    'scottmckendry/cyberdream.nvim',
+    lazy = false,
+    priority = 1000,
+  },
   {
     'EdenEast/nightfox.nvim',
     priority = 1000,
@@ -918,7 +922,7 @@ require('lazy').setup({
     priority = 1000,
     opts = {},
     init = function()
-      vim.cmd.colorscheme 'eldritch'
+      -- vim.cmd.colorscheme 'eldritch'
     end,
   },
   {
@@ -927,6 +931,15 @@ require('lazy').setup({
     init = function()
       -- vim.g.material_style = 'deep ocean' -- oceanic, deep ocean, palenight, lighter, darker
       -- vim.cmd.colorscheme 'material'
+    end,
+  },
+  {
+    'uloco/bluloco.nvim',
+    lazy = false,
+    priority = 1000,
+    dependencies = { 'rktjmp/lush.nvim' },
+    config = function()
+      -- your optional config goes here, see below.
     end,
   },
   { 'miikanissi/modus-themes.nvim', priority = 1000 },
@@ -1009,3 +1022,4 @@ require('lazy').setup({
 require 'keybindings.keybindings'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.cmd 'colorscheme eldritch'
