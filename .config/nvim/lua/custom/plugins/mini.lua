@@ -38,5 +38,7 @@ return { -- Collection of various small independent plugins/modules
     -- require('mini.animate').setup() -- NOTE: Made me motion sick :|
     require('mini.basics').setup()
     -- require('mini.files').setup() -- NOTE: Already have neo-tree
+    require('mini.surround').setup()
+    -- require('mini.notify').setup()
   end,
 }
