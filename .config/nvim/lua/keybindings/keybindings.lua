@@ -45,3 +45,13 @@ vim.keymap.set('n', '<leader>an', function()
   -- Snacks.terminal.toggle()
   Snacks.notifier.show_history()
 end, { desc = '[N]otification History' })
+
+-- Neogit
+vim.keymap.set('n', '<leader>as', function()
+  -- require('snacks.notify').get_history()
+  -- Snacks.terminal()
+  -- Snacks.terminal.toggle()
+  -- Snacks.notifier.show_history()
+  local neogit = require 'neogit'
+  neogit.open()
+end, { desc = 'Git [S]tatus' })
