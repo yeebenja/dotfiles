@@ -40,5 +40,6 @@ return { -- Collection of various small independent plugins/modules
     -- require('mini.files').setup() -- NOTE: Already have neo-tree
     require('mini.surround').setup()
     -- require('mini.notify').setup()
+    require('mini.jump').setup()
   end,
 }
