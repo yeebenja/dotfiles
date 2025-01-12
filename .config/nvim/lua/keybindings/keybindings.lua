@@ -30,11 +30,6 @@ vim.keymap.set('n', '<leader>1d', function()
   require('persistence').stop()
 end, { desc = "Stop Persistence. (Session won't be saved on exit)" })
 
--- Themery
--- vim.keymap.set('n', '<leader>at', function()
---   vim.cmd
--- end, { desc = '[T]hemery' })
-
 -- Toggle wrapping text
 vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
 
@@ -47,11 +42,7 @@ vim.keymap.set('n', '<leader>an', function()
 end, { desc = '[N]otification History' })
 
 -- Neogit
--- vim.keymap.set('n', '<leader>as', function()
---   -- require('snacks.notify').get_history()
---   -- Snacks.terminal()
---   -- Snacks.terminal.toggle()
---   -- Snacks.notifier.show_history()
---   local neogit = require 'neogit'
---   neogit.open()
--- end, { desc = 'Git [S]tatus' })
+vim.keymap.set('n', '<leader>ag', function()
+  local neogit = require 'neogit'
+  neogit.open()
+end, { desc = '[G]it' })
