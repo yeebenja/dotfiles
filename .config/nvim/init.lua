@@ -421,6 +421,10 @@ require('lazy').setup({
         defaults = {
           file_ignore_patterns = {
             'ios',
+            'node_modules',
+            'venv',
+            '.venv',
+            '__pycache__',
           },
         },
       }

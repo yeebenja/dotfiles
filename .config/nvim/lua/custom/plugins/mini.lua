@@ -35,11 +35,13 @@ return { -- Collection of various small independent plugins/modules
     --  Check out: https://github.com/echasnovski/mini.nvim
     -- NOTE: Here are my custom plugins for mini.nvim
     require('mini.indentscope').setup()
-    -- require('mini.animate').setup() -- NOTE: Made me motion sick :|
+    -- require('mini.animate').setup() -- Made me motion sick :|
     require('mini.basics').setup()
-    -- require('mini.files').setup() -- NOTE: Already have neo-tree
+    -- require('mini.files').setup() -- Already have neo-tree
     require('mini.surround').setup()
     -- require('mini.notify').setup()
     require('mini.jump').setup()
+    require('mini.splitjoin').setup()
+    -- NOTE: Keybindings for MiniSplitjoin.toggle() is gS
   end,
 }
