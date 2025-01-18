@@ -55,9 +55,9 @@ end, { desc = '[1] Toggle Git-signs Column' })
 -- Hop
 local hop = require 'hop'
 local directions = require('hop.hint').HintDirection
-vim.keymap.set('n', '<leader>af', function()
+vim.keymap.set('n', '<leader>l', function()
   vim.cmd ':HopWord'
-end, { desc = '[F]ind Word' })
+end, { desc = '[L] Find Word' })
 
 -- Oil
 vim.keymap.set('n', '<leader>o', function()

@@ -97,7 +97,7 @@ return {
         name = 'EECS 486 - Assignment 1',
 
         -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-        args = { 'cranfieldDocs/', '10000' }, -- Add your Python script arguments here
+        args = { 'cranfieldDocs/', '1000' }, -- Add your Python script arguments here
 
         program = '${file}', -- This configuration will launch the current file if used.
         pythonPath = function()
