@@ -63,3 +63,11 @@ end, { desc = '[F]ind Word' })
 vim.keymap.set('n', '<leader>o', function()
   vim.cmd ':Oil'
 end, { desc = '[O]il' })
+
+-- Barbar
+vim.keymap.set('n', '<C-7>', function()
+  vim.cmd ':BufferPrevious'
+end, { desc = 'Buffer Move Previous' })
+vim.keymap.set('n', '<C-0>', function()
+  vim.cmd ':BufferNext'
+end, { desc = 'Buffer Move Next' })
