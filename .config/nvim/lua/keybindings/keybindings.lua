@@ -46,3 +46,20 @@ vim.keymap.set('n', '<leader>ag', function()
   local neogit = require 'neogit'
   neogit.open()
 end, { desc = '[G]it' })
+
+-- Gitsigns
+vim.keymap.set('n', '<leader>a1', function()
+  vim.cmd ':Gitsigns toggle_signs'
+end, { desc = '[1] Toggle Git-signs Column' })
+
+-- Hop
+local hop = require 'hop'
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('n', '<leader>af', function()
+  vim.cmd ':HopWord'
+end, { desc = '[F]ind Word' })
+
+-- Oil
+vim.keymap.set('n', '<leader>o', function()
+  vim.cmd ':Oil'
+end, { desc = '[O]il' })

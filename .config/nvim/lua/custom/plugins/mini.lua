@@ -40,7 +40,7 @@ return { -- Collection of various small independent plugins/modules
     -- require('mini.files').setup() -- Already have neo-tree
     require('mini.surround').setup()
     -- require('mini.notify').setup()
-    require('mini.jump').setup()
+    -- require('mini.jump').setup()
     require('mini.splitjoin').setup()
     -- NOTE: Keybindings for MiniSplitjoin.toggle() is gS
   end,
