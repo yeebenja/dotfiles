@@ -11,8 +11,8 @@ return {
       columns = {
         'icon',
         -- "permissions",
-        'size',
-        'mtime',
+        -- 'size',
+        -- 'mtime',
       },
       -- Buffer-local options to use for oil buffers
       buf_options = {
