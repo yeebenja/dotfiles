@@ -4,10 +4,11 @@
 kitty
 neovim
 z-shell (with .zshrc)
+tmux
 
 ## Kitty and Neovim Install
 ```bash
-brew install kitty neovim
+brew install kitty neovim tmux
 ```
 
 ## GNU Stow Install
