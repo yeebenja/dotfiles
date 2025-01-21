@@ -4,11 +4,10 @@
 kitty
 neovim
 z-shell (with .zshrc)
-tmux
 
 ## Kitty and Neovim Install
 ```bash
-brew install kitty neovim tmux
+brew install kitty neovim 
 ```
 
 ## GNU Stow Install
@@ -37,12 +36,4 @@ Add the following line
 ```
 \.DS_Store
 ```
-## tmux
-Make sure plugin manager is installed for tmux.
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source-file ~/.tmux.conf
-```
-After sourcing .tmux.conf, run <Prefix> + I to install tmux plugins.
-
 
