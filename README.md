@@ -27,3 +27,21 @@ stow .
 
 ## P.S.
 Make sure to install fonts. fonts are in .config/nvim/fonts/
+
+## DS_Store Being Annoying?
+```bash
+vim ~/.stow-global-ignore
+```
+Add the following line
+```
+\.DS_Store
+```
+## tmux
+Make sure plugin manager is installed for tmux.
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source-file ~/.tmux.conf
+```
+After sourcing .tmux.conf, run <Prefix> + I to install tmux plugins.
+
+

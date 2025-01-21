@@ -1,3 +1,14 @@
+-- keybindings.lua
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+-- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
 -- Keybindings for splitting buffer vertically and horizontally
 vim.keymap.set('n', '<leader>ah', '<cmd>sb<CR>', { desc = '[H]orizontal Split' })
 vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split' })
@@ -34,11 +45,9 @@ end, { desc = "Stop Persistence. (Session won't be saved on exit)" })
 vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
 
 -- Snacks
+local Snacks = require 'snacks'
 vim.keymap.set('n', '<leader>an', function()
-  -- require('snacks.notify').get_history()
-  -- Snacks.terminal()
-  -- Snacks.terminal.toggle()
-  Snacks.notifier.show_history()
+  Snacks.notifier.show_history() -- NOTE: Example of using Lua function
 end, { desc = '[N]otification History' })
 
 -- Neogit
@@ -53,8 +62,9 @@ vim.keymap.set('n', '<leader>a1', function()
 end, { desc = '[1] Toggle Git-signs Column' })
 
 -- Hop
-local hop = require 'hop'
-local directions = require('hop.hint').HintDirection
+-- FIXME: figure out what these two variables do later
+-- local hop = require 'hop'
+-- local directions = require('hop.hint').HintDirection
 vim.keymap.set('n', '<leader>l', function()
   vim.cmd ':HopWord'
 end, { desc = '[L] Find Word' })
@@ -65,9 +75,13 @@ vim.keymap.set('n', '<leader>o', function()
 end, { desc = '[O]il' })
 
 -- Barbar
+-- FIXME: Doesn't work anymore
 vim.keymap.set('n', '<C-7>', function()
   vim.cmd ':BufferPrevious'
 end, { desc = 'Buffer Move Previous' })
 vim.keymap.set('n', '<C-0>', function()
   vim.cmd ':BufferNext'
 end, { desc = 'Buffer Move Next' })
+
+-- Undotree
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
