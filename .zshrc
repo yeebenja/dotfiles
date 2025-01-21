@@ -9,6 +9,7 @@ alias vim="nvim"
 alias lgit="lazygit"
 alias ldocker="lazydocker"
 alias gitgraph="git log --graph --abbrev-commit --decorate --all --format=format:'%C(auto)%h %d %s %C(bold blue)<%an>'"
+alias tm="tmux"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
