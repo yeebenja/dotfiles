@@ -8,7 +8,7 @@ neovim
 z-shell
 ```
 
-## Kitty and Neovim Install
+## Kitty Neovim Ghostty Install
 ```bash
 brew install kitty neovim 
 brew install --cask ghostty

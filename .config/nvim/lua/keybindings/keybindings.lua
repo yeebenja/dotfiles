@@ -85,3 +85,6 @@ end, { desc = 'Buffer Move Next' })
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
+
+-- Aerial
+vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
