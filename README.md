@@ -1,6 +1,7 @@
 # Dotfiles
 
 ## Configured Programs
+ghostty
 kitty
 neovim
 z-shell (with .zshrc)
@@ -8,6 +9,7 @@ z-shell (with .zshrc)
 ## Kitty and Neovim Install
 ```bash
 brew install kitty neovim 
+brew install --cask ghostty
 ```
 
 ## GNU Stow Install
@@ -25,7 +27,7 @@ brew install stow
 stow .
 ```
 
-## P.S.
+## Fonts
 Make sure to install fonts. fonts are in .config/nvim/fonts/
 
 ## DS_Store Being Annoying?
