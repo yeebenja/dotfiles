@@ -1,10 +1,12 @@
 # Dotfiles
 
 ## Configured Programs
+```
 ghostty
 kitty
 neovim
-z-shell (with .zshrc)
+z-shell
+```
 
 ## Kitty and Neovim Install
 ```bash
