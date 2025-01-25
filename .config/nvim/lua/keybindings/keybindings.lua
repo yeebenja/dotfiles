@@ -75,7 +75,7 @@ vim.keymap.set('n', '<leader>o', function()
 end, { desc = '[O]il' })
 
 -- Barbar
--- FIXME: Doesn't work anymore
+-- NOTE: <C-7> and <C-0> don't work with TMUX
 vim.keymap.set('n', '<C-7>', function()
   vim.cmd ':BufferPrevious'
 end, { desc = 'Buffer Move Previous' })
