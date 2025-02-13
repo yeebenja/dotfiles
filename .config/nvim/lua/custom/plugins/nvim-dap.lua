@@ -115,30 +115,102 @@ return {
       --   end,
       -- },
 
-      {
-        -- The first three options are required by nvim-dap
-        type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
-        request = 'launch',
-        name = 'EECS 486 - Assignment 1 second part',
-
-        -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-        args = { 'languageIdentification.data/training/', 'languageIdentification.data/test' }, -- Add your Python script arguments here
-
-        program = '${file}', -- This configuration will launch the current file if used.
-        pythonPath = function()
-          -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
-          -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
-          -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
-          local cwd = vim.fn.getcwd()
-          if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
-            return cwd .. '/venv/bin/python'
-          elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
-            return cwd .. '/.venv/bin/python'
-          else
-            return '/usr/bin/python'
-          end
-        end,
-      },
+      -- {
+      --   -- The first three options are required by nvim-dap
+      --   type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+      --   request = 'launch',
+      --   name = 'EECS 486 - Assignment 1 (Second Part)',
+      --
+      --   -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+      --   args = { 'languageIdentification.data/training/', 'languageIdentification.data/test' }, -- Add your Python script arguments here
+      --
+      --   program = '${file}', -- This configuration will launch the current file if used.
+      --   pythonPath = function()
+      --     -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+      --     -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+      --     -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      --     local cwd = vim.fn.getcwd()
+      --     if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+      --       return cwd .. '/venv/bin/python'
+      --     elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+      --       return cwd .. '/.venv/bin/python'
+      --     else
+      --       return '/usr/bin/python'
+      --     end
+      --   end,
+      -- },
+      -- {
+      --   -- The first three options are required by nvim-dap
+      --   type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+      --   request = 'launch',
+      --   name = 'EECS 486 - Assignment 2 Small Test',
+      --
+      --   -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+      --   args = { 'tf.idf', 'tf.idf', '1', 'example/', 'example.queries' }, -- Add your Python script arguments here
+      --
+      --   program = '${file}', -- This configuration will launch the current file if used.
+      --   pythonPath = function()
+      --     -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+      --     -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+      --     -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      --     local cwd = vim.fn.getcwd()
+      --     if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+      --       return cwd .. '/venv/bin/python'
+      --     elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+      --       return cwd .. '/.venv/bin/python'
+      --     else
+      --       return '/usr/bin/python'
+      --     end
+      --   end,
+      -- },
+      -- {
+      --   -- The first three options are required by nvim-dap
+      --   type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+      --   request = 'launch',
+      --   name = 'EECS 486 - Assignment 2',
+      --
+      --   -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+      --   args = { 'tf.idf', 'tf.idf', '1', 'cranfieldDocs/', 'cranfield.queries' }, -- Add your Python script arguments here
+      --
+      --   program = '${file}', -- This configuration will launch the current file if used.
+      --   pythonPath = function()
+      --     -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+      --     -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+      --     -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      --     local cwd = vim.fn.getcwd()
+      --     if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+      --       return cwd .. '/venv/bin/python'
+      --     elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+      --       return cwd .. '/.venv/bin/python'
+      --     else
+      --       return '/usr/bin/python'
+      --     end
+      --   end,
+      -- },
+      -- {
+      --   -- The first three options are required by nvim-dap
+      --   type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+      --   request = 'launch',
+      --   name = 'EECS 486 - Assignment 2 (Classical IDF)',
+      --
+      --   -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+      --   args = { 'classical-idf', 'classical-idf', '1', 'cranfieldDocs/', 'cranfield.queries' }, -- Add your Python script arguments here
+      --
+      --   program = '${file}', -- This configuration will launch the current file if used.
+      --   pythonPath = function()
+      --     -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+      --     -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+      --     -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      --     local cwd = vim.fn.getcwd()
+      --     if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+      --       return cwd .. '/venv/bin/python'
+      --     elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+      --       return cwd .. '/.venv/bin/python'
+      --     else
+      --       return '/usr/bin/python'
+      --     end
+      --   end,
+      -- },
     }
     dap.adapters.cpp = {
       type = 'executable',

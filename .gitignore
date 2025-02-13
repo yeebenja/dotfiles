@@ -1,6 +1,10 @@
 *.DS_Store
-*.py
 *.cpp
 **/*.pyc
 **/__pycache__/
 jfkdlsajflkdasfjkl
+
+# Ignore all .py files
+*.py
+# Except for .pdbrc.py
+!.pdbrc.py
