@@ -24,6 +24,7 @@ brew install stow
 ## Steps
 First, create backups of your current config files. For example, rename ~/.zshrc to ~/.zshrc_backup. Do this for all of your current config files.
 ```bash
+cd ~
 git clone https://github.com/yeebenja/dotfiles.git
 cd dotfiles
 brew install stow
@@ -32,6 +33,11 @@ stow .
 
 ## Fonts
 If you want to install custom fonts, make sure to install them. Fonts are in .config/nvim/fonts/
+```bash
+cd ~
+cd dotfiles/.config/nvim/fonts/
+ls
+```
 
 ## DS_Store Being Annoying?
 ```bash
