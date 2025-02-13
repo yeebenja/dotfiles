@@ -6,6 +6,7 @@ ghostty
 kitty
 neovim
 z-shell
+pdbpp
 ```
 
 ## Kitty Neovim Ghostty Install
@@ -30,7 +31,7 @@ stow .
 ```
 
 ## Fonts
-Make sure to install fonts. fonts are in .config/nvim/fonts/
+If you want to install custom fonts, make sure to install them. Fonts are in .config/nvim/fonts/
 
 ## DS_Store Being Annoying?
 ```bash
