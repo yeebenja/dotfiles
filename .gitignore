@@ -2,7 +2,6 @@
 *.cpp
 **/*.pyc
 **/__pycache__/
-jfkdlsajflkdasfjkl
 
 # Ignore all .py files
 *.py
