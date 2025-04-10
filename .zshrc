@@ -133,3 +133,12 @@ export PATH=$PATH:/opt/homebrew/bin
 fastfetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# source virtual environment shortcut
+function act() {
+  if [ -d "$1/bin" ]; then
+    source "$1/bin/activate"
+  else
+    echo "No virtual environment found at '$1'"
+  fi
+}
