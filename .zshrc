@@ -14,7 +14,6 @@ alias gitl1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 alias gitl2="git"
 alias gitl2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
 alias gitl3="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
-alias getip="ipconfig getifaddr en0"
 
 alias tm="tmux"
 viedit() {
@@ -141,4 +140,10 @@ function act() {
   else
     echo "No virtual environment found at '$1'"
   fi
+}
+
+# Show IP Address and copy to clipboard
+function getip() {
+  ip=$(ipconfig getifaddr en0)
+  printf "%s" "$ip" | tee >(pbcopy)
 }
