@@ -1,4 +1,5 @@
 -- Ben's init.lua file for Neovim
+vim.opt.termguicolors = true
 
 --[[
 
