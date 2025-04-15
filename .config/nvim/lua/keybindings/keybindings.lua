@@ -88,3 +88,13 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' }
 
 -- Aerial
 vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
+
+-- Stay Centered
+-- vim.keymap.set({ 'n', 'v' }, '<leader>a2', require('stay-centered').toggle, { desc = 'Toggle stay-centered.nvim' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
+  require('stay-centered').toggle()
+  -- -@param msg string|string[]
+  -- -@param opts? snacks.notify.Opts
+  Snacks.notify.notify('Stay-Center.nvim Toggled', { once = false })
+end, { desc = 'Toggle stay-centered.nvim' })

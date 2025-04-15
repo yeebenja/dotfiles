@@ -27,6 +27,7 @@ return {
     {
       '<leader>ac',
       function()
+        Snacks.notify.notify('Treesitter Context Toggled', { once = false })
         vim.cmd 'TSContextToggle' -- Then toggle it
       end,
       desc = 'Treesitter [C]ontext Toggle',
