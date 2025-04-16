@@ -51,7 +51,7 @@ vim.keymap.set('n', '<leader>an', function()
 end, { desc = '[N]otification History' })
 
 -- Neogit
-vim.keymap.set('n', '<leader>ag', function()
+vim.keymap.set('n', '<leader>gg', function()
   local neogit = require 'neogit'
   neogit.open()
 end, { desc = '[G]it' })
