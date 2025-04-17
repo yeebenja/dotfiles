@@ -4,6 +4,7 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
  
 # NOTE: Aliases:
+alias neobean='NVIM_APPNAME=linkarzu/dotfiles-latest/neovim/neobean nvim'
 alias vi="nvim"
 alias vim="nvim"
 alias lgit="lazygit"

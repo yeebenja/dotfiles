@@ -58,6 +58,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+        frecency = {
+          show_scores = true,
+          show_filter_column = false,
+        },
       },
       -- NOTE: telescope ignore files
       defaults = {
@@ -80,6 +84,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     -- vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     -- vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+    -- "<leader>ff",
+    -- "<cmd>Telescope frecency workspace=CWD theme=ivy<cr›",
+    -- desc = "Find Files (Root Dir)"
+
+    vim.keymap.set('n', '<leader>sf', function()
+      vim.cmd 'Telescope frecency workspace=CWD theme=ivy'
+    end, { desc = '[S]earch [F]iles' })
+
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
