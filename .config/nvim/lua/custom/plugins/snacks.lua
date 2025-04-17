@@ -175,19 +175,19 @@ return {
       desc = 'Git S[T]atus',
     },
     -- Search Files
-    {
-      '<leader>sf',
-      function()
-        Snacks.picker.files {
-          finder = 'files',
-          format = 'file',
-          show_empty = true,
-          supports_live = true,
-          layout = 'ivy',
-        }
-      end,
-      desc = '[S]earch [F]iles',
-    },
+    -- {
+    --   '<leader>sf',
+    --   function()
+    --     Snacks.picker.files {
+    --       finder = 'files',
+    --       format = 'file',
+    --       show_empty = true,
+    --       supports_live = true,
+    --       layout = 'ivy',
+    --     }
+    --   end,
+    --   desc = '[S]earch [F]iles',
+    -- },
     -- Search Keymaps
     {
       '<leader>sk',
