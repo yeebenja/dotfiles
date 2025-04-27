@@ -93,8 +93,15 @@ vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial T
 -- vim.keymap.set({ 'n', 'v' }, '<leader>a2', require('stay-centered').toggle, { desc = 'Toggle stay-centered.nvim' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
-  require('stay-centered').toggle()
+  require('stay-centered').enable()
   -- -@param msg string|string[]
   -- -@param opts? snacks.notify.Opts
-  Snacks.notify.notify('Stay-Center.nvim Toggled', { once = false })
-end, { desc = 'Toggle stay-centered.nvim' })
+  Snacks.notify.notify('Stay-Center.nvim Enabled', { once = false })
+end, { desc = 'Enable Cursor Center' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>a3', function()
+  require('stay-centered').disable()
+  -- -@param msg string|string[]
+  -- -@param opts? snacks.notify.Opts
+  Snacks.notify.notify('Stay-Center.nvim Disabled', { once = false })
+end, { desc = 'Disable Cursor Center' })
