@@ -105,3 +105,17 @@ vim.keymap.set({ 'n', 'v' }, '<leader>a3', function()
   -- -@param opts? snacks.notify.Opts
   Snacks.notify.notify('Stay-Center.nvim Disabled', { once = false })
 end, { desc = 'Disable Cursor Center' })
+
+-- Spectre
+vim.keymap.set('n', '<leader>i', '<cmd>lua require("spectre").toggle()<CR>', {
+  desc = '[I] Toggle Spectre',
+})
+vim.keymap.set('n', '<leader>ki', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+  desc = 'Search current word',
+})
+vim.keymap.set('v', '<leader>ki', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = 'Search current word',
+})
+vim.keymap.set('n', '<leader>kk', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = 'Search on current file',
+})
