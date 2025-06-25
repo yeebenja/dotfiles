@@ -9,10 +9,12 @@ z-shell
 pdbpp
 ```
 
-## Kitty Neovim Ghostty Install
+## Neovim and Ghostty Install
+ripgrep is for Spectre neovim plugin
 ```bash
 brew install kitty neovim 
 brew install --cask ghostty
+brew install ripgrep
 ```
 
 ## GNU Stow Install
