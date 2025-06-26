@@ -49,4 +49,5 @@ Add the following line
 ```
 \.DS_Store
 ```
-
+## Map Caps Lock to Control (^) on Mac
+Go to System Settings -> Keyboard -> Keyboard Shortcuts...
