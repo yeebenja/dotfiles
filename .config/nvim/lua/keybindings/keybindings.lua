@@ -148,3 +148,9 @@ vim.keymap.set('n', '<leader>a5', function()
 end, {
   desc = 'LSP Lines Disable',
 })
+
+-- Up and Down (my own custon keymappings)
+vim.keymap.set('n', '-', '<C-d>', { noremap = true })
+vim.keymap.set('v', '-', '<C-d>', { noremap = true })
+vim.keymap.set('n', '=', '<C-u>', { noremap = true })
+vim.keymap.set('v', '=', '<C-u>', { noremap = true })
