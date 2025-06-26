@@ -332,6 +332,10 @@ require('lazy').setup({
   },
 })
 
+-- NOTE: Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config {
+  virtual_text = false,
+}
 -- Import keybindings
 require 'keybindings.keybindings'
 -- The line beneath this is called `modeline`. See `:help modeline`

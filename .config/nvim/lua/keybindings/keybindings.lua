@@ -107,15 +107,44 @@ vim.keymap.set({ 'n', 'v' }, '<leader>a3', function()
 end, { desc = 'Disable Cursor Center' })
 
 -- Spectre
-vim.keymap.set('n', '<leader>i', '<cmd>lua require("spectre").toggle()<CR>', {
+vim.keymap.set('n', '<leader>i', function()
+  Snacks.notifier.notify('Spectre Toggled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+  require('spectre').toggle()
+end, {
   desc = '[I] Toggle Spectre',
 })
-vim.keymap.set('n', '<leader>ki', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+vim.keymap.set('n', '<leader>ki', function()
+  Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+  require('spectre').open_visual { select_word = true }
+end, {
   desc = 'Search current word',
 })
-vim.keymap.set('v', '<leader>ki', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+vim.keymap.set('v', '<leader>ki', function()
+  Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+  require('spectre').open_visual()
+end, {
   desc = 'Search current word',
 })
-vim.keymap.set('n', '<leader>kk', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+vim.keymap.set('n', '<leader>kk', function()
+  Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+  require('spectre').open_file_search { select_word = true }
+end, {
   desc = 'Search on current file',
+})
+
+-- lsp-lines
+vim.keymap.set('n', '<leader>a4', function()
+  -- require('lsp_lines').toggle()
+  Snacks.notifier.notify('LSP Lines Enabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+  vim.diagnostic.config { virtual_lines = true }
+end, {
+  desc = 'LSP Lines Enable',
+})
+
+vim.keymap.set('n', '<leader>a5', function()
+  -- require('lsp_lines').toggle()
+  Snacks.notifier.notify('LSP Lines Disabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+  vim.diagnostic.config { virtual_lines = false }
+end, {
+  desc = 'LSP Lines Disable',
 })
