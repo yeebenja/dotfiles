@@ -133,18 +133,26 @@ end, {
 })
 
 -- lsp-lines
+-- lsp-lines enable
 vim.keymap.set('n', '<leader>a4', function()
   -- require('lsp_lines').toggle()
   Snacks.notifier.notify('LSP Lines Enabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
   vim.diagnostic.config { virtual_lines = true }
+  vim.diagnostic.config {
+    virtual_text = false,
+  }
 end, {
   desc = 'LSP Lines Enable',
 })
 
+-- lsp-lines disable
 vim.keymap.set('n', '<leader>a5', function()
   -- require('lsp_lines').toggle()
   Snacks.notifier.notify('LSP Lines Disabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
   vim.diagnostic.config { virtual_lines = false }
+  vim.diagnostic.config {
+    virtual_text = true,
+  }
 end, {
   desc = 'LSP Lines Disable',
 })
