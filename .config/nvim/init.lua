@@ -333,11 +333,16 @@ require('lazy').setup({
 })
 
 -- NOTE: Disable virtual_text since it's redundant due to lsp_lines.
+-- LSP-lines not on by default unless explicitly turned on :)
+vim.diagnostic.config { virtual_lines = false }
 vim.diagnostic.config {
-  virtual_text = false,
+  virtual_text = true,
 }
 -- Import keybindings
 require 'keybindings.keybindings'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 vim.cmd 'colorscheme eldritch'
+
+-- Import fold
+require 'nvim-ufo-config.nvim-fold-config'
