@@ -3,18 +3,22 @@
 ## Configured Programs
 ```
 ghostty
-kitty
 neovim
 z-shell
-pdbpp
 ```
 
 ## Neovim and Ghostty Install
 ripgrep is for Spectre neovim plugin
 ```bash
-brew install kitty neovim 
+brew install neovim 
 brew install --cask ghostty
 brew install ripgrep
+brew install zsh
+brew install fastfetch
+brew install node
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ## GNU Stow Install
@@ -27,6 +31,7 @@ brew install stow
 First, create backups of your current config files. For example, rename ~/.zshrc to ~/.zshrc_backup. Do this for all of your current config files.
 ```bash
 cd ~
+rm ~/.zshrc
 git clone https://github.com/yeebenja/dotfiles.git
 cd dotfiles
 brew install stow
