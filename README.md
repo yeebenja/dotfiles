@@ -7,7 +7,7 @@ neovim
 z-shell
 ```
 
-## Install Programs and Plugings
+## Install Programs and Plugins
 ```bash
 brew install neovim 
 brew install --cask ghostty
