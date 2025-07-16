@@ -7,15 +7,17 @@ neovim
 z-shell
 ```
 
-## Neovim and Ghostty Install
-ripgrep is for Spectre neovim plugin
+## Install Programs and Plugings
 ```bash
 brew install neovim 
 brew install --cask ghostty
+# (ripgrep is for Spectre neovim plugin)
 brew install ripgrep
 brew install zsh
 brew install fastfetch
+# Node is needed for some LSPs in nvim
 brew install node
+# Oh-my-zsh plugins
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
