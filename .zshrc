@@ -148,3 +148,9 @@ function getip() {
   ip=$(ipconfig getifaddr en0)
   printf "%s" "$ip" | tee >(pbcopy)
 }
+
+# Show Seal's static IP Address for Backend server and copy to clipboard
+function sealip() {
+  ip=10.1.1.242
+  printf "%s" "$ip" | tee >(pbcopy)
+}
