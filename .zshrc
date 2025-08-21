@@ -17,8 +17,16 @@ alias gitl3="git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 alias gits="git status"
 
 alias tm="tmux"
+
+# NOTE: Instantly edit my nvim configuation
 viedit() {
     cd ~/dotfiles/.config/nvim || return
+    vi
+}
+
+# instantly edit dotfiles
+dotedit() {
+    cd ~/dotfiles || return
     vi
 }
 
