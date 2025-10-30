@@ -30,6 +30,12 @@ dotedit() {
     vi
 }
 
+# leetcode scratchpad
+leet(){
+  cd ~/dotfiles/leet || return
+  vi
+}
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin:$PATH"
