@@ -63,10 +63,10 @@ Add the following line
 Go to System Settings -> Keyboard -> Keyboard Shortcuts...
 
 ## LeetCode Practice
-Get cookie info by going in developer tools on browser (CMD + OPT + i)
-Then go to Storage > Cookies > leetcode.com (must on page leetcode.com)
-Get these two cookies: LEETCODE_SESSION and csrftoken
-When entering cookie for leetcode.nvim, make sure cookie is in this format:
+* Get cookie info by going in developer tools on browser (CMD + OPT + i)
+* Then go to Storage > Cookies > leetcode.com (must on page leetcode.com)
+* Get these two cookies: LEETCODE_SESSION and csrftoken
+* When entering cookie for leetcode.nvim, make sure cookie is in this format:
 ```
 LEETCODE_SESSION=abcdefghijk; csrftoken=abcdefghijk
 ```
