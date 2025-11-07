@@ -70,3 +70,9 @@ Go to System Settings -> Keyboard -> Keyboard Shortcuts...
 ```
 LEETCODE_SESSION=abcdefghijk; csrftoken=abcdefghijk
 ```
+
+## AI and LLMs CLI
+Use gemini CLI
+```
+npm install -g @google/gemini-cli # or brew install gemini-cli
+```
