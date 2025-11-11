@@ -162,3 +162,25 @@ vim.keymap.set('n', '-', '<C-d>', { noremap = true })
 vim.keymap.set('v', '-', '<C-d>', { noremap = true })
 vim.keymap.set('n', '=', '<C-u>', { noremap = true })
 vim.keymap.set('v', '=', '<C-u>', { noremap = true })
+
+local isLspDiagnosticsVisible = true
+vim.keymap.set('n', '<leader>a6', function()
+  -- toggle the state
+  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+
+  -- apply the new state
+  vim.diagnostic.config {
+    virtual_text = isLspDiagnosticsVisible,
+    underline = isLspDiagnosticsVisible,
+    -- signs = isLspDiagnosticsVisible -- do i need this? figure out later
+  }
+
+  -- notify user
+  if isLspDiagnosticsVisible then
+    Snacks.notifier.notify('Showing Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+  else
+    Snacks.notifier.notify('Hiding Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+  end
+end, {
+  desc = 'Show/Hide Diagnostics Toggle',
+})
