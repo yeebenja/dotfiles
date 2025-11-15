@@ -3,8 +3,7 @@ return {
   event = 'VimEnter',
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
-    -- signs = true, -- show icons in the signs column
-    signs = false,
+    signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
     -- keywords recognized as todo comments
     keywords = {
@@ -15,6 +14,7 @@ return {
         -- signs = false, -- configure signs for some keywords individually
       },
       TODO = { icon = ' ', color = 'info' },
+      DEBUG = { icon = ' ', color = 'warning' },
       HACK = { icon = ' ', color = 'warning' },
       WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
       PERF = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },

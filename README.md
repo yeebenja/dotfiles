@@ -11,10 +11,13 @@ z-shell
 ```bash
 brew install neovim 
 brew install --cask ghostty
-# (ripgrep is for Spectre neovim plugin)
-brew install ripgrep
+brew install ripgrep         # For spectre
 brew install zsh
 brew install fastfetch
+brew install fd              # For better file searching in snacks.picker
+brew install mermaid-cli     # For Mermaid diagrams in snacks.image
+brew install tectonic        # For LaTeX rendering in snacks.image
+
 # Node is needed for some LSPs in nvim
 brew install node
 # Oh-my-zsh plugins

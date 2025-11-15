@@ -13,13 +13,34 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>ah', '<cmd>sb<CR>', { desc = '[H]orizontal Split' })
 vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split' })
 
--- Harpoon keybindings
-require('telescope').load_extension 'harpoon'
-vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file, { desc = '[H]arpoon: [X] Add file to marks' })
-vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next, { desc = '[H]arpoon: [N]ext mark' })
-vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev, { desc = '[H]arpoon: [P]revious mark' })
-vim.keymap.set('n', '<leader>hm', ':Telescope harpoon marks<CR>', { desc = '[H]arpoon [M]arks view' })
+-- Harpoon 2 keybindings
+local harpoon = require 'harpoon'
+vim.keymap.set('n', '<leader>h', function()
+  harpoon:list():add()
+  Snacks.notifier.notify('Added to Harpoon', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+end, { desc = '[H]arpoon Add' })
 
+vim.keymap.set('n', '<C-e>', function() -- <C-e> is okay to be overwritten, originally <C-e> goes one line down
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+vim.keymap.set('n', '<C-t>', function()
+  harpoon:list():select(1)
+end)
+vim.keymap.set('n', '<C-n>', function()
+  harpoon:list():select(2)
+end)
+vim.keymap.set('n', '<C-s>', function() -- get rid of other keymap
+  harpoon:list():select(3)
+end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set('n', '<C-S-P>', function()
+  harpoon:list():prev()
+end)
+vim.keymap.set('n', '<C-S-N>', function()
+  harpoon:list():next()
+end)
 -- Persistence keybindings
 -- -- load the session for the current directory
 vim.keymap.set('n', '<leader>1s', function()

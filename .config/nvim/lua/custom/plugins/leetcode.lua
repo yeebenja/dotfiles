@@ -51,8 +51,8 @@ return {
       dir = 'row', ---@type lc.direction
 
       size = { ---@type lc.size
-        width = '70%', -- default '90%'
-        height = '50%', -- default '75%'
+        width = '90%', -- default '90%'
+        height = '75%', -- default '75%'
       },
 
       result = {
