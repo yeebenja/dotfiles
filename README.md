@@ -75,7 +75,7 @@ LEETCODE_SESSION=abcdefghijk; csrftoken=abcdefghijk
 ```
 
 ## AI and LLMs CLI
-Use gemini CLI
+Use OpenCode
 ```
-npm install -g @google/gemini-cli # or brew install gemini-cli
+brew install opencode
 ```

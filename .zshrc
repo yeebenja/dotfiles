@@ -18,6 +18,8 @@ alias gits="git status"
 
 alias tm="tmux"
 
+alias opc="opencode"
+
 # NOTE: Instantly edit my nvim configuation
 viedit() {
     cd ~/dotfiles/.config/nvim || return
