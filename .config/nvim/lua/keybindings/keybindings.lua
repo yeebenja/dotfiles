@@ -17,7 +17,7 @@ vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split
 local harpoon = require 'harpoon'
 vim.keymap.set('n', '<leader>h', function()
   harpoon:list():add()
-  Snacks.notifier.notify('Added to Harpoon', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+  Snacks.notifier.notify('Added to Harpoon', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
 end, { desc = '[H]arpoon Add' })
 
 vim.keymap.set('n', '<C-e>', function() -- <C-e> is okay to be overwritten, originally <C-e> goes one line down
