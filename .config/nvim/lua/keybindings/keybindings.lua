@@ -219,3 +219,7 @@ end, { desc = 'leap remote gs' })
 vim.keymap.set({ 'n', 'o' }, 'gS', function()
   require('leap.remote').action { input = 'V' }
 end, { desc = 'leap remote gS' })
+
+vim.cmd [[
+  cnoreabbrev leet Leet
+]]
