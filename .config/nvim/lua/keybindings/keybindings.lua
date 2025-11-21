@@ -205,3 +205,17 @@ vim.keymap.set('n', '<leader>a6', function()
 end, {
   desc = 'Show/Hide Diagnostics Toggle',
 })
+
+-- Leap
+vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)', { desc = 'leap current window' })
+vim.keymap.set('n', 'S', '<Plug>(leap-from-window)', { desc = 'leap from another window' })
+vim.keymap.set({ 'n', 'o' }, 'gs', function()
+  require('leap.remote').action {
+    -- Automatically enter Visual mode when coming from Normal.
+    input = vim.fn.mode(true):match 'o' and '' or 'v',
+  }
+end, { desc = 'leap remote gs' })
+-- Forced linewise version (`gS{leap}jjy`):
+vim.keymap.set({ 'n', 'o' }, 'gS', function()
+  require('leap.remote').action { input = 'V' }
+end, { desc = 'leap remote gS' })
