@@ -13,13 +13,34 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>ah', '<cmd>sb<CR>', { desc = '[H]orizontal Split' })
 vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split' })
 
--- Harpoon keybindings
-require('telescope').load_extension 'harpoon'
-vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file, { desc = '[H]arpoon: [X] Add file to marks' })
-vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next, { desc = '[H]arpoon: [N]ext mark' })
-vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev, { desc = '[H]arpoon: [P]revious mark' })
-vim.keymap.set('n', '<leader>hm', ':Telescope harpoon marks<CR>', { desc = '[H]arpoon [M]arks view' })
+-- Harpoon 2 keybindings
+local harpoon = require 'harpoon'
+vim.keymap.set('n', '<leader>h', function()
+  harpoon:list():add()
+  Snacks.notifier.notify('Added to Harpoon', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+end, { desc = '[H]arpoon Add' })
 
+vim.keymap.set('n', '<C-e>', function() -- <C-e> is okay to be overwritten, originally <C-e> goes one line down
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+vim.keymap.set('n', '<C-t>', function()
+  harpoon:list():select(1)
+end)
+vim.keymap.set('n', '<C-n>', function()
+  harpoon:list():select(2)
+end)
+vim.keymap.set('n', '<C-s>', function() -- get rid of other keymap
+  harpoon:list():select(3)
+end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set('n', '<C-S-P>', function()
+  harpoon:list():prev()
+end)
+vim.keymap.set('n', '<C-S-N>', function()
+  harpoon:list():next()
+end)
 -- Persistence keybindings
 -- -- load the session for the current directory
 vim.keymap.set('n', '<leader>1s', function()
@@ -92,19 +113,36 @@ vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial T
 -- Stay Centered
 -- vim.keymap.set({ 'n', 'v' }, '<leader>a2', require('stay-centered').toggle, { desc = 'Toggle stay-centered.nvim' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
-  require('stay-centered').enable()
-  -- -@param msg string|string[]
-  -- -@param opts? snacks.notify.Opts
-  Snacks.notify.notify('Stay-Center.nvim Enabled', { once = false })
-end, { desc = 'Enable Cursor Center' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
+--   require('stay-centered').enable()
+--   -- -@param msg string|string[]
+--   -- -@param opts? snacks.notify.Opts
+--   Snacks.notify.notify('Stay-Center.nvim Enabled', { once = false })
+-- end, { desc = 'Enable Cursor Center' })
+--
+-- vim.keymap.set({ 'n', 'v' }, '<leader>a3', function()
+--   require('stay-centered').disable()
+--   -- -@param msg string|string[]
+--   -- -@param opts? snacks.notify.Opts
+--   Snacks.notify.notify('Stay-Center.nvim Disabled', { once = false })
+-- end, { desc = 'Disable Cursor Center' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>a3', function()
-  require('stay-centered').disable()
-  -- -@param msg string|string[]
-  -- -@param opts? snacks.notify.Opts
-  Snacks.notify.notify('Stay-Center.nvim Disabled', { once = false })
-end, { desc = 'Disable Cursor Center' })
+-- Initialize the state variable to match the plugin's default (enabled)
+vim.g.stay_centered_enabled = true
+
+vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
+  local stay_centered = require 'stay-centered'
+
+  if vim.g.stay_centered_enabled then
+    stay_centered.disable()
+    Snacks.notify.notify('Stay-Center.nvim Disabled', { once = false })
+    vim.g.stay_centered_enabled = false
+  else
+    stay_centered.enable()
+    Snacks.notify.notify('Stay-Center.nvim Enabled', { once = false })
+    vim.g.stay_centered_enabled = true
+  end
+end, { desc = 'Toggle Cursor Center' })
 
 -- Spectre
 vim.keymap.set('n', '<leader>i', function()
@@ -117,13 +155,13 @@ vim.keymap.set('n', '<leader>ki', function()
   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
   require('spectre').open_visual { select_word = true }
 end, {
-  desc = 'Search current word',
+  desc = '(Spectre) Search current word',
 })
 vim.keymap.set('v', '<leader>ki', function()
   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
   require('spectre').open_visual()
 end, {
-  desc = 'Search current word',
+  desc = '(Spectre) Search current word',
 })
 vim.keymap.set('n', '<leader>kk', function()
   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
@@ -132,29 +170,20 @@ end, {
   desc = 'Search on current file',
 })
 
--- lsp-lines
--- lsp-lines enable
-vim.keymap.set('n', '<leader>a4', function()
-  -- require('lsp_lines').toggle()
-  Snacks.notifier.notify('LSP Lines Enabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
-  vim.diagnostic.config { virtual_lines = true }
-  vim.diagnostic.config {
-    virtual_text = false,
-  }
-end, {
-  desc = 'LSP Lines Enable',
-})
+-- lsp-lines toggle
+vim.keymap.set('n', '<leader>a3', function()
+  local config = vim.diagnostic.config()
+  local is_lines_enabled = config.virtual_lines
 
--- lsp-lines disable
-vim.keymap.set('n', '<leader>a5', function()
-  -- require('lsp_lines').toggle()
-  Snacks.notifier.notify('LSP Lines Disabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
-  vim.diagnostic.config { virtual_lines = false }
-  vim.diagnostic.config {
-    virtual_text = true,
-  }
+  if is_lines_enabled then
+    Snacks.notifier.notify('LSP Lines Disabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+    vim.diagnostic.config { virtual_lines = false, virtual_text = true }
+  else
+    Snacks.notifier.notify('LSP Lines Enabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
+    vim.diagnostic.config { virtual_lines = true, virtual_text = false }
+  end
 end, {
-  desc = 'LSP Lines Disable',
+  desc = 'LSP Lines Toggle',
 })
 
 -- Up and Down (my own custon keymappings)
@@ -163,8 +192,9 @@ vim.keymap.set('v', '-', '<C-d>', { noremap = true })
 vim.keymap.set('n', '=', '<C-u>', { noremap = true })
 vim.keymap.set('v', '=', '<C-u>', { noremap = true })
 
+-- toggle diagnostics
 local isLspDiagnosticsVisible = true
-vim.keymap.set('n', '<leader>a6', function()
+vim.keymap.set('n', '<leader>a4', function()
   -- toggle the state
   isLspDiagnosticsVisible = not isLspDiagnosticsVisible
 
@@ -184,3 +214,21 @@ vim.keymap.set('n', '<leader>a6', function()
 end, {
   desc = 'Show/Hide Diagnostics Toggle',
 })
+
+-- Leap
+vim.keymap.set({ 'n', 'x', 'o' }, '<leader>j', '<Plug>(leap)', { desc = '[J] leap current window' })
+vim.keymap.set('n', '<leader>J', '<Plug>(leap-from-window)', { desc = '[J] leap from another window' })
+vim.keymap.set({ 'n', 'o' }, 'gs', function()
+  require('leap.remote').action {
+    -- Automatically enter Visual mode when coming from Normal.
+    input = vim.fn.mode(true):match 'o' and '' or 'v',
+  }
+end, { desc = 'leap remote gs' })
+-- Forced linewise version (`gS{leap}jjy`):
+vim.keymap.set({ 'n', 'o' }, 'gS', function()
+  require('leap.remote').action { input = 'V' }
+end, { desc = 'leap remote gS' })
+
+vim.cmd [[
+  cnoreabbrev leet Leet
+]]

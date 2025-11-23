@@ -172,8 +172,44 @@ return {
     -- statuscolumn = { enabled = true },
     -- words = { enabled = true },
     -- terminal = { enabled = true },
+    ---@class snacks.picker.grep.Config: snacks.picker.proc.Config
+    ---@field cmd? string
+    ---@field hidden? boolean show hidden files
+    ---@field ignored? boolean show ignored files
+    ---@field dirs? string[] directories to search
+    ---@field follow? boolean follow symlinks
+    ---@field glob? string|string[] glob file pattern(s)
+    ---@field ft? string|string[] ripgrep file type(s). See `rg --type-list`
+    ---@field regex? boolean use regex search pattern (defaults to `true`)
+    ---@field buffers? boolean search in open buffers
+    ---@field need_search? boolean require a search pattern
+    ---@field exclude? string[] exclude patterns
+    ---@field args? string[] additional arguments
+    ---@field rtp? boolean search in runtimepath
+    --- NOTE: ? means that the fiield is optional in the configuration table
+    --- so, hidden? means that hidden is an optional field
+    grep = {
+      finder = 'grep',
+      regex = true,
+      format = 'file',
+      show_empty = true,
+      live = true, -- live grep by default
+      supports_live = true,
+      hidden = true, -- grep in hidden files as well
+      ignored = false, -- don't grep in ignored files
+    },
   },
   keys = {
+    -- Live Grep
+    {
+      '<leader>sg',
+      function()
+        Snacks.picker.grep {
+          layout = 'ivy',
+        }
+      end,
+      desc = '[S]earch by [G]rep',
+    },
     -- Git Log
     {
       '<leader>gl',
@@ -218,6 +254,8 @@ return {
           show_empty = true,
           supports_live = true,
           layout = 'ivy',
+          ignored = false, -- ignore ignored files
+          hidden = true, -- include hidden files when searching
         }
       end,
       desc = '[S]earch [F]iles',
