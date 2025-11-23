@@ -36,7 +36,7 @@ return { -- Collection of various small independent plugins/modules
     -- NOTE: Here are my custom plugins for mini.nvim
     require('mini.indentscope').setup()
     -- require('mini.animate').setup() -- Made me motion sick :|
-    require('mini.basics').setup()
+    -- require('mini.basics').setup()
     -- require('mini.files').setup() -- Already have neo-tree
     require('mini.surround').setup()
     -- require('mini.notify').setup()

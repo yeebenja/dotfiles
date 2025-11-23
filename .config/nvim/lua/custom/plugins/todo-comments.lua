@@ -3,9 +3,19 @@ return {
   event = 'VimEnter',
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
-    -- signs = true, -- show icons in the signs column
-    signs = false,
+    signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
+    -- FIX:
+    -- TODO:
+    -- DEBUG:
+    -- HACK:
+    -- WARN:
+    --PERF:
+    --NOTE:
+    --TEST:
+    --EXAMPLE:
+    --LATER:  rename to something else?
+
     -- keywords recognized as todo comments
     keywords = {
       FIX = {
@@ -15,11 +25,15 @@ return {
         -- signs = false, -- configure signs for some keywords individually
       },
       TODO = { icon = ' ', color = 'info' },
+      DEBUG = { icon = ' ', color = 'warning' },
       HACK = { icon = ' ', color = 'warning' },
       WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
       PERF = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
       NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
       TEST = { icon = '⏲ ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
+      -- NOTE: these are my own TODO comments
+      EXAMPLE = { icon = '', color = 'example' },
+      LATER = { icon = '󰥔', color = 'later' },
     },
     gui_style = {
       fg = 'NONE', -- The gui style to use for the fg highlight group.
@@ -51,6 +65,8 @@ return {
       hint = { 'DiagnosticHint', '#10B981' },
       default = { 'Identifier', '#7C3AED' },
       test = { 'Identifier', '#FF00FF' },
+      example = { '#42b9f5' },
+      later = { '#faa5db' },
     },
     search = {
       command = 'rg',
