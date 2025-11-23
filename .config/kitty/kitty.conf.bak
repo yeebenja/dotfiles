@@ -1,11 +1,11 @@
 # vim:fileencoding=utf-8:foldmethod=marker
-include ./kitty-themes/themes/Cyberpunk.conf
+include ./kitty-themes/Cyberpunk.conf
 #: Fonts {{{
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-editor nvim
+editor .
 
 # font_family      CaskaydiaCoveNerdFont-Regular
 # font_family     JetBrainsMono-Regular 
@@ -13,6 +13,19 @@ editor nvim
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
+
+# BEGIN_KITTY_FONTS
+font_family      family='JetBrainsMono Nerd Font Mono' postscript_name=JetBrainsMonoNFM-Regular
+bold_font        family='JetBrainsMono Nerd Font Mono' postscript_name=JetBrainsMonoNFM-Bold
+italic_font      family='JetBrainsMono Nerd Font Mono' style='Medium Italic'
+bold_italic_font family='JetBrainsMono Nerd Font Mono' postscript_name=JetBrainsMonoNFM-BoldItalic
+# END_KITTY_FONTS
+
+# for maximum performance
+input_delay 0
+repaint_delay 2
+sync_to_monitor no
+wayland_enable_ime no
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. The easiest way to select fonts is to run the `kitten
@@ -2690,9 +2703,3 @@ map cmd+v        paste_from_clipboard
 #: }}}
 
 
-# BEGIN_KITTY_FONTS
-font_family      family="JetBrainsMono Nerd Font Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
