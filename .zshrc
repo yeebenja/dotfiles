@@ -170,3 +170,21 @@ function sealip() {
   ip=10.1.1.242
   printf "%s" "$ip" | tee >(pbcopy)
 }
+
+# pve alias creates python virtual environment
+# EXAMPLE: "pve venv" will create a virtual environment called venv in python3
+pve() {
+  if [ -z "$1" ]; then
+    echo "Usage: pve <env_name>"
+    return 1
+  fi
+  python3 -m venv "$1"
+}
+
+pve311() {
+  if [ -z "$1" ]; then
+    echo "Usage: pve311 <env_name>"
+    return 1
+  fi
+  python3.11 -m venv "$1"
+}
