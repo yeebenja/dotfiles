@@ -5,6 +5,17 @@ return {
   opts = {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
+    -- FIX:
+    -- TODO:
+    -- DEBUG:
+    -- HACK:
+    -- WARN:
+    --PERF:
+    --NOTE:
+    --TEST:
+    --EXAMPLE:
+    --LATER:  rename to something else?
+
     -- keywords recognized as todo comments
     keywords = {
       FIX = {
@@ -20,6 +31,9 @@ return {
       PERF = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
       NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
       TEST = { icon = '⏲ ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
+      -- NOTE: these are my own TODO comments
+      EXAMPLE = { icon = '', color = 'example' },
+      LATER = { icon = '󰥔', color = 'later' },
     },
     gui_style = {
       fg = 'NONE', -- The gui style to use for the fg highlight group.
@@ -51,6 +65,8 @@ return {
       hint = { 'DiagnosticHint', '#10B981' },
       default = { 'Identifier', '#7C3AED' },
       test = { 'Identifier', '#FF00FF' },
+      example = { '#42b9f5' },
+      later = { '#faa5db' },
     },
     search = {
       command = 'rg',
