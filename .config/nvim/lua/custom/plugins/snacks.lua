@@ -210,6 +210,15 @@ return {
       end,
       desc = '[S]earch by [G]rep',
     },
+    {
+      '<leader>/',
+      function()
+        Snacks.picker.lines {
+          layout = 'vscode',
+        }
+      end,
+      desc = '[/] Grep in Current Buffer (Snacks Picker)',
+    },
     -- Git Log
     {
       '<leader>gl',
