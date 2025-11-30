@@ -56,6 +56,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>x', group = '[X] Trouble' },
       { '<leader>1', group = '[1] Persistence (Sessions)' },
       { '<leader>k', group = '[K] Spectre' },
+      { '<leader>1', group = '[2] LeetCode' },
     },
   },
 }
