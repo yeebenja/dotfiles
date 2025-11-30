@@ -216,8 +216,8 @@ end, {
 })
 
 -- Leap
-vim.keymap.set({ 'n', 'x', 'o' }, '<leader>j', '<Plug>(leap)', { desc = '[J] leap current window' })
-vim.keymap.set('n', '<leader>J', '<Plug>(leap-from-window)', { desc = '[J] leap from another window' })
+vim.keymap.set({ 'n', 'x', 'o' }, '<leader>;', '<Plug>(leap)', { desc = '[J] leap current window' })
+vim.keymap.set('n', '<leader>:', '<Plug>(leap-from-window)', { desc = '[J] leap from another window' })
 vim.keymap.set({ 'n', 'o' }, 'gs', function()
   require('leap.remote').action {
     -- Automatically enter Visual mode when coming from Normal.
