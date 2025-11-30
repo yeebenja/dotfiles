@@ -234,3 +234,8 @@ vim.cmd 'colorscheme eldritch'
 
 -- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
+
+-- add leet command abbreviation
+vim.cmd [[
+  cnoreabbrev leet Leet
+]]
