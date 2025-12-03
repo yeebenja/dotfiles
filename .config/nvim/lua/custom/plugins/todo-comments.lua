@@ -69,7 +69,7 @@ return {
       test = { 'Identifier', '#FF00FF' },
       example = { '#42b9f5' },
       later = { '#faa5db' },
-      done = { '#afff47' },
+      done = { '#00ff37' },
     },
     search = {
       command = 'rg',
