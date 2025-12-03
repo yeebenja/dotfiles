@@ -240,3 +240,20 @@ vim.keymap.set('n', '<leader>22', '<cmd>Leet<CR>', { desc = '[2] LeetCode Init' 
 vim.keymap.set({ 'n', 'v' }, '<leader>sj', function()
   require('mini.splitjoin').toggle()
 end, { desc = 'Toggle Split/Join' })
+
+-- blame.nvim
+vim.keymap.set({ 'n' }, '<leader>gw', function()
+  -- require('mini.splitjoin').toggle()
+  vim.cmd ':BlameToggle window'
+end, { desc = 'Git Blame [W]indow Toggle' })
+
+vim.keymap.set({ 'n' }, '<leader>gv', function()
+  -- require('mini.splitjoin').toggle()
+  vim.cmd ':BlameToggle virtual'
+end, { desc = 'Git Blame [V]irtual Toggle' })
+
+-- git-blame
+vim.keymap.set({ 'n' }, '<leader>gb', function()
+  -- require('mini.splitjoin').toggle()
+  vim.cmd ':GitBlameToggle'
+end, { desc = 'Git [B]lame Simple Toggle' })
