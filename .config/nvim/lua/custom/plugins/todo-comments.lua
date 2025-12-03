@@ -15,6 +15,7 @@ return {
     --TEST:
     --EXAMPLE:
     --LATER:  rename to something else?
+    --DONE:
 
     -- keywords recognized as todo comments
     keywords = {
@@ -34,6 +35,7 @@ return {
       -- NOTE: these are my own TODO comments
       EXAMPLE = { icon = '', color = 'example' },
       LATER = { icon = '󰥔', color = 'later' },
+      DONE = { icon = ' ', color = 'done' },
     },
     gui_style = {
       fg = 'NONE', -- The gui style to use for the fg highlight group.
@@ -67,6 +69,7 @@ return {
       test = { 'Identifier', '#FF00FF' },
       example = { '#42b9f5' },
       later = { '#faa5db' },
+      done = { '#afff47' },
     },
     search = {
       command = 'rg',
