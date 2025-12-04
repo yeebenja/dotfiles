@@ -35,7 +35,7 @@ return {
       -- NOTE: these are my own TODO comments
       EXAMPLE = { icon = '', color = 'example' },
       LATER = { icon = '󰥔', color = 'later' },
-      DONE = { icon = ' ', color = 'done' },
+      DONE = { icon = ' ', color = 'hint' },
     },
     gui_style = {
       fg = 'NONE', -- The gui style to use for the fg highlight group.
