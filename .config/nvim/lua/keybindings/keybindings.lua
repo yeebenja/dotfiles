@@ -22,17 +22,23 @@ end, { desc = '[H]arpoon Add' })
 
 vim.keymap.set('n', '<C-e>', function() -- <C-e> is okay to be overwritten, originally <C-e> goes one line down
   harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
+end, { desc = 'Harpoon List' })
 
-vim.keymap.set('n', '<C-t>', function()
+vim.keymap.set('n', '<C-1>', function()
   harpoon:list():select(1)
-end)
-vim.keymap.set('n', '<C-n>', function()
+end, { desc = 'Harpoon [1]' })
+
+vim.keymap.set('n', '<C-2>', function()
   harpoon:list():select(2)
-end)
-vim.keymap.set('n', '<C-s>', function() -- get rid of other keymap
+end, { desc = 'Harpoon [2]' })
+
+vim.keymap.set('n', '<C-3>', function() -- get rid of other keymap
   harpoon:list():select(3)
-end)
+end, { desc = 'Harpoon [3]' })
+
+vim.keymap.set('n', '<C-4>', function() -- get rid of other keymap
+  harpoon:list():select(4)
+end, { desc = 'Harpoon [4]' })
 
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set('n', '<C-S-P>', function()
@@ -41,6 +47,7 @@ end)
 vim.keymap.set('n', '<C-S-N>', function()
   harpoon:list():next()
 end)
+
 -- Persistence keybindings
 -- -- load the session for the current directory
 vim.keymap.set('n', '<leader>1s', function()
