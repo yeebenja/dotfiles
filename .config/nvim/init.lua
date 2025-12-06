@@ -239,3 +239,11 @@ require 'nvim-ufo-config.nvim-fold-config'
 vim.cmd [[
   cnoreabbrev leet Leet
 ]]
+
+-- Remove the default gr mappings for [G]oto [R]eference keymap
+vim.keymap.del('n', 'grn')
+vim.keymap.del('n', 'grr')
+vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grt')
+vim.keymap.del('n', 'gra')
+vim.keymap.del('x', 'gra')
