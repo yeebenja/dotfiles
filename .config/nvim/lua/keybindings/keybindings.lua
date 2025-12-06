@@ -82,27 +82,27 @@ vim.keymap.set('n', '<leader>a1', function()
   vim.cmd ':Gitsigns toggle_signs'
 end, { desc = '[1] Toggle Git-signs Column' })
 
--- Hop
+-- Hop DISABLED
 -- FIXME: figure out what these two variables do later
 -- local hop = require 'hop'
 -- local directions = require('hop.hint').HintDirection
-vim.keymap.set('n', '<leader>l', function()
-  vim.cmd ':HopWord'
-end, { desc = '[L] Find Word' })
+-- vim.keymap.set('n', '<leader>l', function()
+--   vim.cmd ':HopWord'
+-- end, { desc = '[L] Find Word' })
 
 -- Oil
 vim.keymap.set('n', '<leader>o', function()
   vim.cmd ':Oil'
 end, { desc = '[O]il' })
 
--- Barbar
+-- Barbar DISABLED
 -- NOTE: <C-7> and <C-0> don't work with TMUX
-vim.keymap.set('n', '<C-7>', function()
-  vim.cmd ':BufferPrevious'
-end, { desc = 'Buffer Move Previous' })
-vim.keymap.set('n', '<C-0>', function()
-  vim.cmd ':BufferNext'
-end, { desc = 'Buffer Move Next' })
+-- vim.keymap.set('n', '<C-7>', function()
+--   vim.cmd ':BufferPrevious'
+-- end, { desc = 'Buffer Move Previous' })
+-- vim.keymap.set('n', '<C-0>', function()
+--   vim.cmd ':BufferNext'
+-- end, { desc = 'Buffer Move Next' })
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
@@ -145,30 +145,30 @@ vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
 end, { desc = 'Toggle Cursor Center' })
 
 -- Spectre
-vim.keymap.set('n', '<leader>i', function()
-  Snacks.notifier.notify('Spectre Toggled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
-  require('spectre').toggle()
-end, {
-  desc = '[I] Toggle Spectre',
-})
-vim.keymap.set('n', '<leader>ki', function()
-  Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
-  require('spectre').open_visual { select_word = true }
-end, {
-  desc = '(Spectre) Search current word',
-})
-vim.keymap.set('v', '<leader>ki', function()
-  Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
-  require('spectre').open_visual()
-end, {
-  desc = '(Spectre) Search current word',
-})
-vim.keymap.set('n', '<leader>kk', function()
-  Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
-  require('spectre').open_file_search { select_word = true }
-end, {
-  desc = 'Search on current file',
-})
+-- vim.keymap.set('n', '<leader>i', function()
+--   Snacks.notifier.notify('Spectre Toggled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+--   require('spectre').toggle()
+-- end, {
+--   desc = '[I] Toggle Spectre',
+-- })
+-- vim.keymap.set('n', '<leader>ki', function()
+--   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+--   require('spectre').open_visual { select_word = true }
+-- end, {
+--   desc = '(Spectre) Search current word',
+-- })
+-- vim.keymap.set('v', '<leader>ki', function()
+--   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+--   require('spectre').open_visual()
+-- end, {
+--   desc = '(Spectre) Search current word',
+-- })
+-- vim.keymap.set('n', '<leader>kk', function()
+--   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
+--   require('spectre').open_file_search { select_word = true }
+-- end, {
+--   desc = 'Search on current file',
+-- })
 
 -- lsp-lines toggle
 vim.keymap.set('n', '<leader>a3', function()
