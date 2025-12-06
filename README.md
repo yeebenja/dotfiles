@@ -81,3 +81,13 @@ Use OpenCode
 ```
 brew install opencode
 ```
+
+## Learning More About Neovim
+Here are some Youtubers I like watching to learn more about my editor and Neovim
+```
+linkarzu
+smnatale
+Sylvan Franklin
+Coding with Sphere
+TJ DeVries
+```
