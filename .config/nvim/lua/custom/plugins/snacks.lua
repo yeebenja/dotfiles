@@ -47,11 +47,14 @@ return {
       refresh = 50, -- refresh at most every 50ms
     },
     picker = {
-      -- NOTE: Everything in the picker opts is from linkarzu
+      -- NOTE:
+      -- Follow documentation for Snacks picker here:
+      -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
+      --
+      -- EXAMPLE: Everything in the picker opts is from linkarzu
       -- Here is the link: https://github.com/linkarzu/dotfiles-latest/blob/main/neovim/neobean/lua/plugins/snacks.lua
       --
-      -- Documentation for the picker
-      -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
+      --
       -- My ~/github/dotfiles-latest/neovim/lazyvim/lua/config/keymaps.lua
       -- file was always showing at the top, I needed a way to decrease its
       -- score, in frecency you could use :FrecencyDelete to delete a file
@@ -200,6 +203,54 @@ return {
     },
   },
   keys = {
+    -- TODO : add Snacks.todo_comments
+    {
+      '<leader>st',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
+      end,
+      desc = 'Search TODO/FIX/FIXME (Snacks)',
+    },
+    -- Workplace Symbols
+    {
+      '<leader>ws',
+      function()
+        Snacks.picker.lsp_workspace_symbols()
+      end,
+      desc = '[W]orkplace [S]ymbols (Snacks)',
+    },
+    -- Document Symbols
+    {
+      '<leader>ds',
+      function()
+        Snacks.picker.lsp_symbols()
+      end,
+      desc = '[D]ocument [S]ymbols (Snacks)',
+    },
+    -- Goto Type Definition (via LSP)
+    {
+      '<leader>D',
+      function()
+        Snacks.picker.lsp_type_definitions()
+      end,
+      desc = '[G]oto Type [D]efinition (Snacks)',
+    },
+    -- Goto Definition (via LSP)
+    {
+      'gd',
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+      desc = '[G]oto [D]efinition (Snacks)',
+    },
+    -- Goto Reference (via LSP)
+    {
+      'gr',
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      desc = '[G]oto [R]eference (Snacks)',
+    },
     -- Live Grep
     {
       '<leader>sg',
@@ -208,7 +259,7 @@ return {
           layout = 'ivy',
         }
       end,
-      desc = '[S]earch by [G]rep',
+      desc = '[S]earch by [G]rep (Snacks)',
     },
     {
       '<leader>/',
@@ -217,7 +268,7 @@ return {
           layout = 'vscode',
         }
       end,
-      desc = '[/] Grep in Current Buffer (Snacks Picker)',
+      desc = '[/] Grep in Current Buffer (Snacks)',
     },
     -- Git Log
     {
@@ -231,7 +282,7 @@ return {
           layout = 'vertical',
         }
       end,
-      desc = 'Git [L]og',
+      desc = 'Git [L]og (Snacks)',
     },
     -- Git Branches
     {
@@ -241,7 +292,7 @@ return {
           layout = 'select',
         }
       end,
-      desc = '[C]heckout Branches',
+      desc = '[C]heckout Branches (Snacks)',
     },
     -- Git Status
     {
@@ -251,7 +302,7 @@ return {
           layout = 'vertical',
         }
       end,
-      desc = 'Git S[T]atus',
+      desc = 'Git S[T]atus (Snacks)',
     },
     -- Search Files
     {
@@ -267,7 +318,7 @@ return {
           hidden = true, -- include hidden files when searching
         }
       end,
-      desc = '[S]earch [F]iles',
+      desc = '[S]earch [F]iles (Snacks)',
     },
     -- Search Keymaps
     {
@@ -277,7 +328,7 @@ return {
           layout = 'vertical',
         }
       end,
-      desc = '[S]earch [K]eymaps',
+      desc = '[S]earch [K]eymaps (Snacks)',
     },
     -- Buffer Picker
     {
