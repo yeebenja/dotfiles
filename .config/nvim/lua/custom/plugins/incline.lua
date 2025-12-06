@@ -44,6 +44,7 @@ return {
           ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
           ' ',
           { filename, gui = modified and 'bold,italic' or 'bold' },
+          modified and { ' ●', guifg = '#ff6b6b' } or '',
           ' ',
           guibg = '#44406e',
         }
