@@ -11,6 +11,7 @@ return {
     -- dashboard = { enabled = true },
     -- indent = { enabled = true },
     -- input = { enabled = true },
+    profiler = {},
     notifier = {
       -- NOTE: https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md
       -- ^^ Documentation for notifier
@@ -203,7 +204,30 @@ return {
     },
   },
   keys = {
-    -- TODO : add Snacks.todo_comments
+    -- LATER: figure out of neovim profiling works
+    {
+      '<leader>pp',
+      function()
+        Snacks.toggle.profiler()
+      end,
+      desc = 'Toggle Profiler',
+    },
+    {
+      '<leader>ph',
+      function()
+        Snacks.toggle.profiler_highlights()
+      end,
+      desc = 'Toggle Profiler Highlights',
+    },
+    -- Your existing scratch buffer keymap
+    {
+      '<leader>ps',
+      function()
+        Snacks.profiler.scratch()
+      end,
+      desc = 'Profiler Scratch Buffer',
+    },
+    -- TODO comment search
     {
       '<leader>st',
       function()
