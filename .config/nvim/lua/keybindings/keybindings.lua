@@ -243,24 +243,31 @@ vim.keymap.set('n', '<leader>2c', '<cmd>Leet console<CR>', { desc = '[C] LeetCod
 vim.keymap.set('n', '<leader>2l', '<cmd>Leet list<CR>', { desc = '[l] LeetCode List' })
 vim.keymap.set('n', '<leader>22', '<cmd>Leet<CR>', { desc = '[2] LeetCode Init' })
 
--- Custom keybinding for toggle
+-- mini splitjoin
 vim.keymap.set({ 'n', 'v' }, '<leader>sj', function()
   require('mini.splitjoin').toggle()
 end, { desc = 'Toggle Split/Join' })
 
+-- mini bufremove
+vim.api.nvim_create_user_command('Bd', function(opts)
+  require('mini.bufremove').delete(0, opts.bang)
+end, { bang = true })
+-- remap this to :bd
+vim.cmd [[
+  cnoreabbrev bd Bd
+  cnoreabbrev bdelete Bd
+]]
+
 -- blame.nvim
 vim.keymap.set({ 'n' }, '<leader>gw', function()
-  -- require('mini.splitjoin').toggle()
   vim.cmd ':BlameToggle window'
 end, { desc = 'Git Blame [W]indow Toggle' })
 
 vim.keymap.set({ 'n' }, '<leader>gv', function()
-  -- require('mini.splitjoin').toggle()
   vim.cmd ':BlameToggle virtual'
 end, { desc = 'Git Blame [V]irtual Toggle' })
 
 -- git-blame
 vim.keymap.set({ 'n' }, '<leader>gb', function()
-  -- require('mini.splitjoin').toggle()
   vim.cmd ':GitBlameToggle'
 end, { desc = 'Git [B]lame Simple Toggle' })
