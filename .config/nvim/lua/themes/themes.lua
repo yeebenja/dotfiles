@@ -196,5 +196,15 @@ local themes = {
       }
     end,
   },
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('kanagawa').setup {
+        -- your options here
+      }
+    end,
+  },
 }
 return themes
