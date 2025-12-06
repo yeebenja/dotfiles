@@ -114,26 +114,10 @@ end, { desc = '[O]il' })
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
 
--- Aerial
-vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
+-- Aerial DISABLED
+-- vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
 
 -- Stay Centered
--- vim.keymap.set({ 'n', 'v' }, '<leader>a2', require('stay-centered').toggle, { desc = 'Toggle stay-centered.nvim' })
-
--- vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
---   require('stay-centered').enable()
---   -- -@param msg string|string[]
---   -- -@param opts? snacks.notify.Opts
---   Snacks.notify.notify('Stay-Center.nvim Enabled', { once = false })
--- end, { desc = 'Enable Cursor Center' })
---
--- vim.keymap.set({ 'n', 'v' }, '<leader>a3', function()
---   require('stay-centered').disable()
---   -- -@param msg string|string[]
---   -- -@param opts? snacks.notify.Opts
---   Snacks.notify.notify('Stay-Center.nvim Disabled', { once = false })
--- end, { desc = 'Disable Cursor Center' })
-
 -- Initialize the state variable to match the plugin's default (enabled)
 vim.g.stay_centered_enabled = true
 
