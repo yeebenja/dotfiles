@@ -47,7 +47,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>s', group = '[S]earch' },
       { '<leader>w', group = '[W]orkspace' },
       { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       -- Custom mappings I added
       { '<leader>u', group = '[U]ndotree' },
       { '<leader>h', group = '[H]arpoon' },
@@ -56,7 +56,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>x', group = '[X] Trouble' },
       { '<leader>1', group = '[1] Persistence (Sessions)' },
       -- { '<leader>k', group = '[K] Spectre' },
-      { '<leader>1', group = '[2] LeetCode' },
+      { '<leader>2', group = '[2] LeetCode' },
     },
   },
 }
