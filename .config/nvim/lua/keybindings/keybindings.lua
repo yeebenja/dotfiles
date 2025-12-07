@@ -225,7 +225,6 @@ vim.keymap.set('n', '<leader>2;', '<cmd>Leet run<CR>', { desc = '[;] LeetCode Ru
 vim.keymap.set('n', '<leader>2<CR>', '<cmd>Leet submit<CR>', { desc = '[CR] LeetCode Submit' })
 vim.keymap.set('n', '<leader>2c', '<cmd>Leet console<CR>', { desc = '[C] LeetCode Console' })
 vim.keymap.set('n', '<leader>2l', '<cmd>Leet list<CR>', { desc = '[l] LeetCode List' })
-vim.keymap.set('n', '<leader>22', '<cmd>Leet<CR>', { desc = '[2] LeetCode Init' })
 
 -- mini splitjoin
 vim.keymap.set({ 'n', 'v' }, '<leader>sj', function()
