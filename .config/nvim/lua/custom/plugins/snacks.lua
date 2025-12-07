@@ -204,6 +204,13 @@ return {
     },
   },
   keys = {
+    {
+      '<leader>sh',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = '[S]earch [H]elp (Snacks)',
+    },
     -- LATER: figure out of neovim profiling works
     {
       '<leader>pp',
