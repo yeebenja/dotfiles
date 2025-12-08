@@ -261,3 +261,12 @@ end, { desc = 'Git Blame [V]irtual Toggle' })
 vim.keymap.set({ 'n' }, '<leader>gb', function()
   vim.cmd ':GitBlameToggle'
 end, { desc = 'Git [B]lame Simple Toggle' })
+
+-- diffview
+vim.keymap.set({ 'n' }, '<leader>do', function()
+  vim.cmd ':DiffviewOpen'
+end, { desc = 'Diffview [O]pen' })
+
+vim.keymap.set({ 'n' }, '<leader>dc', function()
+  vim.cmd ':DiffviewClose'
+end, { desc = 'Diffview [C]lose' })
