@@ -270,3 +270,9 @@ end, { desc = 'Diffview [O]pen' })
 vim.keymap.set({ 'n' }, '<leader>dc', function()
   vim.cmd ':DiffviewClose'
 end, { desc = 'Diffview [C]lose' })
+
+-- date time
+vim.keymap.set('n', '<leader>dt', function()
+  local date = os.date '%Y-%m-%d %H:%M:%S'
+  vim.api.nvim_put({ tostring(date) }, 'c', true, true)
+end, { desc = '[D]ate/[T]ime Insert' })
