@@ -204,6 +204,16 @@ return {
     },
   },
   keys = {
+    -- TODO: split join all of these plugins
+
+    -- search lazy spec
+    {
+      '<leader>sl',
+      function()
+        Snacks.picker.lazy()
+      end,
+      desc = '[S]earch [L]azy Plugin Spec (Snacks)',
+    },
     -- search themes
     {
       '<leader>at',
