@@ -345,7 +345,7 @@ return {
           show_empty = true,
           supports_live = true,
           layout = 'ivy',
-          ignored = false, -- ignore ignored files
+          ignored = true, -- ignore ignored files
           hidden = true, -- include hidden files when searching
         }
       end,
