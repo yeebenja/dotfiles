@@ -204,6 +204,15 @@ return {
     },
   },
   keys = {
+    -- search themes
+    {
+      '<leader>at',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = '[T]hemes',
+    },
+    -- search help
     {
       '<leader>sh',
       function()
@@ -212,6 +221,7 @@ return {
       desc = '[S]earch [H]elp (Snacks)',
     },
     -- LATER: figure out of neovim profiling works
+    -- Snacks profiler
     {
       '<leader>pp',
       function()
