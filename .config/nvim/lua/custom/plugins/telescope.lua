@@ -101,7 +101,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     -- NOTE: I added...
     -- vim.keymap.set('n', '<leader>st', builtin.treesitter, { desc = '[S]earch [T]reesitter' })
-    vim.keymap.set('n', '<leader>at', builtin.colorscheme, { desc = '[T]hemes Telescope' })
+    -- vim.keymap.set('n', '<leader>at', builtin.colorscheme, { desc = '[T]hemes Telescope' })
 
     -- Slightly advanced example of overriding default behavior and theme
     -- vim.keymap.set('n', '<leader>/', function()
