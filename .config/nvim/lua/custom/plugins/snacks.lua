@@ -202,10 +202,41 @@ return {
       hidden = true, -- grep in hidden files as well
       ignored = false, -- don't grep in ignored files
     },
+    words = {
+      debounce = 200, -- time in ms to wait before updating
+      notify_jump = false, -- show a notification when jumping
+      notify_end = true, -- show a notification when reaching the end
+      foldopen = true, -- open folds after jumping
+      jumplist = true, -- set jump point before jumping
+      modes = { 'n', 'i', 'c' }, -- modes to show references
+      filter = function(buf) -- what buffers to enable `snacks.words`
+        return vim.g.snacks_words ~= false and vim.b[buf].snacks_words ~= false
+      end,
+    },
   },
   keys = {
-    -- TODO: split join all of these plugins
-
+    {
+      ']]',
+      function()
+        ---@param count? number
+        ---@param cycle? boolean
+        -- Snacks.words.jump(count, cycle)
+        Snacks.words.jump(vim.v.count1, false)
+      end,
+      desc = 'Next Reference (Snacks.words)',
+      mode = 'n',
+    },
+    {
+      '[[',
+      function()
+        ---@param count? number
+        ---@param cycle? boolean
+        -- Snacks.words.jump(count, cycle)
+        Snacks.words.jump(-vim.v.count1, false)
+      end,
+      desc = 'Prev Reference (Snacks.words)',
+      mode = 'n',
+    },
     -- search lazy spec
     {
       '<leader>sl',
