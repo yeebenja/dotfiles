@@ -71,7 +71,7 @@ return {
           else
             gitsigns.nav_hunk 'next'
           end
-        end, { desc = 'Jump to next git [c]hange' })
+        end, { desc = 'Jump to next git [c]hange (gitsigns)' })
 
         -- Prev Hunk
         map('n', '[c', function()
@@ -80,7 +80,7 @@ return {
           else
             gitsigns.nav_hunk 'prev'
           end
-        end, { desc = 'Jump to previous git [c]hange' })
+        end, { desc = 'Jump to prev git [c]hange (gitsigns)' })
 
         -- Actions
         -- visual mode
