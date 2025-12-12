@@ -41,6 +41,8 @@ return {
       -- You can set the delay to false to disable cleanup entirely
       -- Note that the cleanup process only starts when none of the oil buffers are currently displayed
       cleanup_delay_ms = 2000,
+      -- NOTE: lsp file methods: update import lines when renaming file or changing file location
+      -- Buffers will be modified but not saved (autosave_changes = false)
       lsp_file_methods = {
         -- Enable or disable LSP file operations
         enabled = true,

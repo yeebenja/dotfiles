@@ -1,6 +1,5 @@
 -- Neo-tree is a Neovim plugin to browse the file system
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
-
 return {
   'nvim-neo-tree/neo-tree.nvim',
   -- version = '',
@@ -9,6 +8,7 @@ return {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
+    'folke/snacks.nvim', -- Add snacks.nvim as a dependency
   },
   cmd = 'Neotree',
   keys = {
@@ -30,9 +30,18 @@ return {
           },
           border = 'rounded', -- Add a border style
         },
-        -- mappings = {
-        --   ['\\'] = 'close_window',
-        -- },
+        mappings = {
+          -- Override the default rename mapping to use snacks.nvim
+          ['r'] = 'rename',
+        },
+      },
+      -- Add the rename command that integrates with snacks.nvim
+      commands = {
+        rename = function(state)
+          local node = state.tree:get_node()
+          local path = node:get_id()
+          Snacks.rename.rename_file(path)
+        end,
       },
     },
     follow_current_file = true,
