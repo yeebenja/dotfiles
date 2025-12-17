@@ -136,7 +136,7 @@ return {
       matcher = {
         fuzzy = true, -- use fuzzy matching
         smartcase = true, -- use smartcase
-        ignorecase = true, -- use ignorecase
+        -- ignorecase = true, -- use ignorecase (disabled b/c smartcase enabled)
         sort_empty = false, -- sort results when the search string is empty
         filename_bonus = true, -- give bonus for matching file names (last part of the path)
         file_pos = true, -- support patterns like `file:line:col` and `file:line`
@@ -192,16 +192,6 @@ return {
     ---@field rtp? boolean search in runtimepath
     --- NOTE: ? means that the fiield is optional in the configuration table
     --- so, hidden? means that hidden is an optional field
-    grep = {
-      finder = 'grep',
-      regex = true,
-      format = 'file',
-      show_empty = true,
-      live = true, -- live grep by default
-      supports_live = true,
-      hidden = true, -- grep in hidden files as well
-      ignored = false, -- don't grep in ignored files
-    },
     words = {
       debounce = 200, -- time in ms to wait before updating
       notify_jump = false, -- show a notification when jumping
@@ -339,6 +329,13 @@ return {
       function()
         Snacks.picker.grep {
           layout = 'ivy',
+          regex = true,
+          format = 'file',
+          show_empty = true,
+          live = true, -- live grep by default
+          supports_live = true,
+          hidden = true, -- grep in hidden files as well
+          ignored = false, -- don't grep in ignored files
         }
       end,
       desc = '[S]earch by [G]rep (Snacks)',
@@ -347,7 +344,9 @@ return {
       '<leader>/',
       function()
         Snacks.picker.lines {
-          layout = 'vscode',
+          layout = 'ivy',
+          live = true,
+          supports_live = true,
         }
       end,
       desc = '[/] Grep in Current Buffer (Snacks)',
