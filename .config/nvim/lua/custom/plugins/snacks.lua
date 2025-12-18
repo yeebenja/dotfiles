@@ -114,8 +114,6 @@ return {
             },
           },
         },
-        -- I wanted to modify the layout width
-        --
         vertical = {
           layout = {
             backdrop = false,
@@ -133,6 +131,7 @@ return {
           },
         },
       },
+      -- global defaults for matcher
       matcher = {
         fuzzy = true, -- use fuzzy matching
         smartcase = true, -- use smartcase
@@ -345,8 +344,6 @@ return {
       function()
         Snacks.picker.lines {
           layout = 'ivy',
-          live = true,
-          supports_live = true,
         }
       end,
       desc = '[/] Grep in Current Buffer (Snacks)',
@@ -397,6 +394,8 @@ return {
           layout = 'ivy',
           ignored = true, -- ignore ignored files
           hidden = true, -- include hidden files when searching
+          frecency = true,
+          history_bonus = true,
         }
       end,
       desc = '[S]earch [F]iles (Snacks)',
@@ -436,6 +435,9 @@ return {
           },
           -- In case you want to override the layout for this keymap
           -- layout = "ivy",
+
+          frecency = true,
+          history_bonus = true,
         }
       end,
       desc = 'Buffer Picker',
