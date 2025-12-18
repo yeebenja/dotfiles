@@ -339,6 +339,7 @@ return {
       end,
       desc = '[S]earch by [G]rep (Snacks)',
     },
+    -- Live Grep in Current File
     {
       '<leader>/',
       function()
