@@ -125,7 +125,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank {
+      higroup = 'YankHighlight',
+      timeout = 200,
+    }
   end,
 })
 
@@ -241,3 +244,22 @@ vim.keymap.del('n', 'gri')
 vim.keymap.del('n', 'grt')
 vim.keymap.del('n', 'gra')
 vim.keymap.del('x', 'gra')
+
+-- NOTE: since leap.nvim uses IncSearch label for highlighting
+-- labels, change label to bright green to make it more readable
+vim.api.nvim_set_hl(0, 'IncSearch', {
+  fg = '#00ff0d', -- bright green
+  bg = 'NONE', -- transparent background
+  bold = true,
+})
+
+-- NOTE: original IncSearch fg and bg
+-- :hi IncSearch
+-- IncSearch      xxx guifg=#1a1c2c guibg=#f7c67f
+local fg_original = '#1a1c2c'
+local bg_original = '#f7c67f'
+vim.api.nvim_set_hl(0, 'YankHighlight', {
+  fg = fg_original, -- or 'NONE;
+  bg = bg_original, -- or 'NONE'
+  bold = true, -- optional
+})
