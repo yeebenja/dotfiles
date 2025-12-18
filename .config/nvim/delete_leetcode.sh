@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script to clean LeetCode nvim cache directory
 # Works across different computers by expanding ~ to home directory
 
@@ -31,21 +30,10 @@ if [ "$ITEM_COUNT" -eq 0 ]; then
 fi
 
 # Show what will be deleted
-echo "Found $ITEM_COUNT item(s) to delete:"
-ls -la "$TARGET_DIR"
-echo ""
+echo "Deleting $ITEM_COUNT item(s)..."
 
-# Confirm before deleting
-read -p "Are you sure you want to delete everything? (y/N): " -n 1 -r
-echo ""
+# Delete everything inside the directory but keep the directory itself
+rm -rf "${TARGET_DIR:?}"/*
+rm -rf "${TARGET_DIR:?}"/.[!.]*
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    # Delete everything inside the directory but keep the directory itself
-    rm -rf "${TARGET_DIR:?}"/*
-    rm -rf "${TARGET_DIR:?}"/.[!.]*
-    
-    echo -e "${GREEN}✓ Successfully cleaned $TARGET_DIR${NC}"
-else
-    echo -e "${YELLOW}Cancelled. No files were deleted.${NC}"
-    exit 0
-fi
+echo -e "${GREEN}✓ Successfully cleaned $TARGET_DIR${NC}"
