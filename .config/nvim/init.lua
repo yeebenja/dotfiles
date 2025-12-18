@@ -248,7 +248,7 @@ vim.keymap.del('x', 'gra')
 -- NOTE: since leap.nvim uses IncSearch label for highlighting
 -- labels, change label to bright green to make it more readable
 vim.api.nvim_set_hl(0, 'IncSearch', {
-  fg = '#00ff0d', -- bright green
+  fg = '#f364b5', -- eldritch red
   bg = 'NONE', -- transparent background
   bold = true,
 })
