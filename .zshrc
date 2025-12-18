@@ -19,6 +19,8 @@ alias gits="git status"
 alias tm="tmux"
 
 alias opc="opencode"
+# nukes nvim cache and removes all swap files
+alias nuke="rm -rf ~/.local/state/nvim/swap/*"
 
 # NOTE: Instantly edit my nvim configuation
 viedit() {
