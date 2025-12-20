@@ -233,10 +233,10 @@ vim.keymap.set('n', '<leader>2<CR>', '<cmd>Leet submit<CR>', { desc = '[CR] Leet
 vim.keymap.set('n', '<leader>2c', '<cmd>Leet console<CR>', { desc = '[C] LeetCode Console' })
 vim.keymap.set('n', '<leader>2l', '<cmd>Leet list<CR>', { desc = '[l] LeetCode List' })
 
--- mini splitjoin
+-- tree split join
 vim.keymap.set({ 'n', 'v' }, '<leader>sj', function()
-  require('mini.splitjoin').toggle()
-end, { desc = 'Toggle Split/Join' })
+  vim.cmd 'TSJToggle'
+end, { desc = 'Tree Split/Join' })
 
 -- mini bufremove
 vim.api.nvim_create_user_command('Bd', function(opts)
