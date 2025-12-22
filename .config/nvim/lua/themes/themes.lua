@@ -49,6 +49,8 @@ local themes = {
     'eldritch-theme/eldritch.nvim',
     lazy = false,
     priority = 1000,
+    -- NOTE: use this specific version of eldritch
+    commit = 'cddd745d4bd317a5c142708def49fd466fd87fc6',
     opts = {},
     init = function()
       -- vim.cmd.colorscheme 'eldritch'
