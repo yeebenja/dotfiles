@@ -304,7 +304,7 @@ return {
       function()
         Snacks.picker.lsp_type_definitions()
       end,
-      desc = '[G]oto Type [D]efinition (Snacks)',
+      desc = 'Goto Type [D]efinition (Snacks)',
     },
     -- Goto Definition (via LSP)
     {
