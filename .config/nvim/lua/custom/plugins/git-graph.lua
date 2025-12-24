@@ -32,7 +32,7 @@ return {
       GLRUCR = '',
     },
     format = {
-      timestamp = '%H:%M:%S %d-%m-%Y',
+      timestamp = '%m-%d-%Y %H:%M:%S',
       fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
     },
     hooks = {
