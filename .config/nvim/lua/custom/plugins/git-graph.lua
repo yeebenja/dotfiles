@@ -2,9 +2,34 @@ return {
   'isakbm/gitgraph.nvim',
   opts = {
     git_cmd = 'git',
+    -- NOTE: using kitty specific symbols for gitgraph
     symbols = {
-      merge_commit = 'M',
-      commit = '*',
+      merge_commit = '',
+      commit = '',
+      merge_commit_end = '',
+      commit_end = '',
+
+      -- Advanced symbols
+      GVER = '',
+      GHOR = '',
+      GCLD = '',
+      GCRD = '╭',
+      GCLU = '',
+      GCRU = '',
+      GLRU = '',
+      GLRD = '',
+      GLUD = '',
+      GRUD = '',
+      GFORKU = '',
+      GFORKD = '',
+      GRUDCD = '',
+      GRUDCU = '',
+      GLUDCD = '',
+      GLUDCU = '',
+      GLRDCL = '',
+      GLRDCR = '',
+      GLRUCL = '',
+      GLRUCR = '',
     },
     format = {
       timestamp = '%H:%M:%S %d-%m-%Y',
@@ -42,7 +67,7 @@ return {
       function()
         require('gitgraph').draw({}, { all = true, max_count = 5000 })
       end,
-      desc = 'GitGraph - Draw',
+      desc = 'Git [L]og Graph',
     },
   },
 }
