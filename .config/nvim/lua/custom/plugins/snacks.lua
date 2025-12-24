@@ -349,20 +349,21 @@ return {
       end,
       desc = '[/] Grep in Current Buffer (Snacks)',
     },
+    -- disabled git log in favor for gitgraph.nvim
     -- Git Log
-    {
-      '<leader>gl',
-      function()
-        Snacks.picker.git_log {
-          finder = 'git_log',
-          format = 'git_log',
-          preview = 'git_show',
-          confirm = 'git_checkout',
-          layout = 'vertical',
-        }
-      end,
-      desc = 'Git [L]og (Snacks)',
-    },
+    -- {
+    --   '<leader>gl',
+    --   function()
+    --     Snacks.picker.git_log {
+    --       finder = 'git_log',
+    --       format = 'git_log',
+    --       preview = 'git_show',
+    --       confirm = 'git_checkout',
+    --       layout = 'vertical',
+    --     }
+    --   end,
+    --   desc = 'Git [L]og (Snacks)',
+    -- },
     -- Git Branches
     {
       '<leader>gc',
