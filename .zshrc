@@ -190,3 +190,13 @@ pve311() {
   fi
   python3.11 -m venv "$1"
 }
+
+# gitw -> runs "git worktree list"
+# gitw (arguments) -> runs "git worktree (with arguments)"
+gitw() {
+    if [[ $# -eq 0 ]]; then
+        git worktree list
+    else
+        git worktree "$@"
+    fi
+}
