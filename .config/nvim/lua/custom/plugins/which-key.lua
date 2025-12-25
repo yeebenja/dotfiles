@@ -45,7 +45,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>d', group = '[D]ocument' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]earch' },
-      { '<leader>w', group = '[W]orkspace' },
+      { '<leader>w', group = '[W]orkspace / Git [W]orktree' },
       { '<leader>t', group = '[T]oggle' },
       -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       -- Custom mappings I added
