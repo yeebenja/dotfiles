@@ -46,6 +46,7 @@ return {
       lualine_a = { 'mode' },
       lualine_b = {
         'branch',
+        -- show current git worktree
         {
           git_worktree_with_icon,
           cond = function()
