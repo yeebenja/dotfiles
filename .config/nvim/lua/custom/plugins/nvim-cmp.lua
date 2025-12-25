@@ -124,10 +124,7 @@ return { -- Autocompletion
 
     -- Setup for `:` (command mode)
     cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline {
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-      },
+      mapping = cmp.mapping.preset.cmdline {},
       sources = cmp.config.sources({
         { name = 'path' },
       }, {
