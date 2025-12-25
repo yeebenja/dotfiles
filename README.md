@@ -29,6 +29,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # Goofing off
 brew tap real-aazam/homebrew-aazam
 brew install hollywood
+# npm dependencies
+npm install -g markdownlint-cli # for linting markdown files
 ```
 
 ## GNU Stow Install
