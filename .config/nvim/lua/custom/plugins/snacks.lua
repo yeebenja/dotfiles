@@ -252,28 +252,28 @@ return {
     },
     -- LATER: figure out of neovim profiling works
     -- Snacks profiler
-    {
-      '<leader>pp',
-      function()
-        Snacks.toggle.profiler()
-      end,
-      desc = 'Toggle Profiler',
-    },
-    {
-      '<leader>ph',
-      function()
-        Snacks.toggle.profiler_highlights()
-      end,
-      desc = 'Toggle Profiler Highlights',
-    },
-    -- Your existing scratch buffer keymap
-    {
-      '<leader>ps',
-      function()
-        Snacks.profiler.scratch()
-      end,
-      desc = 'Profiler Scratch Buffer',
-    },
+    -- {
+    --   '<leader>pp',
+    --   function()
+    --     Snacks.toggle.profiler()
+    --   end,
+    --   desc = 'Toggle Profiler',
+    -- },
+    -- {
+    --   '<leader>ph',
+    --   function()
+    --     Snacks.toggle.profiler_highlights()
+    --   end,
+    --   desc = 'Toggle Profiler Highlights',
+    -- },
+    -- -- Your existing scratch buffer keymap
+    -- {
+    --   '<leader>ps',
+    --   function()
+    --     Snacks.profiler.scratch()
+    --   end,
+    --   desc = 'Profiler Scratch Buffer',
+    -- },
     -- TODO comment search
     {
       '<leader>st',
