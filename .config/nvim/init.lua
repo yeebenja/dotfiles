@@ -1,4 +1,5 @@
 -- Ben's init.lua file for Neovim
+_G.global_colors = require 'globals.colors' -- _G signifies that this table is intentionally global
 vim.opt.termguicolors = true
 
 --[[
