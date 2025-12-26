@@ -66,7 +66,27 @@ return {
         -- }, -- 14:30 12/24/2024
         -- Git worktree
       },
-      lualine_x = { 'encoding', 'fileformat', 'filetype' },
+      lualine_x = {
+        {
+          -- Modified buffers count
+          function()
+            local modified_buffers = 0
+            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+              if vim.bo[buf].modified and vim.api.nvim_buf_is_loaded(buf) then
+                modified_buffers = modified_buffers + 1
+              end
+            end
+            if modified_buffers == 0 then
+              return ''
+            end
+            return string.format('● %d', modified_buffers)
+          end,
+          color = { fg = global_colors.colors.modified_buffer_color },
+        },
+        'encoding',
+        'fileformat',
+        'filetype',
+      },
       lualine_y = { 'progress' },
       lualine_z = { 'location' },
     },
