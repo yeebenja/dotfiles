@@ -51,6 +51,8 @@ local ftMap = {
   vim = 'indent',
   python = { 'indent' },
   git = '',
+  typescript = { 'treesitter', 'indent' }, -- TS
+  typescriptreact = { 'treesitter', 'indent' }, -- TSX
 }
 require('ufo').setup {
 
