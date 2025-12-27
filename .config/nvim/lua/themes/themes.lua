@@ -216,5 +216,6 @@ local themes = {
     --   config = bar
     --   end,
   },
+  { 'nxvu699134/vn-night.nvim' },
 }
 return themes
