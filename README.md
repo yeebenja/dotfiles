@@ -83,3 +83,8 @@ Use OpenCode
 ```
 brew install opencode
 ```
+
+## Browser Extensions
+* [Redux DevTools][redux-devtools]
+
+[redux-devtools]: https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
