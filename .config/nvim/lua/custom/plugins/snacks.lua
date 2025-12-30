@@ -226,6 +226,15 @@ return {
       desc = 'Prev Reference (Snacks.words)',
       mode = 'n',
     },
+
+    -- search diagnostics
+    {
+      '<leader>sd',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = '[S]earch [D]iagnostics (Snacks)',
+    },
     -- search lazy spec
     {
       '<leader>sl',
