@@ -1,6 +1,10 @@
 return {
   'stevearc/oil.nvim',
   version = '*',
+  dependencies = {
+    'benomahony/oil-git.nvim', -- oil git extension
+    'JezerM/oil-lsp-diagnostics.nvim', -- oil LSP diagnostics extension
+  },
   config = function()
     require('oil').setup {
       -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
@@ -31,7 +35,9 @@ return {
         concealcursor = 'nvic',
       },
       -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-      delete_to_trash = false,
+
+      delete_to_trash = true, -- NOTE: I think this is safer
+
       -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
       skip_confirm_for_simple_edits = false,
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
@@ -66,12 +72,12 @@ return {
       keymaps = {
         ['g?'] = { 'actions.show_help', mode = 'n' },
         ['<CR>'] = 'actions.select',
-        ['<C-s>'] = { 'actions.select', opts = { vertical = true } },
-        ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
-        ['<C-t>'] = { 'actions.select', opts = { tab = true } },
-        ['<C-p>'] = 'actions.preview',
+        -- ['<C-s>'] = { 'actions.select', opts = { vertical = true } },
+        -- ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
+        -- ['<C-t>'] = { 'actions.select', opts = { tab = true } },
+        -- ['<C-p>'] = 'actions.preview',
         ['<C-c>'] = { 'actions.close', mode = 'n' },
-        ['<C-l>'] = 'actions.refresh',
+        -- ['<C-l>'] = 'actions.refresh',
         ['-'] = { 'actions.parent', mode = 'n' },
         ['_'] = { 'actions.open_cwd', mode = 'n' },
         ['`'] = { 'actions.cd', mode = 'n' },
@@ -81,8 +87,7 @@ return {
         ['g.'] = { 'actions.toggle_hidden', mode = 'n' },
         ['g\\'] = { 'actions.toggle_trash', mode = 'n' },
       },
-      -- Set to false to disable all of the above keymaps
-      use_default_keymaps = true,
+      use_default_keymaps = false, -- disable default keymaps since we are using the specified ones above
       view_options = {
         -- Show files and directories that start with "."
         show_hidden = true,
