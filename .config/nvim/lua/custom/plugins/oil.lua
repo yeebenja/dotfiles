@@ -1,10 +1,7 @@
 return {
   'stevearc/oil.nvim',
   version = '*',
-  dependencies = {
-    'benomahony/oil-git.nvim', -- oil git extension
-    'JezerM/oil-lsp-diagnostics.nvim', -- oil LSP diagnostics extension
-  },
+  dependencies = {},
   config = function()
     require('oil').setup {
       -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
