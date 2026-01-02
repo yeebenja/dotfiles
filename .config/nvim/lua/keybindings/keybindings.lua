@@ -100,7 +100,11 @@ end, { desc = '[1] Toggle Git-signs Column' })
 -- Oil
 vim.keymap.set('n', '<leader>o', function()
   vim.cmd ':Oil'
-end, { desc = '[O]il' })
+end, { desc = '[o]il' })
+
+vim.keymap.set('n', '<leader>O', function()
+  vim.cmd ':Oil --float'
+end, { desc = '[O]il Floating Window' })
 
 -- Barbar DISABLED
 -- NOTE: <C-7> and <C-0> don't work with TMUX
