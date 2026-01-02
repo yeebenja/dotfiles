@@ -9,3 +9,6 @@
 !iterm2kitty.py
 # Except for .pdbrc.py
 !.pdbrc.py
+# ignore todo list
+TODO.md
+JOB_RESPONSES.md
