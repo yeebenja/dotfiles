@@ -253,10 +253,6 @@ vim.cmd [[
 ]]
 
 -- blame.nvim
-vim.keymap.set({ 'n' }, '<leader>gw', function()
-  vim.cmd ':BlameToggle window'
-end, { desc = 'Git Blame [W]indow Toggle' })
-
 vim.keymap.set({ 'n' }, '<leader>gv', function()
   vim.cmd ':BlameToggle virtual'
 end, { desc = 'Git Blame [V]irtual Toggle' })
