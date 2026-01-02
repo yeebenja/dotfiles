@@ -2,6 +2,9 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  -- NOTE: Use master branch bc eldritch theme acts funny
+  -- on main branch in typescript files
+  branch = 'master',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
