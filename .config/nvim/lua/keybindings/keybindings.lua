@@ -253,14 +253,9 @@ vim.cmd [[
 ]]
 
 -- blame.nvim
-vim.keymap.set({ 'n' }, '<leader>gv', function()
-  vim.cmd ':BlameToggle virtual'
-end, { desc = 'Git Blame [V]irtual Toggle' })
-
--- git-blame
 vim.keymap.set({ 'n' }, '<leader>gb', function()
-  vim.cmd ':GitBlameToggle'
-end, { desc = 'Git [B]lame Simple Toggle' })
+  vim.cmd ':BlameToggle window'
+end, { desc = 'Git [B]lame Toggle' })
 
 -- diffview
 vim.keymap.set({ 'n' }, '<leader>do', function()
