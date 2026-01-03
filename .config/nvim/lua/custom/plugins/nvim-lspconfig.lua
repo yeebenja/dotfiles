@@ -1,3 +1,5 @@
+-- NOTE: Good video for how all of this works
+-- https://www.youtube.com/watch?v=yI9R13h9IEE
 return {
   -- Main LSP Configuration
   'neovim/nvim-lspconfig',
@@ -12,7 +14,7 @@ return {
     { 'j-hui/fidget.nvim', opts = {} },
 
     -- Allows extra capabilities provided by nvim-cmp
-    'hrsh7th/cmp-nvim-lsp',
+    -- 'hrsh7th/cmp-nvim-lsp',
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -149,8 +151,8 @@ return {
     --  By default, Neovim doesn't support everything that is in the LSP specification.
     --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -189,9 +191,10 @@ return {
           },
         },
       },
-      codelldb = {}, -- debug c++
-      debugpy = {}, -- debug Python
     }
+    -- local lspconfig = require 'lspconfig'
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
@@ -205,12 +208,17 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua code
+      'stylua',
       'lua-language-server',
       'markdownlint',
       'typescript-language-server',
       'pyright',
+      'codelldb',
+      'debugpy',
+      'clangd',
     })
+    -- mason tool installer is for all tools, not just LSPs
+    -- codelldb and debugpy are tools that also can be installed
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
