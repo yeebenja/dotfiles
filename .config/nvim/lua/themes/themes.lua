@@ -1,11 +1,12 @@
 local themes = {
   {
     'scottmckendry/cyberdream.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
   },
   {
     'EdenEast/nightfox.nvim',
+    lazy = true,
     priority = 1000,
     init = function()
       -- vim.cmd.colorscheme 'carbonfox'
@@ -18,6 +19,7 @@ local themes = {
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
+    lazy = true,
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
@@ -32,6 +34,7 @@ local themes = {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
+    lazy = true,
     priority = 1000,
     init = function()
       -- vim.cmd.colorscheme 'catppuccin-mocha'
@@ -40,6 +43,7 @@ local themes = {
 
   {
     'Mofiqul/dracula.nvim',
+    lazy = true,
     priority = 1000,
     init = function()
       -- vim.cmd.colorscheme 'dracula'
@@ -47,7 +51,7 @@ local themes = {
   },
   {
     'eldritch-theme/eldritch.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     -- NOTE: use this specific version of eldritch if i want the original
     -- status bar theme
@@ -59,6 +63,7 @@ local themes = {
   },
   {
     'marko-cerovac/material.nvim',
+    lazy = true,
     priority = 1000,
     init = function()
       -- vim.g.material_style = 'deep ocean' -- oceanic, deep ocean, palenight, lighter, darker
@@ -67,7 +72,7 @@ local themes = {
   },
   {
     'uloco/bluloco.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     dependencies = { 'rktjmp/lush.nvim' },
     config = function()
@@ -82,7 +87,7 @@ local themes = {
   },
   {
     '0xstepit/flow.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     tag = 'v2.0.1',
     opts = {
@@ -112,6 +117,7 @@ local themes = {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
+    lazy = true,
     config = function()
       require('rose-pine').setup {
         variant = 'auto', -- auto, main, moon, or dawn
@@ -191,7 +197,7 @@ local themes = {
   },
   {
     'ribru17/bamboo.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require('bamboo').setup {
@@ -201,7 +207,7 @@ local themes = {
   },
   {
     'rebelot/kanagawa.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require('kanagawa').setup {
@@ -211,6 +217,7 @@ local themes = {
   },
   {
     'nyoom-engineering/oxocarbon.nvim',
+    lazy = true,
     -- Add in any other configuration;
     --   event = foo,
     --   config = bar
