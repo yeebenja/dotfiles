@@ -31,12 +31,13 @@ return {
       nerd_font_variant = 'mono',
     },
 
-    -- auto brackets
-    -- NOTE: some LSPs may add auto brackets themselves anyway
-    accept = { auto_brackets = { enabled = true } },
-
     -- automatically show documentation
-    completion = { documentation = { auto_show = true } }, -- disable if this gets annoying
+    completion = {
+      documentation = { auto_show = true },
+      -- auto brackets
+      -- NOTE: some LSPs may add auto brackets themselves anyway
+      accept = { auto_brackets = { enabled = true } },
+    }, -- disable if this gets annoying
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
