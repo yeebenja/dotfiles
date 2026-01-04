@@ -79,10 +79,19 @@ local themes = {
       -- your optional config goes here, see below.
     end,
   },
-  { 'miikanissi/modus-themes.nvim', priority = 1000 },
-  { 'shaunsingh/moonlight.nvim', priority = 1000 },
+  {
+    'miikanissi/modus-themes.nvim',
+    lazy = true,
+    priority = 1000,
+  },
+  {
+    'shaunsingh/moonlight.nvim',
+    lazy = true,
+    priority = 1000,
+  },
   {
     'samharju/synthweave.nvim',
+    lazy = true,
     priority = 1000,
   },
   {
