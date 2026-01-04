@@ -2,6 +2,7 @@
 -- https://www.youtube.com/watch?v=Q0cvzaPJJas
 return {
   'saghen/blink.cmp',
+  event = 'InsertEnter', -- Load when entering insert mode
   dependencies = { 'rafamadriz/friendly-snippets' },
   version = '1.*',
   ---@module 'blink.cmp'

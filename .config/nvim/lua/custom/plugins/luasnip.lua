@@ -2,6 +2,7 @@
 -- https://www.youtube.com/watch?v=FmHhonPjvvA
 return {
   'L3MON4D3/LuaSnip',
+  event = 'InsertEnter', -- Load when entering insert mode
   -- follow latest release.
   version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
   -- install jsregexp (optional!).

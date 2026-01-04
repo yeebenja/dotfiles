@@ -23,6 +23,10 @@ return {
 
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  -- NOTE: I want this plugin to be loaded on
+  -- startup because it looks cleaner
+  --
+  -- event = ...
   opts = {
     icons_enabled = true,
     theme = 'auto',

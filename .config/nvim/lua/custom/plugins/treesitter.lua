@@ -1,6 +1,7 @@
 -- Add to your plugins (using lazy.nvim)
 return {
   'nvim-treesitter/nvim-treesitter',
+  event = { 'BufReadPost', 'BufNewFile' },
   build = ':TSUpdate',
   -- NOTE: Use master branch bc eldritch theme acts funny
   -- on main branch in typescript files
