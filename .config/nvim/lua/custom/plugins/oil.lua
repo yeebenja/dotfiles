@@ -1,5 +1,6 @@
 return {
   'stevearc/oil.nvim',
+  cmd = 'Oil', -- load on command :Oil
   version = '*',
   dependencies = {},
   config = function()
