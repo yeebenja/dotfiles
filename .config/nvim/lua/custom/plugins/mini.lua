@@ -1,5 +1,6 @@
 return { -- Collection of various small independent plugins/modules
   'echasnovski/mini.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -66,7 +67,6 @@ return { -- Collection of various small independent plugins/modules
       -- idle time if user input is required.
       silent = false,
     }
-    require('mini.splitjoin').setup {}
-    -- NOTE: Keybindings for MiniSplitjoin.toggle() is gS
+    -- require('mini.splitjoin').setup {} -- NOTE: using TreeSJ
   end,
 }
