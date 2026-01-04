@@ -14,37 +14,44 @@ vim.keymap.set('n', '<leader>ah', '<cmd>sb<CR>', { desc = '[H]orizontal Split' }
 vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split' })
 
 -- Harpoon 2 keybindings
-local harpoon = require 'harpoon'
 vim.keymap.set('n', '<leader>h', function()
+  local harpoon = require 'harpoon'
   harpoon:list():add()
   Snacks.notifier.notify('Added to Harpoon', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
 end, { desc = '[H]arpoon Add' })
 
 vim.keymap.set('n', '<C-e>', function() -- <C-e> is okay to be overwritten, originally <C-e> goes one line down
+  local harpoon = require 'harpoon'
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end, { desc = 'Harpoon List' })
 
 vim.keymap.set('n', '<C-1>', function()
+  local harpoon = require 'harpoon'
   harpoon:list():select(1)
 end, { desc = 'Harpoon [1]' })
 
 vim.keymap.set('n', '<C-2>', function()
+  local harpoon = require 'harpoon'
   harpoon:list():select(2)
 end, { desc = 'Harpoon [2]' })
 
 vim.keymap.set('n', '<C-3>', function() -- get rid of other keymap
+  local harpoon = require 'harpoon'
   harpoon:list():select(3)
 end, { desc = 'Harpoon [3]' })
 
 vim.keymap.set('n', '<C-4>', function() -- get rid of other keymap
+  local harpoon = require 'harpoon'
   harpoon:list():select(4)
 end, { desc = 'Harpoon [4]' })
 
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set('n', '<C-S-P>', function()
+  local harpoon = require 'harpoon'
   harpoon:list():prev()
 end)
 vim.keymap.set('n', '<C-S-N>', function()
+  local harpoon = require 'harpoon'
   harpoon:list():next()
 end)
 
