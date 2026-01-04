@@ -20,10 +20,10 @@ return {
       ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
       ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
 
-      ['<Tab>'] = { 'snippet_forward', 'fallback' },
-      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      ['<C-k>'] = { 'snippet_forward', 'fallback' },
+      ['<C-j>'] = { 'snippet_backward', 'fallback' },
 
-      ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+      ['<C-0>'] = { 'show_signature', 'hide_signature', 'fallback' },
     },
 
     appearance = {
@@ -34,7 +34,7 @@ return {
     -- NOTE: some LSPs may add auto brackets themselves anyway
     accept = { auto_brackets = { enabled = true } },
 
-    -- (Default) Only show the documentation popup when manually triggered
+    -- automatically show documentation
     completion = { documentation = { auto_show = true } }, -- disable if this gets annoying
 
     -- Default list of enabled providers defined so that you can extend it
@@ -62,8 +62,7 @@ return {
     -- https://cmp.saghen.dev/configuration/snippets.html
     -- maybe make some personal snippets...
 
-    -- snippets = { preset = 'luasnip' },
-    -- TODO: left off here...
+    snippets = { preset = 'luasnip' },
   },
 
   opts_extend = { 'sources.default' },
