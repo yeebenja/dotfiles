@@ -61,6 +61,10 @@ return {
     -- snippets?
     -- https://cmp.saghen.dev/configuration/snippets.html
     -- maybe make some personal snippets...
+
+    -- snippets = { preset = 'luasnip' },
+    -- TODO: left off here...
   },
+
   opts_extend = { 'sources.default' },
 }
