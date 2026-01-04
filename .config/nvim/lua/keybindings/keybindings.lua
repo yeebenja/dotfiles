@@ -239,7 +239,9 @@ vim.keymap.set('n', '<leader>2l', '<cmd>Leet list<CR>', { desc = '[l] LeetCode L
 
 -- tree split join
 vim.keymap.set({ 'n', 'v' }, '<leader>sj', function()
-  vim.cmd 'TSJToggle'
+  -- vim.cmd 'TSJToggle'
+  local treesj = require 'treesj'
+  treesj.toggle()
 end, { desc = 'Tree Split/Join' })
 
 -- mini bufremove
