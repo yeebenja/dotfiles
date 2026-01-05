@@ -293,3 +293,30 @@ vim.keymap.set('n', '<leader>wd', function()
   -- <c-d> - deletes that worktree
   -- <c-f> - toggles forcing of the next deletion
 end, { desc = 'Git Worktree Switch/[D]elete' })
+
+-- grug-far
+vim.keymap.set({ 'n', 'v' }, '<leader>s;', function()
+  local grug_far = require 'grug-far'
+  local ext = vim.bo.buftype == '' and vim.fn.expand '%:e'
+
+  -- Get visual selection if in visual mode
+  local is_visual = vim.fn.mode():lower():match '[vs]'
+  local search_text = ''
+
+  if is_visual then
+    -- Get the visually selected text
+    vim.cmd 'noau normal! "vy"'
+    search_text = vim.fn.getreg 'v'
+  end
+
+  grug_far.open {
+    prefills = {
+      search = search_text,
+      filesFilter = ext and ext ~= '' and '*.' .. ext or nil,
+    },
+  }
+end)
+-- grug-far within visual selection block
+vim.keymap.set({ 'v' }, '<leader>s:', function()
+  vim.cmd 'GrugFarWithin'
+end)
