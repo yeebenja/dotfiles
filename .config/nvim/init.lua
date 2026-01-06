@@ -45,7 +45,7 @@ vim.cmd 'colorscheme eldritch'
 
 -- Import keybindings
 require 'keybindings.vim-keybindings'
-require 'keybindings.keybindings'
+require 'keybindings.plugin-keybindings'
 require 'keybindings.kickstart-keybindings'
 require 'keybindings.quickfix'
 
