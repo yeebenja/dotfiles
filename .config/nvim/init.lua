@@ -1,6 +1,8 @@
 -- Ben's init.lua file for Neovim
 require 'vim-opts.vim-opts'
-_G.global_colors = require 'globals.colors' -- _G signifies that this table is intentionally global
+
+-- Global colors table
+_G.global_colors = require 'globals.colors'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -38,12 +40,12 @@ require('lazy').setup({
   },
 })
 
+-- load colorscheme after lazy.nvim loads all plugins
+vim.cmd 'colorscheme eldritch'
+
 -- Import keybindings
 require 'keybindings.keybindings'
 require 'keybindings.kickstart-keybindings'
-
--- load colorscheme
-vim.cmd 'colorscheme eldritch'
 
 -- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
