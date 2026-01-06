@@ -19,8 +19,14 @@ alias gits="git status"
 alias tm="tmux"
 
 alias opc="opencode"
+
 # nukes nvim cache and removes all swap files
 alias nuke="rm -rfv ~/.local/state/nvim/swap/*"
+
+# clean all lazy plugins
+alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim;"
+# clean all lazy plugins and enter neovim
+alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; nvim"
 
 # NOTE: Instantly edit my nvim configuation
 viedit() {
