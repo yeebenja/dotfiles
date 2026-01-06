@@ -44,8 +44,10 @@ require('lazy').setup({
 vim.cmd 'colorscheme eldritch'
 
 -- Import keybindings
+require 'keybindings.vim-keybindings'
 require 'keybindings.keybindings'
 require 'keybindings.kickstart-keybindings'
+require 'keybindings.quickfix'
 
 -- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
