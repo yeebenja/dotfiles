@@ -207,14 +207,6 @@ vim.cmd 'colorscheme eldritch'
 -- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
 
--- Remove the default gr mappings for [G]oto [R]eference keymap
-vim.keymap.del('n', 'grn')
-vim.keymap.del('n', 'grr')
-vim.keymap.del('n', 'gri')
-vim.keymap.del('n', 'grt')
-vim.keymap.del('n', 'gra')
-vim.keymap.del('x', 'gra')
-
 -- NOTE: since leap.nvim uses IncSearch label for highlighting
 -- labels, change label to bright green to make it more readable
 vim.api.nvim_set_hl(0, 'IncSearch', {
