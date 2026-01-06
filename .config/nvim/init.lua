@@ -207,16 +207,6 @@ vim.cmd 'colorscheme eldritch'
 -- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
 
--- add leet command abbreviation
-vim.cmd [[
-  cnoreabbrev leet Leet
-]]
-
--- add lazy command abbreviation
-vim.cmd [[
-  cnoreabbrev lazy Lazy
-]]
-
 -- Remove the default gr mappings for [G]oto [R]eference keymap
 vim.keymap.del('n', 'grn')
 vim.keymap.del('n', 'grr')
@@ -260,3 +250,5 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- import autocmds
 require 'autocmds.autocmds'
+-- import aliases
+require 'aliases.aliases'
