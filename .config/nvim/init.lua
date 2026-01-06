@@ -1,4 +1,4 @@
--- Ben's init.lua file for Neovim
+-- init.lua
 require 'vim-opts.vim-opts'
 
 -- Global colors table
