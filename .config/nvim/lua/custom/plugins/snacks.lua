@@ -1,7 +1,7 @@
 return {
   'folke/snacks.nvim',
   priority = 1000,
-  lazy = false,
+  lazy = false, -- should be loaded upon startup b/c notifier is needed upon startup
   ---@type snacks.Config
   opts = {
     -- your configuration comes here

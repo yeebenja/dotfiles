@@ -1,5 +1,6 @@
 return {
   'wurli/visimatch.nvim',
+  event = 'VeryLazy',
   opts = {
     -- The highlight group to apply to matched text
     hl_group = 'Search',
