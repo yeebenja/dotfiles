@@ -2,9 +2,10 @@
 
 ## Configured Programs
 ```
-ghostty
 neovim
-z-shell
+kitty
+ghostty
+zsh
 ```
 
 ## Install Programs and Plugins
