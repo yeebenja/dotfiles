@@ -4,6 +4,7 @@ require 'vim-opts.vim-opts'
 -- Global colors table
 _G.global_colors = require 'globals.colors'
 
+-- Bootstrap Lazy upon fresh startup
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -17,8 +18,8 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  require 'themes.themes',
-  { import = 'custom.plugins' },
+  { import = 'custom.plugins' }, -- import plugins
+  { import = 'themes.themes' }, -- import themes
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
@@ -57,5 +58,6 @@ require 'highlight-groups.highlight-groups'
 
 -- import autocmds
 require 'autocmds.autocmds'
+
 -- import aliases
 require 'aliases.aliases'
