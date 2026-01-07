@@ -41,6 +41,9 @@ require('lazy').setup({
   },
 })
 
+-- NOTE: run :MasonToolsInstall after startup to install all 
+-- lsp servers
+
 -- load colorscheme after lazy.nvim loads all plugins
 vim.cmd 'colorscheme eldritch'
 
