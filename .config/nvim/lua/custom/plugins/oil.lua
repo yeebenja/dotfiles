@@ -1,6 +1,8 @@
 return {
   'stevearc/oil.nvim',
-  cmd = 'Oil', -- load on command :Oil
+  -- load oil.nvim on startup so when doing 'nvim .' oil is loaded
+  -- instead of netrw
+  lazy = false,
   version = '*',
   dependencies = {},
   config = function()
