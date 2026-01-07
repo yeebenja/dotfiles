@@ -74,7 +74,7 @@ return {
         -- ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
         -- ['<C-t>'] = { 'actions.select', opts = { tab = true } },
         -- ['<C-p>'] = 'actions.preview',
-        ['<C-c>'] = { 'actions.close', mode = 'n' },
+        ['<leader>q'] = { 'actions.close', mode = 'n' },
         -- ['<C-l>'] = 'actions.refresh',
         ['-'] = { 'actions.parent', mode = 'n' },
         ['_'] = { 'actions.open_cwd', mode = 'n' },
@@ -209,5 +209,12 @@ return {
         border = 'rounded',
       },
     }
+    -- creates a header showing current directory
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'oil',
+      callback = function()
+        vim.opt_local.winbar = "%{substitute(expand('%'), '^oil://', '', '')}"
+      end,
+    })
   end,
 }
