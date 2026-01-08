@@ -15,7 +15,6 @@ brew install --cask kitty
 brew install --cask ghostty
 brew install ripgrep         # For spectre
 brew install zsh
-brew install fastfetch
 brew install fd              # For better file searching in snacks.picker
 brew install mermaid-cli     # For Mermaid diagrams in snacks.image
 brew install tectonic        # For LaTeX rendering in snacks.image
