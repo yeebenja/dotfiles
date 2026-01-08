@@ -1,9 +1,6 @@
 return {
   'b0o/incline.nvim',
-  -- NOTE: I want this plugin to be loaded on
-  -- startup because it looks cleaner
-  --
-  -- event = ...
+  event = 'VimEnter',
   config = function()
     require('incline').setup {
       debounce_threshold = {

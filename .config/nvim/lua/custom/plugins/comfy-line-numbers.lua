@@ -1,5 +1,6 @@
 return {
   'mluders/comfy-line-numbers.nvim',
+  event = 'VimEnter',
   config = function()
     require('comfy-line-numbers').setup {
       labels = {
