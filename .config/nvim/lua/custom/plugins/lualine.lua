@@ -22,6 +22,7 @@ end
 return {
 
   'nvim-lualine/lualine.nvim',
+  event = 'VimEnter',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   -- NOTE: I want this plugin to be loaded on
   -- startup because it looks cleaner
