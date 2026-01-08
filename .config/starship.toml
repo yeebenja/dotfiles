@@ -20,6 +20,22 @@ truncation_symbol = ''
 [git_status]
 
 [git_state]
+disabled = false
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+# Rebase operations
+rebase = '[📝 REBASING](bold yellow)'
+# Merge operations
+merge = '[🔀 MERGING](bold blue)'
+# Revert operations
+revert = '[⏪ REVERTING](bold purple)'
+# Cherry-pick operations
+cherry_pick = '[🍒 PICKING](bold red)'
+# Bisect operations (binary search for bugs)
+bisect = '[🔍 BISECTING](bold cyan)'
+# AM (applying mailbox patches)
+am = '[📬 APPLYING](bold green)'
+# AM with rebase
+am_or_rebase = '[📬 AM/REBASE](bold green)'
 
 [time]
 disabled = false
