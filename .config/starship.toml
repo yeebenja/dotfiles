@@ -1,16 +1,12 @@
 # starship.toml
 
-
-
-
-# format = '$all$directory$character'
 # A minimal left prompt
 format = """$directory$character"""
 # palette = "catppuccin_mocha"
 add_newline = false
 
 # move the rest of the prompt to the right
-right_format = """$git_branch$git_state$python$time"""
+right_format = """$git_branch$git_status$git_state$python$time"""
 
 [directory]
 truncation_length = 1
@@ -20,6 +16,8 @@ truncation_symbol = ''
 '~/tests/starship-custom' = 'work-project'
 
 [git_branch]
+
+[git_status]
 
 [git_state]
 
