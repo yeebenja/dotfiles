@@ -13,7 +13,8 @@ zsh
 brew install neovim 
 brew install --cask kitty
 brew install --cask ghostty
-brew install ripgrep         # For spectre
+brew install starship        # CLI Plugin
+brew install ripgrep
 brew install zsh
 brew install fd              # For better file searching in snacks.picker
 brew install mermaid-cli     # For Mermaid diagrams in snacks.image

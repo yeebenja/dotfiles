@@ -204,3 +204,6 @@ gitw() {
         git worktree "$@"
     fi
 }
+
+# starship
+eval "$(starship init zsh)"
