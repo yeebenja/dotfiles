@@ -1,4 +1,4 @@
-# Ben's .zshrc File
+# .zshrc
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -49,7 +49,6 @@ leet(){
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH=$PATH:/opt/homebrew/bin
  
 # NOTE: ZSH Theme:
 # Set name of the theme to load --- if set to "random", it will
@@ -119,7 +118,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting macos)
+plugins=(git zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting)
  
 source $ZSH/oh-my-zsh.sh
  
@@ -151,8 +150,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# NOTE:: Path variable for brew package manager
-export PATH=$PATH:/opt/homebrew/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
