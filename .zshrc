@@ -153,8 +153,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # NOTE:: Path variable for brew package manager
 export PATH=$PATH:/opt/homebrew/bin
-# NOTE:: Run fastfetch on startup
-fastfetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
