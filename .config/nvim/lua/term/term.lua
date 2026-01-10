@@ -2,7 +2,7 @@ local last_job_id = 0
 local last_term_bufnr = 0
 
 -- open terminal in buffer
-vim.keymap.set('n', '<leader>n', function()
+vim.keymap.set('n', '<leader>N', function()
   vim.cmd.term()
   last_job_id = vim.bo.channel
   last_term_bufnr = vim.api.nvim_get_current_buf()
