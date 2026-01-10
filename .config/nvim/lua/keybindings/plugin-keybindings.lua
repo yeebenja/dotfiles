@@ -69,14 +69,14 @@ vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text To
 -- Snacks
 local Snacks = require 'snacks'
 vim.keymap.set('n', '<leader>an', function()
-  Snacks.notifier.show_history() -- NOTE: Example of using Lua function
+  Snacks.notifier.show_history()
 end, { desc = '[N]otification History' })
 
 -- Neogit
-vim.keymap.set('n', '<leader>gg', function()
+vim.keymap.set('n', '<leader>n', function()
   local neogit = require 'neogit'
   neogit.open()
-end, { desc = '[G]it' })
+end, { desc = '[N]eogit' })
 
 -- Gitsigns
 vim.keymap.set('n', '<leader>a1', function()
