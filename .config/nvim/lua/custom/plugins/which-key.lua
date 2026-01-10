@@ -51,13 +51,13 @@ return { -- Useful plugin to show you pending keybinds.
       -- Custom mappings I added
       { '<leader>u', group = '[U]ndotree' },
       { '<leader>h', group = '[H]arpoon' },
-      { '<leader>g', group = '[G]itsigns' },
+      { '<leader>g', group = '[G]it' },
       { '<leader>a', group = '[A]uxillary Commands' },
       { '<leader>x', group = '[X] Trouble' },
       { '<leader>1', group = '[1] Persistence (Sessions)' },
       -- { '<leader>k', group = '[K] Spectre' },
       { '<leader>2', group = '[2] LeetCode' },
-      { '<leader>M', group = '[M] Terminal Commands' },
+      { '<leader>m', group = '[m] Terminal Commands' },
     },
   },
 }
