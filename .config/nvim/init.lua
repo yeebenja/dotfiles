@@ -41,7 +41,7 @@ require('lazy').setup({
   },
 })
 
--- NOTE: run :MasonToolsInstall after startup to install all 
+-- NOTE: run :MasonToolsInstall after startup to install all
 -- lsp servers
 
 -- load colorscheme after lazy.nvim loads all plugins
@@ -64,3 +64,6 @@ require 'autocmds.autocmds'
 
 -- import aliases
 require 'aliases.aliases'
+
+-- import term
+require 'term.term'

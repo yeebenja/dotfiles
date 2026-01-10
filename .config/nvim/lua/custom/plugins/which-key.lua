@@ -57,6 +57,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>1', group = '[1] Persistence (Sessions)' },
       -- { '<leader>k', group = '[K] Spectre' },
       { '<leader>2', group = '[2] LeetCode' },
+      { '<leader>M', group = '[M] Terminal Commands' },
     },
   },
 }
