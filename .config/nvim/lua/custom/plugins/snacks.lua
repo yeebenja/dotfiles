@@ -235,6 +235,14 @@ return {
       end,
       desc = '[S]earch [D]iagnostics (Snacks)',
     },
+    {
+      '<leader>sm',
+      function()
+        local picker = require 'snacks.picker'
+        picker.marks()
+      end,
+      desc = '[S]earch [M]arks (Snacks)',
+    },
     -- search lazy spec
     {
       '<leader>sl',
