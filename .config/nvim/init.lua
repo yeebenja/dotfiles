@@ -67,3 +67,6 @@ require 'aliases.aliases'
 
 -- import term
 require 'term.term'
+
+-- import user-commands
+require 'user-commands.user-commands'
