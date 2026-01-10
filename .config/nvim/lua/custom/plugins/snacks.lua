@@ -205,6 +205,20 @@ return {
   },
   keys = {
     {
+      '<leader>sq',
+      function()
+        Snacks.picker.qflist()
+      end,
+      desc = 'Quickfix List (Snacks)',
+    },
+    {
+      '<leader>sr',
+      function()
+        Snacks.picker.resume()
+      end,
+      desc = 'Search Resume (Snacks)',
+    },
+    {
       ']]',
       function()
         ---@param count? number
