@@ -269,11 +269,11 @@ vim.keymap.set('n', '<leader>dt', function()
 end, { desc = '[D]ate/[T]ime Insert' })
 
 -- git-worktree
-vim.keymap.set('n', '<leader>wa', function()
+vim.keymap.set('n', '<leader>gwa', function()
   require('telescope').extensions.git_worktree.create_git_worktree()
 end, { desc = 'Git Worktree [A]dd' })
 
-vim.keymap.set('n', '<leader>wd', function()
+vim.keymap.set('n', '<leader>gwd', function()
   require('telescope').extensions.git_worktree.git_worktrees()
   -- NOTE:
   -- <Enter> - switches to that worktree

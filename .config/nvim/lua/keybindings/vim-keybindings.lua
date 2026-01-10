@@ -11,6 +11,13 @@ vim.keymap.set('n', '<leader>Q', function()
   vim.cmd 'qa'
 end, { desc = '[Q]uit All' })
 
+-- update (write only when there are changes)
+vim.keymap.set('n', '<leader>w', function()
+  vim.cmd 'update'
+end, { desc = '[w]rite ' })
+
+-- ZZ write and quit buffer
+
 -- Remove the default gr mappings for [G]oto [R]eference keymap
 vim.keymap.del('n', 'grn')
 vim.keymap.del('n', 'grr')

@@ -301,19 +301,19 @@ return {
     },
     -- Workplace Symbols
     {
-      '<leader>ws',
+      '<leader>sS',
       function()
         Snacks.picker.lsp_workspace_symbols()
       end,
-      desc = '[W]orkplace [S]ymbols (Snacks)',
+      desc = 'Workplace [S]ymbols (Snacks)',
     },
     -- Document Symbols
     {
-      '<leader>ds',
+      '<leader>ss',
       function()
         Snacks.picker.lsp_symbols()
       end,
-      desc = '[D]ocument [S]ymbols (Snacks)',
+      desc = 'Document [s]ymbols (Snacks)',
     },
     -- Goto Type Definition (via LSP)
     {
