@@ -18,6 +18,11 @@ end, { desc = '[w]rite ' })
 
 -- ZZ write and quit buffer
 
+-- buffer delete :bd
+vim.keymap.set('n', '<leader>bd', function()
+  require('mini.bufremove').delete()
+end, { desc = '[b]uffer [d]elete' })
+
 -- Remove the default gr mappings for [G]oto [R]eference keymap
 vim.keymap.del('n', 'grn')
 vim.keymap.del('n', 'grr')
