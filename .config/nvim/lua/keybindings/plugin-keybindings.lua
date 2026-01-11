@@ -211,15 +211,6 @@ vim.keymap.set({ 'n' }, '<leader>gb', function()
   vim.cmd ':BlameToggle window'
 end, { desc = 'Git [B]lame Toggle' })
 
--- diffview
-vim.keymap.set({ 'n' }, '<leader>do', function()
-  vim.cmd ':DiffviewOpen'
-end, { desc = 'Diffview [O]pen' })
-
-vim.keymap.set({ 'n' }, '<leader>dc', function()
-  vim.cmd ':DiffviewClose'
-end, { desc = 'Diffview [C]lose' })
-
 -- date time
 vim.keymap.set('n', '<leader>dt', function()
   local date = os.date '%Y-%m-%d %H:%M:%S'
