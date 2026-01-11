@@ -380,6 +380,17 @@ return {
       end,
       desc = '[/] Grep in Current Buffer (Snacks)',
     },
+    -- Grep in Open Buffers
+    {
+      '<leader>s/',
+      function()
+        Snacks.picker.grep_buffers {
+          layout = 'ivy',
+          supports_live = true,
+        }
+      end,
+      desc = '[/] Grep in Open Buffers (Snacks)',
+    },
     -- disabled git log in favor for gitgraph.nvim
     -- Git Log
     -- {

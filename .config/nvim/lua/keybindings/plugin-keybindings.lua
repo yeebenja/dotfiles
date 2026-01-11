@@ -24,9 +24,9 @@ end, { desc = "Stop Persistence. (Session won't be saved on exit)" })
 -- Toggle wrapping text
 vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
 
--- Snacks
-local Snacks = require 'snacks'
+-- Notifier
 vim.keymap.set('n', '<leader>an', function()
+  local Snacks = require 'snacks'
   Snacks.notifier.show_history()
 end, { desc = '[N]otification History' })
 

@@ -97,7 +97,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     -- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics (Telescope)' })
     -- vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume (Telescope)' })
-    vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat) (Telescope)' })
+    -- vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat) (Telescope)' })
     -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     -- NOTE: I added...
     -- vim.keymap.set('n', '<leader>st', builtin.treesitter, { desc = '[S]earch [T]reesitter' })
@@ -114,12 +114,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    vim.keymap.set('n', '<leader>s/', function()
-      builtin.live_grep {
-        grep_open_files = true,
-        prompt_title = 'Live Grep in Open Files',
-      }
-    end, { desc = '[S]earch [/] in Open Files (Telescope)' })
+    -- vim.keymap.set('n', '<leader>s/', function()
+    --   builtin.live_grep {
+    --     grep_open_files = true,
+    --     prompt_title = 'Live Grep in Open Files',
+    --   }
+    -- end, { desc = '[S]earch [/] in Open Files (Telescope)' })
 
     -- Shortcut for searching your Neovim configuration files
     -- vim.keymap.set('n', '<leader>sn', function()
