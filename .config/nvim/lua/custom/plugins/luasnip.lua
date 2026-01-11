@@ -88,5 +88,17 @@ return {
         i(0), -- (Final cursor position)
       }),
     })
+
+    -- python
+    -- var = self.var
+    -- i(1) = self.rep(1)i(0)
+    ls.add_snippets('python', {
+      s('self.', {
+        i(1),
+        t ' = self.',
+        rep(1),
+        i(0),
+      }),
+    })
   end,
 }
