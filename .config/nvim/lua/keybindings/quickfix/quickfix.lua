@@ -28,6 +28,8 @@ vim.keymap.set('n', '<M-q>', function()
     },
     'a' -- 'a' flag appends to quickfix list instead of replacing it
   )
+  -- update qf signs after adding item
+  require('keybindings.quickfix.quickfix-util.quickfix-update-signs').update_qf_signs()
   local notifier = require 'snacks.notifier'
   notifier.notify('Added Position to Quickfix List', 'info', { style = 'fancy', timeout = 2000, title = 'Quickfix' })
 end, { desc = 'Add Current Position to Quickfix List' })
@@ -68,6 +70,8 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
       vim.keymap.set('n', 'dD', function()
         vim.fn.setqflist {}
       end, { buffer = true, desc = 'Clear Quickfix List' })
+      -- update qf signs after deleting
+      require('keybindings.quickfix.quickfix-util.quickfix-update-signs').update_qf_signs()
     end
   end,
 })
