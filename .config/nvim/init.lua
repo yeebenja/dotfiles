@@ -51,7 +51,7 @@ vim.cmd 'colorscheme eldritch'
 require 'keybindings.vim-keybindings'
 require 'keybindings.plugin-keybindings'
 require 'keybindings.kickstart-keybindings'
-require 'keybindings.quickfix'
+require 'keybindings.quickfix.quickfix'
 
 -- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
