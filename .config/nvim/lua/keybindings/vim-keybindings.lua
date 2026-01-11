@@ -41,3 +41,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Split buffer Horizontally and Vertically
 vim.keymap.set('n', '<leader>ah', '<cmd>sb<CR>', { desc = '[H]orizontal Split' })
 vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split' })
+
+-- Switch/Split alternate buffers
+vim.keymap.set('n', '<leader>v', '<cmd>e #<CR>', { desc = 'Switch to Alternate Buffer' })
+vim.keymap.set('n', '<leader>V', '<cmd>bot sf #<CR>', { desc = 'Split Alternate Buffer' })
