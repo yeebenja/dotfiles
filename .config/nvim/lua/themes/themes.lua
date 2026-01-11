@@ -236,5 +236,15 @@ local themes = {
     'nxvu699134/vn-night.nvim',
     lazy = true,
   },
+  {
+    'vague-theme/vague.nvim',
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require('vague').setup {
+        -- optional config
+      }
+    end,
+  },
 }
 return themes
