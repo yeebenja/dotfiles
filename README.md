@@ -91,3 +91,8 @@ brew install opencode
 * [Redux DevTools][redux-devtools]
 
 [redux-devtools]: https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+
+## Remapping MacBook Internal Keyboard
+* [hidutil key remapping generator for MacOS][keyboard-remap-website]
+
+[keyboard-remap-website]: https://hidutil-generator.netlify.app
