@@ -8,7 +8,7 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = '[q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa<CR>', { desc = '[Q]uit All' })
 
 -- update (write only when there are changes)
-vim.keymap.set('n', '<leader>w', '<cmd>update<CR>',{ desc = '[w]rite ' })
+vim.keymap.set('n', '<leader>w', '<cmd>update<CR>', { desc = '[w]rite ' })
 
 -- ZZ write and quit buffer
 
@@ -39,3 +39,9 @@ vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split
 -- Switch/Split alternate buffers
 vim.keymap.set('n', '<leader>v', '<cmd>e #<CR>', { desc = 'Switch to Alternate Buffer' })
 vim.keymap.set('n', '<leader>V', '<cmd>bot sf #<CR>', { desc = 'Split Alternate Buffer' })
+
+-- Resize buffers
+vim.keymap.set('n', '<M-/>', ':vertical resize +2<CR>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<M-.>', ':vertical resize -2<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<M-]>', ':resize +2<CR>', { desc = 'Increase window height' })
+vim.keymap.set('n', '<M-[>', ':resize -2<CR>', { desc = 'Decrease window height' })
