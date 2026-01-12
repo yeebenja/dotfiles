@@ -17,13 +17,9 @@ vim.keymap.set('n', '<leader>bd', function()
   require('mini.bufremove').delete()
 end, { desc = '[b]uffer [d]elete' })
 
--- Remove the default gr mappings for [G]oto [R]eference keymap
-vim.keymap.del('n', 'grn')
-vim.keymap.del('n', 'grr')
-vim.keymap.del('n', 'gri')
-vim.keymap.del('n', 'grt')
-vim.keymap.del('n', 'gra')
-vim.keymap.del('x', 'gra')
+-- set description names for lsp keymaps
+vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
+vim.keymap.set({ 'n', 'x' }, 'gra', vim.lsp.buf.code_action, { desc = 'LSP: Code action' })
 
 -- Keybinds to make split navigation easier.
 -- Ctrl+<hjkl> to switch between windows
