@@ -205,6 +205,13 @@ return {
   },
   keys = {
     {
+      'gri',
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+      desc = 'LSP: Go to Implementation (Snacks)',
+    },
+    {
       '<leader>sq',
       function()
         Snacks.picker.qflist()
@@ -331,11 +338,11 @@ return {
     },
     -- Goto Type Definition (via LSP)
     {
-      '<leader>D',
+      'grt',
       function()
         Snacks.picker.lsp_type_definitions()
       end,
-      desc = 'Goto Type [D]efinition (Snacks)',
+      desc = 'LSP: Goto Type [D]efinition (Snacks)',
     },
     -- Goto Definition (via LSP)
     {
@@ -347,11 +354,11 @@ return {
     },
     -- Goto Reference (via LSP)
     {
-      'gr',
+      'grr', -- override default |vim.lsp.buf.references()| mapping
       function()
         Snacks.picker.lsp_references()
       end,
-      desc = '[G]oto [R]eference (Snacks)',
+      desc = 'Goto Reference (Snacks)',
     },
     -- Live Grep
     {
