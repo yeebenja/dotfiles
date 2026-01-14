@@ -39,3 +39,11 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.expandtab = true
   end,
 })
+
+-- when Conform.nvim is loaded, disable auto format
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'ConformSetup',
+  callback = function()
+    vim.g.disable_autoformat = false
+  end,
+})
