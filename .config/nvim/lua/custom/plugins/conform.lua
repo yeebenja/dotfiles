@@ -18,15 +18,15 @@ return { -- Autoformat
       function()
         vim.g.disable_autoformat = not vim.g.disable_autoformat
         if vim.g.disable_autoformat then
-          Snacks.notifier.notify('Conform: Format-on-save disabled', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
-          print 'Format-on-save disabled'
+          Snacks.notifier.notify('Disabled Format-On-Save', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
+          print 'Disabled Format-On-Save'
         else
-          Snacks.notifier.notify('Conform: Format-on-save enabled', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
-          print 'Format-on-save enabled'
+          Snacks.notifier.notify('Enabled Format-On-Save', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
+          print 'Enabled Format-On-Save'
         end
       end,
       mode = '',
-      desc = 'Toggle [F]ormat-on-save',
+      desc = 'Toggle [F]ormat-On-Save for all Buffers',
     },
   },
   opts = {
