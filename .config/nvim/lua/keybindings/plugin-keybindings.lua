@@ -252,3 +252,21 @@ end, { desc = 'Debug: Set Breakpoint' })
 vim.keymap.set('n', '<F7>', function()
   require('dapui').toggle()
 end, { desc = 'Debug: Toggle DAP UI' })
+
+-- conform.nvim
+vim.keymap.set('n', '<leader>f', function()
+  require('conform').format { async = true, lsp_format = 'fallback' }
+  Snacks.notifier.notify('Formatted Buffer', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
+  print 'Formatted Buffer'
+end, { desc = '[F]ormat Buffer' })
+
+vim.keymap.set('n', '<leader>F', function()
+  vim.g.disable_autoformat = not vim.g.disable_autoformat
+  if vim.g.disable_autoformat then
+    Snacks.notifier.notify('Disabled Format-On-Save', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
+    print 'Disabled Format-On-Save'
+  else
+    Snacks.notifier.notify('Enabled Format-On-Save', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
+    print 'Enabled Format-On-Save'
+  end
+end, { desc = 'Toggle [F]ormat-On-Save for all Buffers' })
