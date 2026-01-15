@@ -1,7 +1,7 @@
 -- keybindings.lua
 
 -- Persistence keybindings
--- -- load the session for the current directory
+-- load the session for the current directory
 vim.keymap.set('n', '<leader>1s', function()
   require('persistence').load()
 end, { desc = 'Load Session for Current Directory' })
@@ -21,9 +21,6 @@ vim.keymap.set('n', '<leader>1d', function()
   require('persistence').stop()
 end, { desc = "Stop Persistence. (Session won't be saved on exit)" })
 
--- Toggle wrapping text
-vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
-
 -- Notifier
 vim.keymap.set('n', '<leader>an', function()
   local Snacks = require 'snacks'
@@ -41,14 +38,6 @@ vim.keymap.set('n', '<leader>a1', function()
   vim.cmd ':Gitsigns toggle_signs'
 end, { desc = '[1] Toggle Git-signs Column' })
 
--- Hop DISABLED
--- FIXME: figure out what these two variables do later
--- local hop = require 'hop'
--- local directions = require('hop.hint').HintDirection
--- vim.keymap.set('n', '<leader>l', function()
---   vim.cmd ':HopWord'
--- end, { desc = '[L] Find Word' })
-
 -- Oil
 vim.keymap.set('n', '<leader>o', function()
   vim.cmd ':Oil'
@@ -58,20 +47,8 @@ vim.keymap.set('n', '<leader>O', function()
   vim.cmd ':Oil --float'
 end, { desc = '[O]il Floating Window' })
 
--- Barbar DISABLED
--- NOTE: <C-7> and <C-0> don't work with TMUX
--- vim.keymap.set('n', '<C-7>', function()
---   vim.cmd ':BufferPrevious'
--- end, { desc = 'Buffer Move Previous' })
--- vim.keymap.set('n', '<C-0>', function()
---   vim.cmd ':BufferNext'
--- end, { desc = 'Buffer Move Next' })
-
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
-
--- Aerial DISABLED
--- vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
 
 -- Stay Centered
 -- Initialize the state variable to match the plugin's default (enabled)
@@ -91,82 +68,11 @@ vim.keymap.set({ 'n', 'v' }, '<leader>a2', function()
   end
 end, { desc = 'Toggle Cursor Center' })
 
--- Spectre
--- vim.keymap.set('n', '<leader>i', function()
---   Snacks.notifier.notify('Spectre Toggled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
---   require('spectre').toggle()
--- end, {
---   desc = '[I] Toggle Spectre',
--- })
--- vim.keymap.set('n', '<leader>ki', function()
---   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
---   require('spectre').open_visual { select_word = true }
--- end, {
---   desc = '(Spectre) Search current word',
--- })
--- vim.keymap.set('v', '<leader>ki', function()
---   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
---   require('spectre').open_visual()
--- end, {
---   desc = '(Spectre) Search current word',
--- })
--- vim.keymap.set('n', '<leader>kk', function()
---   Snacks.notifier.notify('Spectre Current Word Enabled', 'info', { style = 'compact', timeout = 1000, title = 'Snacks Notifier' })
---   require('spectre').open_file_search { select_word = true }
--- end, {
---   desc = 'Search on current file',
--- })
-
--- DISABLED lsp-lines toggle
--- vim.keymap.set('n', '<leader>a3', function()
---   local config = vim.diagnostic.config()
---   local is_lines_enabled = config.virtual_lines
---
---   if is_lines_enabled then
---     Snacks.notifier.notify('LSP Lines Disabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
---     vim.diagnostic.config { virtual_lines = false, virtual_text = true }
---   else
---     Snacks.notifier.notify('LSP Lines Enabled', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
---     vim.diagnostic.config { virtual_lines = true, virtual_text = false }
---   end
--- end, {
---   desc = 'LSP Lines Toggle',
--- })
-
 -- tiny inclinde diagnostics
 vim.keymap.set('n', '<leader>a3', function()
   vim.cmd 'TinyInlineDiag toggle'
 end, {
   desc = 'Tiny Incline Diagnostics Toggle',
-})
-
--- Up and Down (my own custon keymappings)
-vim.keymap.set('n', '-', '<C-d>', { noremap = true })
-vim.keymap.set('v', '-', '<C-d>', { noremap = true })
-vim.keymap.set('n', '=', '<C-u>', { noremap = true })
-vim.keymap.set('v', '=', '<C-u>', { noremap = true })
-
--- toggle diagnostics
-local isLspDiagnosticsVisible = true
-vim.keymap.set('n', '<leader>a4', function()
-  -- toggle the state
-  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
-
-  -- apply the new state
-  vim.diagnostic.config {
-    virtual_text = isLspDiagnosticsVisible,
-    underline = isLspDiagnosticsVisible,
-    -- signs = isLspDiagnosticsVisible -- do i need this? figure out later
-  }
-
-  -- notify user
-  if isLspDiagnosticsVisible then
-    Snacks.notifier.notify('Showing Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
-  else
-    Snacks.notifier.notify('Hiding Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Snacks Notifier' })
-  end
-end, {
-  desc = 'Show/Hide Diagnostics Toggle',
 })
 
 -- Leap
@@ -210,12 +116,6 @@ vim.cmd [[
 vim.keymap.set({ 'n' }, '<leader>gb', function()
   vim.cmd ':BlameToggle window'
 end, { desc = 'Git [B]lame Toggle' })
-
--- date time
-vim.keymap.set('n', '<leader>dt', function()
-  local date = os.date '%Y-%m-%d %H:%M:%S'
-  vim.api.nvim_put({ tostring(date) }, 'c', true, true)
-end, { desc = '[D]ate/[T]ime Insert' })
 
 -- git-worktree
 vim.keymap.set('n', '<leader>gwa', function()

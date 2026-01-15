@@ -41,3 +41,32 @@ vim.keymap.set('n', '<M-/>', ':vertical resize +5<CR>', { desc = 'Increase windo
 vim.keymap.set('n', '<M-.>', ':vertical resize -5<CR>', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<M-]>', ':resize +2<CR>', { desc = 'Increase window height' })
 vim.keymap.set('n', '<M-[>', ':resize -2<CR>', { desc = 'Decrease window height' })
+
+-- date time
+vim.keymap.set('n', '<leader>dt', function()
+  local date = os.date '%Y-%m-%d %H:%M:%S'
+  vim.api.nvim_put({ tostring(date) }, 'c', true, true)
+end, { desc = '[D]ate/[T]ime Insert' })
+
+-- Toggle wrapping text
+vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
+
+-- toggle diagnostics
+local isLspDiagnosticsVisible = true
+vim.keymap.set('n', '<leader>a4', function()
+  -- toggle the state
+  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+
+  vim.diagnostic.config {
+    virtual_text = isLspDiagnosticsVisible,
+    underline = isLspDiagnosticsVisible,
+  }
+
+  if isLspDiagnosticsVisible then
+    Snacks.notifier.notify('Showing Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Diagnostics' })
+  else
+    Snacks.notifier.notify('Hiding Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Diagnostics' })
+  end
+end, {
+  desc = 'Show/Hide Diagnostics Toggle',
+})
