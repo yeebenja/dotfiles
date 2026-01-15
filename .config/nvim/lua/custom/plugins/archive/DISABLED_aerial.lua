@@ -10,4 +10,7 @@ return {
   --     end,
   --   }
   -- end,
+  -- disabled keybinding:
+  -- Aerial DISABLED
+  -- vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
 }

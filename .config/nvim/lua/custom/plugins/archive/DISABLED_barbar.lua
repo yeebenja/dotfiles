@@ -18,3 +18,13 @@ return {
   --   version = '^1.0.0', -- optional: only update when a new 1.x version is released
   -- },
 }
+
+-- disabled keybindings
+-- Barbar DISABLED
+-- NOTE: <C-7> and <C-0> don't work with TMUX
+-- vim.keymap.set('n', '<C-7>', function()
+--   vim.cmd ':BufferPrevious'
+-- end, { desc = 'Buffer Move Previous' })
+-- vim.keymap.set('n', '<C-0>', function()
+--   vim.cmd ':BufferNext'
+-- end, { desc = 'Buffer Move Next' })
