@@ -46,6 +46,12 @@ leet(){
   vi
 }
 
+# manage scratch buffers from scratch.nvim
+scratch(){
+  cd ~/.cache/nvim/scratch.nvim || return
+  vi
+}
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin:$PATH"
