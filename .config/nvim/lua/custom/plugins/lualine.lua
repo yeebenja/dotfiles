@@ -19,6 +19,28 @@ local function git_worktree_with_icon()
   return string.format('%s %s', icon, name)
 end
 
+-- EFFECTS: shows if "format-on-save" is enabled/disabled
+local function format_on_save_status()
+  if vim.g.disable_autoformat then
+    return ' NoFormat'
+  end
+  return ' Format'
+end
+
+-- EFFECTS: shows # of modified buffers
+local function modified_buffers_count()
+  local modified_buffers = 0
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.bo[buf].modified and vim.api.nvim_buf_is_loaded(buf) then
+      modified_buffers = modified_buffers + 1
+    end
+  end
+  if modified_buffers == 0 then
+    return ''
+  end
+  return string.format('● %d', modified_buffers)
+end
+
 return {
 
   'nvim-lualine/lualine.nvim',
@@ -73,20 +95,11 @@ return {
       },
       lualine_x = {
         {
-          -- Modified buffers count
-          function()
-            local modified_buffers = 0
-            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-              if vim.bo[buf].modified and vim.api.nvim_buf_is_loaded(buf) then
-                modified_buffers = modified_buffers + 1
-              end
-            end
-            if modified_buffers == 0 then
-              return ''
-            end
-            return string.format('● %d', modified_buffers)
-          end,
+          modified_buffers_count,
           color = { fg = global_colors.colors.modified_buffer_color },
+        },
+        {
+          format_on_save_status,
         },
         'encoding',
         'fileformat',
