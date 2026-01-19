@@ -248,12 +248,12 @@ local themes = {
   },
   {
     'zootedb0t/citruszest.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
   },
   {
     'Mofiqul/vscode.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
   },
 }
