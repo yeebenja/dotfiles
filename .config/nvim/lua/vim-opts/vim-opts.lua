@@ -72,3 +72,7 @@ vim.g.disable_autoformat = false
 -- turn off swap files and backup files
 vim.opt.swapfile = false
 vim.opt.backup = false
+
+-- move blocks of code up and down
+vim.keymap.set({ 'v', 'x' }, 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set({ 'v', 'x' }, 'K', ":m '<-2<CR>gv=gv")
