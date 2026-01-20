@@ -101,4 +101,4 @@ brew install opencode
 [keyboard-remap-website]: https://hidutil-generator.netlify.app
 
 ## tmux
-* Within a tmux session, use <prefix>I to install all tmux plugins
+* Within a tmux session, use prefix + I to install all tmux plugins
