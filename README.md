@@ -34,6 +34,8 @@ brew tap real-aazam/homebrew-aazam
 brew install hollywood
 # npm dependencies
 npm install -g markdownlint-cli # for linting markdown files
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ## GNU Stow Install
@@ -96,3 +98,6 @@ brew install opencode
 * [hidutil key remapping generator for MacOS][keyboard-remap-website]
 
 [keyboard-remap-website]: https://hidutil-generator.netlify.app
+
+## tmux
+* Within a tmux session, use <prefix>I to install all tmux plugins
