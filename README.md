@@ -20,6 +20,7 @@ brew install fd              # For better file searching in snacks.picker
 brew install mermaid-cli     # For Mermaid diagrams in snacks.image
 brew install tectonic        # For LaTeX rendering in snacks.image
 brew install ghostscript     # PDF rendering for snacks.image
+brew install imagemagick     # for image.nvim
 
 # Node is needed for some LSPs in nvim
 brew install node
