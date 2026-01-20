@@ -68,3 +68,7 @@ vim.opt.scrolloff = 10
 
 -- keey auto format on
 vim.g.disable_autoformat = false
+
+-- turn off swap files and backup files
+vim.opt.swapfile = false
+vim.opt.backup = false
