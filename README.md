@@ -37,6 +37,8 @@ brew install hollywood
 npm install -g markdownlint-cli # for linting markdown files
 # tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# for tmux-session-dispensary
+brew install fd sk
 ```
 
 ## GNU Stow Install
