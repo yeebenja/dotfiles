@@ -15,10 +15,8 @@ alias gitl1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 alias gitl2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
 alias gitl3="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
 alias gits="git status"
-
 alias tm="tmux"
 alias tmuxs="tmux source-file ~/.tmux.conf" 
-
 alias opc="opencode"
 
 # nukes nvim cache and removes all swap files
@@ -29,7 +27,7 @@ alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/l
 # clean all lazy plugins and enter neovim
 alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; nvim"
 
-# NOTE: Instantly edit my nvim configuation
+# instantly edit my nvim configuation
 viedit() {
     cd ~/dotfiles/.config/nvim || return
     vi
@@ -39,6 +37,22 @@ viedit() {
 dotedit() {
     cd ~/dotfiles || return
     vi
+}
+
+# instantly edit .zshrc
+zshedit() {
+    cd ~/dotfiles || return
+    vi .zshrc
+}
+
+# instantly cd into dotfiles
+dotgo() {
+    cd ~/dotfiles || return
+}
+
+# instantly cd into nvim config
+vigo() {
+    cd ~/dotfiles/.config/nvim || return
 }
 
 # leetcode scratchpad
