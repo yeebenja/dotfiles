@@ -3,6 +3,7 @@
 ## Configured Programs
 ```
 neovim
+tmux
 kitty
 ghostty
 zsh
