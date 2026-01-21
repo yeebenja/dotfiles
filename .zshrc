@@ -17,6 +17,7 @@ alias gitl3="git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 alias gits="git status"
 
 alias tm="tmux"
+alias tmuxs="tmux source-file ~/.tmux.conf" 
 
 alias opc="opencode"
 
