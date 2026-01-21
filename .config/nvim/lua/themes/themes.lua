@@ -256,5 +256,10 @@ local themes = {
     lazy = true,
     priority = 1000,
   },
+  {
+    'iruzo/matrix-nvim',
+    lazy = true,
+    priority = 1000,
+  },
 }
 return themes
