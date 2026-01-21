@@ -78,6 +78,7 @@ Add the following line
 Go to System Settings -> Keyboard -> Keyboard Shortcuts...
 
 ## LeetCode Practice
+
 * Get cookie info by going in developer tools on browser (CMD + OPT + i)
 * Then go to Storage > Cookies > leetcode.com (must on page leetcode.com)
 * Get these two cookies: LEETCODE_SESSION and csrftoken
@@ -88,7 +89,7 @@ LEETCODE_SESSION=abcdefghijk; csrftoken=abcdefghijk
 
 ## AI and LLMs CLI
 Use OpenCode
-```
+```bash
 brew install opencode
 ```
 
@@ -104,3 +105,8 @@ brew install opencode
 
 ## tmux
 * Within a tmux session, use prefix + I to install all tmux plugins
+- Allow permissions to run tmux-session-dispensary.sh
+```bash
+chmod +x ~/.config/scripts/tmux-session-dispensary.sh
+
+```
