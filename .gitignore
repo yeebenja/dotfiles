@@ -9,6 +9,7 @@
 !iterm2kitty.py
 # Except for .pdbrc.py
 !.pdbrc.py
-# ignore todo list
+# ignore notes
 TODO.md
 JOB_RESPONSES.md
+leet/
