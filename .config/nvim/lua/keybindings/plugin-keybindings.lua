@@ -172,5 +172,5 @@ vim.keymap.set('n', '<leader>F', function()
 end, { desc = 'Toggle [F]ormat-On-Save for all Buffers' })
 
 -- scratch.nvim
-vim.keymap.set('n', '<leader>.', '<cmd>Scratch<cr>', { desc = 'New Scratch Buffer' })
-vim.keymap.set('n', '<leader>>', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratch Buffers' })
+vim.keymap.set('n', '<leader>\\', '<cmd>Scratch<cr>', { desc = 'New Scratch Buffer' })
+vim.keymap.set('n', '<leader>|', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratch Buffers' })
