@@ -1,5 +1,16 @@
 # starship.toml
 
+
+# Run this command to identify performance bottlenecks:
+# env STARSHIP_LOG=trace starship timings
+# TODO: Look into performance issues:
+# Here are the timings of modules in your prompt (>=1ms or output):
+# git_status  -  503ms  -   ""
+# directory   -    7ms  -   "~ "
+# character   -   <1ms  -   "❯ "
+# git_branch  -   <1ms  -   "on  main "
+# time        -   <1ms  -   "at 01:25:51 "
+
 # A minimal left prompt
 format = """$directory$character"""
 # palette = "catppuccin_mocha"
@@ -18,6 +29,7 @@ truncation_symbol = ''
 [git_branch]
 
 [git_status]
+disabled = true # NOTE: Disabled b/c of performance issues
 
 [git_state]
 disabled = false
