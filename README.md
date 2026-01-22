@@ -104,6 +104,12 @@ brew install opencode
 
 [keyboard-remap-website]: https://hidutil-generator.netlify.app
 
+I have mine set as:
+```
+left cmd -> left ctrl
+left ctrl -> left cmd
+```
+
 ## tmux
 * Within a tmux session, use prefix + I to install all tmux plugins
 - Allow permissions to run tmux-session-dispensary.sh
