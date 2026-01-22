@@ -257,5 +257,10 @@ local themes = {
     lazy = true,
     priority = 1000,
   },
+  {
+    'lunacookies/vim-colors-xcode',
+    lazy = true,
+    priority = 1000,
+  },
 }
 return themes
