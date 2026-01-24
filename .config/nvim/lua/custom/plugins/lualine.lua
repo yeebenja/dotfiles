@@ -62,9 +62,9 @@ local function get_custom_theme()
 
   return {
     normal = {
-      a = { fg = statusline.bg or normal.bg, bg = mode_normal.fg, gui = 'bold' },
-      b = { fg = statusline.fg, bg = statusline.bg },
-      c = { fg = statusline.fg, bg = statusline.bg },
+      a = { fg = normal.bg, bg = mode_normal.fg, gui = 'bold' },
+      b = { fg = normal.fg, bg = normal.bg },
+      c = { fg = normal.fg, bg = normal.bg },
     },
     insert = {
       a = { fg = statusline.bg or normal.bg, bg = mode_insert.fg, gui = 'bold' },
