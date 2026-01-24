@@ -11,7 +11,7 @@ return {
       scratch_file_dir = vim.fn.expand '~' .. '/.local/share/nvim-scratch',
       window_cmd = 'rightbelow vsplit', -- 'vsplit' | 'split' | 'edit' | 'tabedit' | 'rightbelow vsplit'
       file_picker = 'snacks',
-      filetypes = { 'md', 'txt', 'lua', 'js', 'sh', 'ts' },
+      filetypes = { 'md', 'txt' },
       filetype_details = { -- or, you can have more control here
         -- json = {}, -- empty table is fine
         -- ['project-name.md'] = {
