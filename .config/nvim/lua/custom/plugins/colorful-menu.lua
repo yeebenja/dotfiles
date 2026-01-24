@@ -1,5 +1,8 @@
 return {
   'xzbdmw/colorful-menu.nvim',
+  -- Load when entering insert mode or entering cmdline
+  -- (same as blink.cmp)
+  event = { 'InsertEnter', 'CmdlineEnter' },
   config = function()
     -- You don't need to set these options.
     require('colorful-menu').setup {
