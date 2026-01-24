@@ -373,6 +373,14 @@ return {
           supports_live = true,
           hidden = true, -- grep in hidden files as well
           ignored = false, -- don't grep in ignored files
+
+          ---@field dirs? string[] directories to search
+          -- ^^ from :h snacks (snacks help page)
+          -- grep in cwd and scratch buffers from scratch.nvim
+          dirs = {
+            vim.fn.getcwd(),
+            vim.fn.expand '~/.local/share/nvim-scratch',
+          },
         }
       end,
       desc = '[S]earch by [G]rep (Snacks)',
