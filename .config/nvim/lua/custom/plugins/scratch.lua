@@ -8,7 +8,7 @@ return {
   config = function()
     local scratch = require 'scratch'
     scratch.setup {
-      scratch_file_dir = vim.fn.stdpath 'cache' .. '/scratch.nvim', -- where your scratch files will be put
+      scratch_file_dir = vim.fn.expand '~' .. '/.local/share/nvim-scratch',
       window_cmd = 'rightbelow vsplit', -- 'vsplit' | 'split' | 'edit' | 'tabedit' | 'rightbelow vsplit'
       file_picker = 'snacks',
       filetypes = { 'md', 'txt', 'lua', 'js', 'sh', 'ts' },
