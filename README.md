@@ -117,3 +117,11 @@ left ctrl -> left cmd
 chmod +x ~/.config/scripts/tmux-session-dispensary.sh
 
 ```
+
+## Keyboard Layout
+I currently use Colemak DH Matrix (a.k.a Ortholinear)
+![Screenshot](images/colemak_dh_main_iso.png)
+Install the keyboard layout:
+```bash
+brew install --cask colemak-dh
+```
