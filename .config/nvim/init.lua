@@ -70,3 +70,7 @@ require 'term.term'
 
 -- import user-commands
 require 'user-commands.user-commands'
+
+print 'hi'
+print 'hi'
+print 'hi'
