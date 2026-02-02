@@ -186,8 +186,16 @@ return {
             completion = {
               callSnippet = 'Replace',
             },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- diagnostics = { disable = { 'missing-fields' } },
+            -- workspace = {
+            --   -- Make the server aware of Neovim runtime files
+            --   library = vim.api.nvim_get_runtime_file("", true),
+            -- },
+            -- diagnostics = {
+            --   -- ignore Lua_LS's noisy `missing-fields` warnings
+            --   -- disable = { 'missing-fields' },
+            --   -- fix globals vim warning
+            --   globals = { 'vim' },
+            -- },
           },
         },
       },
@@ -234,5 +242,22 @@ return {
         end,
       },
     }
+
+    vim.lsp.config('lua_ls', {
+      settings = {
+        Lua = {
+          diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {
+              'vim',
+            },
+          },
+          workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file('', true),
+          },
+        },
+      },
+    })
   end,
 }
