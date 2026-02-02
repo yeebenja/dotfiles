@@ -85,3 +85,6 @@ vim.opt.laststatus = 3
 -- cursor randomly jumps somewhere
 vim.keymap.del({ 'i', 's' }, '<Tab>')
 vim.keymap.del({ 'i', 's' }, '<S-Tab>')
+
+-- rounded borders for cmd + K
+vim.opt.winborder = 'rounded'
