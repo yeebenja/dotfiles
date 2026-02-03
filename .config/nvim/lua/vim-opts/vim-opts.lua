@@ -88,3 +88,6 @@ vim.keymap.del({ 'i', 's' }, '<S-Tab>')
 
 -- rounded borders for cmd + K
 vim.opt.winborder = 'rounded'
+
+-- timeout for syntax highlighting
+vim.opt.redrawtime = 10000
