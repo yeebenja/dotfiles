@@ -121,13 +121,13 @@ return {
           lualine_a = { 'mode' },
           lualine_b = {
             'branch',
-            -- show current git worktree
-            {
-              git_worktree_with_icon,
-              cond = function()
-                return vim.fn.isdirectory '.git' == 1 or vim.fn.system('git rev-parse --git-dir 2>/dev/null'):find '.git' ~= nil
-              end,
-            },
+            -- NOTE: hide current git worktree b/c it causes cursor flickering
+            -- {
+            --   git_worktree_with_icon,
+            --   cond = function()
+            --     return vim.fn.isdirectory '.git' == 1 or vim.fn.system('git rev-parse --git-dir 2>/dev/null'):find '.git' ~= nil
+            --   end,
+            -- },
             'diff',
             'diagnostics',
           },
