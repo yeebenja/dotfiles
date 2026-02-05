@@ -7,11 +7,8 @@ setopt IGNORE_EOF
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
  
 # NOTE: Aliases:
-alias neobean='NVIM_APPNAME=linkarzu/dotfiles-latest/neovim/neobean nvim'
 alias vi="nvim"
 alias vim="nvim"
-alias lgit="lazygit"
-alias ldocker="lazydocker"
 # alias gitl = 'git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)''
 alias gitl="nvim -c \"lua require('gitgraph').draw({}, { all = true, max_count = 5000 })\""
 alias gitl1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
@@ -62,12 +59,6 @@ vigo() {
 # leetcode scratchpad
 leet(){
   cd ~/dotfiles/leet || return
-  vi
-}
-
-# manage scratch buffers from scratch.nvim
-scratch(){
-  cd ~/.cache/nvim/scratch.nvim || return
   vi
 }
 
