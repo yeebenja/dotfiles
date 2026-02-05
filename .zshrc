@@ -178,6 +178,10 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# ctrl + r shows fuzzy command history
+bindkey '^R' fzf-history-widget
+# TODO: learn more about what I can do with fzf in terminal
+
 # source virtual environment shortcut
 function act() {
   if [ -d "$1/bin" ]; then
