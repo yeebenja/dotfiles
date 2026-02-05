@@ -17,11 +17,12 @@ brew install --cask ghostty
 brew install starship        # CLI Plugin
 brew install ripgrep
 brew install zsh
+brew install fzf             # For fuzzy search in command line
 brew install fd              # For better file searching in snacks.picker
 brew install mermaid-cli     # For Mermaid diagrams in snacks.image
 brew install tectonic        # For LaTeX rendering in snacks.image
 brew install ghostscript     # PDF rendering for snacks.image
-brew install imagemagick     # for image.nvim
+brew install imagemagick     # For image.nvim
 
 # Node is needed for some LSPs in nvim
 brew install node
