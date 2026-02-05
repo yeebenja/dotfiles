@@ -225,6 +225,10 @@ return {
       'debugpy',
       'clangd',
       'json-lsp',
+      'prettierd',
+      'prettier',
+      'isort',
+      'black',
     })
     -- mason tool installer is for all tools, not just LSPs
     -- codelldb and debugpy are tools that also can be installed
