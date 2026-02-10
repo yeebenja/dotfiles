@@ -27,11 +27,13 @@ return {
       ['<C-k>'] = { 'snippet_forward', 'fallback' },
       ['<C-j>'] = { 'snippet_backward', 'fallback' },
 
-      ['<C-0>'] = { 'show_signature', 'hide_signature', 'fallback' },
+      -- NOTE: in insert mode, <C-t> usually indents the whole block of code.
+      -- by setting 'show_signature' to <C-t>, we are removing the indent
+      -- functionality
+      ['<C-t>'] = { 'show_signature', 'hide_signature', 'fallback' },
       -- ['<C-u>'] = { 'scroll_signature_up', 'fallback' },
       -- ['<C-d>'] = { 'scroll_signature_down', 'fallback' },
     },
-
     appearance = {
       nerd_font_variant = 'mono',
     },
