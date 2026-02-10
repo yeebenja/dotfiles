@@ -126,3 +126,13 @@ Install the keyboard layout:
 ```bash
 brew install --cask colemak-dh
 ```
+
+## Add Mac Shortcuts
+- Navigate to Keyboard > Keyboard Shortcuts.
+- Click on App Shortcuts in the sidebar.
+- Hit the + button to add a new shortcut.
+- Set:
+- Application: You can choose “All Applications” or a specific one (like Google Chrome, Mail, etc.).
+- Menu Title: Type exactly this: Paste and Match Style (case-sensitive!).
+- Keyboard Shortcut: Pick something unique like Command + Shift + V or a combination of your choice
+- Click Add and you’re good to go
