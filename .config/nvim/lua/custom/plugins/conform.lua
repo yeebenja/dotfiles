@@ -31,17 +31,13 @@ return { -- Autoformat
       python = { 'isort', 'black' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- .js
-      -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
-      javascript = { 'prettier' },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
       -- .jsx
-      -- javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
-      javascriptreact = { 'prettier' },
+      javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
       -- .ts
-      -- typescript = { 'prettierd', 'prettier', stop_after_first = true },
-      typescript = { 'prettier' },
+      typescript = { 'prettierd', 'prettier', stop_after_first = true },
       -- .tsx
-      -- typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
-      typescriptreact = { 'prettier' },
+      typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
     },
   },
 }
