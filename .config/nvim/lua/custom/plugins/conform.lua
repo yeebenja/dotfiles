@@ -1,6 +1,6 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
-  event = { 'BufWritePre' },
+  lazy = false,
   cmd = { 'ConformInfo' },
   opts = {
     notify_on_error = false,
@@ -21,7 +21,7 @@ return { -- Autoformat
         lsp_format_opt = 'fallback'
       end
       return {
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_format = lsp_format_opt,
       }
     end,
