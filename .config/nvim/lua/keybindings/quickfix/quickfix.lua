@@ -2,21 +2,23 @@
 -- Quickfix specific keybindings
 
 -- Quickfix prev
-vim.keymap.set('n', '<M-k>', function()
-  pcall(function() -- NOTE: pcall function catches errors and silently ignores them
-    vim.cmd 'cprev'
-  end)
-end, { silent = true, desc = 'Quickfix Prev' })
+-- NOTE: just use [q
+-- vim.keymap.set('n', '<M-k>', function()
+--   pcall(function() -- NOTE: pcall function catches errors and silently ignores them
+--     vim.cmd 'cprev'
+--   end)
+-- end, { silent = true, desc = 'Quickfix Prev' })
 
 -- Quickfix next
-vim.keymap.set('n', '<M-j>', function()
-  pcall(function()
-    vim.cmd 'cnext'
-  end)
-end, { silent = true, desc = 'Quickfix Next' })
+-- NOTE: just use ]q
+-- vim.keymap.set('n', '<M-j>', function()
+--   pcall(function()
+--     vim.cmd 'cnext'
+--   end)
+-- end, { silent = true, desc = 'Quickfix Next' })
 
 -- Add file to Quickfix list
-vim.keymap.set('n', '<M-q>', function()
+vim.keymap.set('n', '<leader>aq', function()
   vim.fn.setqflist(
     {
       {
