@@ -1,5 +1,7 @@
-# Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+# NOTE: 
+# - Make sure to only have 1 desktop space on your Mac to
+# make aerospace have a "snappy" feel
+# - Turn on "Group windows by application" in macOS settings
 
 # Config version for compatibility and deprecations
 # Fallback value (if you omit the key): config-version = 1
@@ -7,10 +9,7 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-  'workspace S', # force workspace S to be in accordion layout
-  'layout accordion'
-]
+after-startup-command = []
 
 # Start AeroSpace at login
 start-at-login = true
@@ -145,7 +144,6 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     # colemak dh matrix keybinds
-    # Numbers stay the same
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -155,8 +153,7 @@ on-mode-changed = []
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-
-    # Letters remapped by physical position
+    alt-0 = 'workspace 0'
 
     alt-q = 'workspace Q'
     alt-w = 'workspace W'
@@ -184,11 +181,10 @@ on-mode-changed = []
     alt-j = 'workspace N'
     alt-e = 'workspace F'
     alt-h = 'workspace M'
+    alt-k = 'workspace E'
     
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    # Move node to workspace (Colemak DH matrix)
-    # Numbers stay the same
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-3 = 'move-node-to-workspace 3'
@@ -198,8 +194,7 @@ on-mode-changed = []
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-
-    # Letters remapped by physical position
+    alt-shift-0 = 'move-node-to-workspace 0'
 
     alt-shift-q = 'move-node-to-workspace Q'
     alt-shift-w = 'move-node-to-workspace W'
@@ -227,6 +222,7 @@ on-mode-changed = []
     alt-shift-j = 'move-node-to-workspace N'
     alt-shift-e = 'move-node-to-workspace F'
     alt-shift-h = 'move-node-to-workspace M'
+    alt-shift-k = 'move-node-to-workspace E'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -254,22 +250,39 @@ on-mode-changed = []
     alt-shift-n = ['join-with up', 'mode main']
     alt-shift-u = ['join-with right', 'mode main']
 
-[[on-window-detected]]
-if.app-id = "net.kovidgoyal.kitty"
-run = "move-node-to-workspace T"
 
 [[on-window-detected]]
-if.app-id = "com.apple.MobileSMS"
-run = "move-node-to-workspace M"
+if.app-id = "com.apple.Terminal"
+run = "move-node-to-workspace F" # use terminal to run ff
+
+[[on-window-detected]]
+if.app-id = "net.kovidgoyal.kitty"
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = "com.apple.Safari"
+run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
 if.app-id = "com.apple.mail"
-run = "move-node-to-workspace E"
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = "com.apple.MobileSMS"
+run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-id = "com.apple.iCal"
+run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = "com.apple.Music"
 run = "move-node-to-workspace Q"
 
 [[on-window-detected]]
-if.app-id = "com.apple.Safari"
-run = "move-node-to-workspace S"
+if.app-id = "com.apple.ActivityMonitor"
+run = "move-node-to-workspace X"
