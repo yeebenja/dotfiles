@@ -28,6 +28,15 @@ alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/l
 # clean all lazy plugins and enter neovim
 alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; nvim"
 
+# aerospace find windows
+ff() {
+  local selected=$(aerospace list-windows --all | fzf --header='Select window to focus')
+  if [ -n "$selected" ]; then
+    local window_id=$(echo "$selected" | awk '{print $1}')
+    aerospace focus --window-id "$window_id"
+  fi
+}
+
 # instantly edit my nvim configuation
 viedit() {
     cd ~/dotfiles/.config/nvim || return
