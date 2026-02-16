@@ -37,10 +37,10 @@ vim.keymap.set('n', '<leader>v', '<cmd>e #<CR>', { desc = 'Switch to Alternate B
 vim.keymap.set('n', '<leader>V', '<cmd>bot sf #<CR>', { desc = 'Split Alternate Buffer' })
 
 -- Resize buffers
-vim.keymap.set('n', '<M-/>', ':vertical resize +5<CR>', { desc = 'Increase window width' })
-vim.keymap.set('n', '<M-.>', ':vertical resize -5<CR>', { desc = 'Decrease window width' })
-vim.keymap.set('n', '<M-]>', ':resize +2<CR>', { desc = 'Increase window height' })
-vim.keymap.set('n', '<M-[>', ':resize -2<CR>', { desc = 'Decrease window height' })
+vim.keymap.set('n', '<M-]>', ':vertical resize +5<CR>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<M-[>', ':vertical resize -5<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<M-}>', ':resize +2<CR>', { desc = 'Increase window height' })
+vim.keymap.set('n', '<M-{>', ':resize -2<CR>', { desc = 'Decrease window height' })
 
 -- date time
 vim.keymap.set('n', '<leader>dt', function()
