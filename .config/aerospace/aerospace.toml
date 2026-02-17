@@ -158,7 +158,7 @@ on-mode-changed = []
     alt-q = 'workspace Q'
     alt-w = 'workspace W'
     alt-f = 'workspace T'
-    # alt-p = 'workspace R' (p in QWERTY is ;) so don't use it
+    # alt-p = 'workspace R' (p in QWERTY is ; in COLEMAK DH MATRIX) so don't use it
     alt-b = 'workspace V'
 
     alt-a = 'workspace A'
@@ -286,3 +286,13 @@ run = "move-node-to-workspace Q"
 [[on-window-detected]]
 if.app-id = "com.apple.ActivityMonitor"
 run = "move-node-to-workspace X"
+
+# for work
+[[on-window-detected]]
+if.app-id = "com.microsoft.Outlook"
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.teams2"
+run = "move-node-to-workspace 4"
+
