@@ -287,6 +287,10 @@ run = "move-node-to-workspace Q"
 if.app-id = "com.apple.ActivityMonitor"
 run = "move-node-to-workspace X"
 
+[[on-window-detected]]
+if.app-id = "com.google.Chrome"
+run = "move-node-to-workspace C"
+
 # for work
 [[on-window-detected]]
 if.app-id = "com.microsoft.Outlook"
