@@ -2,7 +2,7 @@
 -- https://www.youtube.com/watch?v=FmHhonPjvvA
 return {
   'L3MON4D3/LuaSnip',
-  event = 'InsertEnter', -- Load when entering insert mode
+  lazy = false,
   -- follow latest release.
   version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
   -- install jsregexp (optional!).
@@ -71,7 +71,7 @@ return {
     })
     ls.add_snippets('lua', {
       s('hello ben', {
-        t 'print(Hello "',
+        t 'print("Hello ',
         i(1),
         t '. Nice to meet you! Your name is ',
         rep(1),
