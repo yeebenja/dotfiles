@@ -24,8 +24,8 @@ return {
       ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
 
       -- for luasnip
-      ['<C-k>'] = { 'snippet_forward', 'fallback' },
-      ['<C-j>'] = { 'snippet_backward', 'fallback' },
+      -- ['<C-k>'] = { 'snippet_forward', 'fallback' },
+      -- ['<C-j>'] = { 'snippet_backward', 'fallback' },
 
       -- NOTE: in insert mode, <C-t> usually indents the whole block of code.
       -- by setting 'show_signature' to <C-t>, we are removing the indent
@@ -88,7 +88,7 @@ return {
     -- https://cmp.saghen.dev/configuration/snippets.html
     -- maybe make some personal snippets...
 
-    snippets = { preset = 'luasnip' },
+    -- snippets = { preset = 'luasnip' },
   },
 
   opts_extend = { 'sources.default' },
