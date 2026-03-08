@@ -3,6 +3,7 @@ return {
   cmd = 'UndotreeToggle',
   config = function()
     -- Configuration for undotree
-    vim.g.undotree_WindowLayout = 3 -- Set to right-side layout
+    -- view more layouts here: https://github.com/mbbill/undotree/blob/master/plugin/undotree.vim#L27
+    vim.g.undotree_WindowLayout = 4
   end,
 }
