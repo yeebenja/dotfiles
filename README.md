@@ -7,7 +7,7 @@ tmux
 kitty
 ghostty
 zsh
-aerospace
+flashspace
 ```
 
 ## Install Programs and Plugins
@@ -15,7 +15,7 @@ aerospace
 brew install neovim 
 brew install --cask kitty
 brew install --cask ghostty
-brew install --cask nikitabobko/tap/aerospace 
+brew install flashspace
 brew install starship        # CLI Plugin
 brew install ripgrep
 brew install zsh
@@ -128,7 +128,6 @@ Install the keyboard layout:
 ```bash
 brew install --cask colemak-dh
 ```
-Note that my aerospace config specifically uses this keyboard layout. This will not work on QWERTY.
 
 ## Add Mac Shortcuts
 - Navigate to Keyboard > Keyboard Shortcuts.

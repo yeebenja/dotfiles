@@ -1,0 +1,184 @@
+{
+  "profiles" : [
+    {
+      "id" : "D4CC066D-01F6-4608-B2D5-BAEEB67F8968",
+      "name" : "Default",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "net.kovidgoyal.kitty",
+              "iconPath" : "/Applications/kitty.app/Contents/Resources/kitty.icns",
+              "name" : "kitty"
+            }
+          ],
+          "display" : "DELL U2718Q",
+          "id" : "9DFED05A-6AE0-4C77-B978-9778A3528830",
+          "name" : "1",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+1"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            }
+          ],
+          "display" : "DELL U2718Q",
+          "id" : "4974865E-6BC1-4548-BE05-69F2296CDF3B",
+          "name" : "2",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+2"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.mail",
+              "iconPath" : "/System/Applications/Mail.app/Contents/Resources/ApplicationIcon.icns",
+              "name" : "Mail"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "69CC5B8D-CD6C-48AF-8AA1-8E124C8AF24C",
+          "name" : "3",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+3"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "BE492B35-6CD5-4139-80FD-E878746C039B",
+          "name" : "4",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+4"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.iCal",
+              "iconPath" : "/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns",
+              "name" : "Calendar"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "06A00318-1AFA-49B7-84D8-6BC2A3AA5E77",
+          "name" : "5",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+5"
+        },
+        {
+          "apps" : [
+
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "CDCE95FA-43A3-4D5F-8DE6-2E838C34154C",
+          "name" : "8",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+8"
+        },
+        {
+          "apps" : [
+
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "16BA6B50-2248-4C78-85B2-9632B16EDCF9",
+          "name" : "9",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+9"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.openai.chat",
+              "iconPath" : "/Applications/ChatGPT.app/Contents/Resources/AppIcon.icns",
+              "name" : "ChatGPT"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "0F5057B7-8115-4CC0-BA1A-F978E914486A",
+          "name" : "0",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+0"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "629BAD65-EAA6-4928-A4CE-476548B086A3",
+          "name" : "C",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+c"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Music",
+              "iconPath" : "/System/Applications/Music.app/Contents/Resources/AppIcon.icns",
+              "name" : "Music"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "99022F5B-D10C-43FC-9EBA-6EAC9BE69B2C",
+          "name" : "Q",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+q"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "net.ankiweb.launcher",
+              "iconPath" : "/Applications/Anki.app/Contents/Resources/AppIcon.icns",
+              "name" : "Anki"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "E703B5B0-97CE-438E-B938-12370127D9BE",
+          "name" : "A",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+a"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Notes",
+              "iconPath" : "/System/Applications/Notes.app/Contents/Resources/AppIcon.icns",
+              "name" : "Notes"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "A345C6FB-DB3A-469E-AE7A-B100C198B9C3",
+          "name" : "N",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+n"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.ActivityMonitor",
+              "iconPath" : "/System/Applications/Utilities/Activity Monitor.app/Contents/Resources/AppIcon.icns",
+              "name" : "Activity Monitor"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "73715E15-6862-4B3C-9A94-58C93AB90CF3",
+          "name" : "X",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+x"
+        }
+      ]
+    }
+  ]
+}
