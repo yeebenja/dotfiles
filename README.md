@@ -70,7 +70,7 @@ cd dotfiles/.config/nvim/fonts/
 ls
 ```
 
-## DS_Store Being Annoying?
+## DS_Store Being Annoying? (for GNU stow)
 ```bash
 vim ~/.stow-global-ignore
 ```
@@ -78,18 +78,17 @@ Add the following line
 ```
 \.DS_Store
 ```
-## Map Caps Lock to Esc on Mac
-Go to System Settings -> Keyboard -> Keyboard Shortcuts...
 
-## LeetCode Practice
+## LeetCode Practice with leetcode.nvim
 
-* Get cookie info by going in developer tools on browser (CMD + OPT + i)
-* Then go to Storage > Cookies > leetcode.com (must on page leetcode.com)
-* Get these two cookies: LEETCODE_SESSION and csrftoken
-* When entering cookie for leetcode.nvim, make sure cookie is in this format:
+* Get cookie info by going in developer tools on browser (Cmd + Opt + i)
+* Go to Network
+* Filter by "graphql"
+* In the request body, copy the cookie. The cookie should be in this format:
 ```
-LEETCODE_SESSION=abcdefghijk; csrftoken=abcdefghijk
+csrftoken=abcdef; LEETCODE_SESSION=abcdef
 ```
+* paste the cookie into leetcode.nvim
 
 ## AI and LLMs CLI
 Use OpenCode
@@ -103,14 +102,15 @@ brew install opencode
 [redux-devtools]: https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 
 ## Remapping MacBook Internal Keyboard
-* [hidutil key remapping generator for MacOS][keyboard-remap-website]
-
-[keyboard-remap-website]: https://hidutil-generator.netlify.app
+```bash
+brew install --cask karabiner-elements
+```
 
 I have mine set as:
 ```
 left cmd -> left ctrl
 left ctrl -> left cmd
+caps lock -> esc
 ```
 
 ## tmux
@@ -138,3 +138,6 @@ brew install --cask colemak-dh
 - Menu Title: Type exactly this: Paste and Match Style (case-sensitive!).
 - Keyboard Shortcut: Pick something unique like Command + Shift + V or a combination of your choice
 - Click Add and you’re good to go
+
+## Debugging Javascript in Browser
+In a browser, use Cmd + P to search for file. Then, add breakpoints. For debugging, I usually use Chrome because the debugger UI is intuitive.
