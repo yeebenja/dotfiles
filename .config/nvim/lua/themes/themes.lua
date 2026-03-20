@@ -262,5 +262,11 @@ local themes = {
     lazy = true,
     priority = 1000,
   },
+  {
+    'serhez/teide.nvim',
+    lazy = true,
+    priority = 1000,
+    opts = {},
+  },
 }
 return themes
