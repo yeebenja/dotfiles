@@ -199,6 +199,11 @@ return {
           },
         },
       },
+      -- NOTE: must have postgres-language-server.jsonc in root of project
+      -- directory
+      postgres_lsp = {
+        filetypes = { 'sql' },
+      },
     }
     -- local lspconfig = require 'lspconfig'
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -231,6 +236,7 @@ return {
       'black',
       'jdtls',
       'yaml-language-server',
+      'postgres-language-server',
     })
     -- mason tool installer is for all tools, not just LSPs
     -- codelldb and debugpy are tools that also can be installed
