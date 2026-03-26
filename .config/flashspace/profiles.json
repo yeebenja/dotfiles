@@ -195,6 +195,21 @@
           "name" : "X",
           "openAppsOnActivation" : false,
           "shortcut" : "opt+x"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "org.jkiss.dbeaver.core.product",
+              "iconPath" : "/Applications/DBeaver.app/Contents/Resources/dbeaver.icns",
+              "name" : "DBeaver Community"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+d",
+          "display" : "Built-in Retina Display",
+          "id" : "F2293D11-6A28-468F-BA6D-032C9B9CFF1A",
+          "name" : "D",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+d"
         }
       ]
     }
