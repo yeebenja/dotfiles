@@ -51,6 +51,16 @@ end, { desc = '[D]ate/[T]ime Insert' })
 -- Toggle wrapping text
 vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
 
+-- Toggle relative line numbers
+vim.keymap.set('n', '<leader>3', function()
+  local enable_relative_numbers = not vim.wo.relativenumber
+  vim.opt.relativenumber = enable_relative_numbers
+
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    vim.api.nvim_set_option_value('relativenumber', enable_relative_numbers, { win = win })
+  end
+end, { desc = 'Toggle Relative Line Numbers' })
+
 -- toggle diagnostics
 local isLspDiagnosticsVisible = true
 vim.keymap.set('n', '<leader>a4', function()
