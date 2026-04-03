@@ -91,3 +91,6 @@ vim.opt.winborder = 'rounded'
 
 -- timeout for syntax highlighting
 vim.opt.redrawtime = 10000
+
+-- set signcolumn width
+vim.opt.signcolumn = 'yes:2'
