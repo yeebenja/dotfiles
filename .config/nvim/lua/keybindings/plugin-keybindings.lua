@@ -38,6 +38,11 @@ vim.keymap.set('n', '<leader>a1', function()
   vim.cmd ':Gitsigns toggle_signs'
 end, { desc = '[1] Toggle Git-signs Column' })
 
+vim.keymap.set('n', '<leader>gh', function()
+  vim.cmd ':Gitsigns toggle_linehl'
+  vim.cmd ':Gitsigns toggle_word_diff'
+end, { desc = 'Git [H]ighlight Changes (Line and WordDiff)' })
+
 -- Oil
 vim.keymap.set('n', '<leader>o', function()
   vim.cmd ':Oil'
