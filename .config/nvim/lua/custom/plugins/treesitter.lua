@@ -5,6 +5,11 @@ return {
   build = ':TSUpdate',
   branch = 'main',
   config = function()
+    -- NOTE: use TSClean to uninstall all parsers
+    vim.api.nvim_create_user_command('TSClean', function()
+      vim.cmd 'TSUninstall all'
+    end, {})
+
     local treesitter = require 'nvim-treesitter'
     treesitter.setup {}
 
