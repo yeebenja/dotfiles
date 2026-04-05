@@ -12,7 +12,8 @@ flashspace
 
 ## Install Programs and Plugins
 ```bash
-brew install neovim 
+brew install neovim tree-sitter-cli
+# neovim NEEDS tree-sitter-cli in order to install parsers correctly
 brew install --cask kitty
 brew install --cask ghostty
 brew install flashspace
