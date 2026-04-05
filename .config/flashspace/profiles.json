@@ -112,6 +112,11 @@
               "bundleIdentifier" : "com.openai.chat",
               "iconPath" : "/Applications/ChatGPT.app/Contents/Resources/AppIcon.icns",
               "name" : "ChatGPT"
+            },
+            {
+              "bundleIdentifier" : "com.anthropic.claudefordesktop",
+              "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+              "name" : "Claude"
             }
           ],
           "assignAppShortcut" : "opt+shift+0",
