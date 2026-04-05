@@ -3,8 +3,10 @@ return {
   'nvim-treesitter/nvim-treesitter',
   event = { 'BufReadPost', 'BufNewFile' },
   build = ':TSUpdate',
-  -- NOTE: Use master branch bc eldritch theme acts funny
-  -- on main branch in typescript files
+  -- NOTE: Use master branch:
+  -- 1. ts-autotag not updated to use treesitter main branch
+  -- 2. in tsx files, eldritch theme acts funny on treesitter main branch
+  -- 3. I don't use any treesitter features... let alone new treesitter features
   branch = 'master',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
