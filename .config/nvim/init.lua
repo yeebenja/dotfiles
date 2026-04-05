@@ -70,3 +70,6 @@ require 'term.term'
 
 -- import user-commands
 require 'user-commands.user-commands'
+
+-- import pack add (native nvim plugins)
+require 'packadd.packadd'
