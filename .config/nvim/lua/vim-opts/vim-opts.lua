@@ -94,3 +94,6 @@ vim.opt.redrawtime = 10000
 
 -- set signcolumn width
 vim.opt.signcolumn = 'yes:2'
+
+-- make diff look simpler
+vim.o.diffopt = 'internal,filler,closeoff'
