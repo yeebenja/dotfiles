@@ -97,3 +97,10 @@ vim.opt.signcolumn = 'yes:2'
 
 -- make diff look simpler
 vim.o.diffopt = 'internal,filler,closeoff'
+
+-- EXPIREMENTAL: enable new UI for messages
+require('vim._core.ui2').enable {}
+-- use g< to go to output for buffer
+--
+
+vim.lsp.document_color.enable(vim.lsp.document_color.is_enabled())
