@@ -14,6 +14,7 @@ return {
     ensure_installed = {
       'bash',
       'c',
+      'cpp',
       'diff',
       'lua',
       'luadoc',
@@ -29,6 +30,10 @@ return {
       'javascript',
       'typescript',
       'tsx',
+      'python',
+      'sql',
+      'yaml',
+      'java',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
