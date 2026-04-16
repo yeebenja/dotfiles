@@ -102,6 +102,23 @@ return {
         cmd = { 'pyright-langserver', '--stdio' },
         filetypes = { 'python' },
         root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', 'pyrightconfig.json', '.git' },
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = 'basic', -- off | basic | standard | strict
+              autoImportCompletions = true, -- suggest auto-imports in completions
+              useLibraryCodeForTypes = true, -- infer types from library source when stubs are missing
+              autoSearchPaths = true, -- auto-add src/ etc. to search paths
+              diagnosticMode = 'workspace', -- lint all files, not just open ones
+              inlayHints = {
+                variableTypes = true, -- show inferred types for variables
+                functionReturnTypes = true, -- show inferred return types on functions
+                parameterTypes = true, -- show types on function parameters (noisy)
+                parameterNames = 'literals', -- show param names at call sites: off | literals | all
+              },
+            },
+          },
+        },
       })
 
       vim.lsp.config('ts_ls', {
