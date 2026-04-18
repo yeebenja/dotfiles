@@ -3,6 +3,7 @@ return {
   {
     'williamboman/mason.nvim',
     dependencies = {
+      { 'neovim/nvim-lspconfig' },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'j-hui/fidget.nvim',
     },
@@ -92,16 +93,7 @@ return {
 
       -- ── Server configurations ──────────────────────────────────────────────
 
-      vim.lsp.config('clangd', {
-        cmd = { 'clangd' },
-        filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
-        root_markers = { '.clangd', '.clang-format', 'compile_commands.json', 'compile_flags.txt', '.git' },
-      })
-
       vim.lsp.config('pyright', {
-        cmd = { 'pyright-langserver', '--stdio' },
-        filetypes = { 'python' },
-        root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', 'pyrightconfig.json', '.git' },
         settings = {
           python = {
             analysis = {
@@ -122,9 +114,6 @@ return {
       })
 
       vim.lsp.config('ts_ls', {
-        cmd = { 'typescript-language-server', '--stdio' },
-        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
-        root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' },
         settings = {
           typescript = {
             inlayHints = {
@@ -162,33 +151,34 @@ return {
       })
 
       vim.lsp.config('lua_ls', {
-        cmd = { 'lua-language-server' },
-        filetypes = { 'lua' },
-        root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
         settings = {
           Lua = {
-            completion = { callSnippet = 'Replace' },
-            diagnostics = { globals = { 'vim' } },
-            workspace = { library = vim.api.nvim_get_runtime_file('', true) },
+            completion = {
+              callSnippet = 'Replace', -- expand function snippets in completions
+            },
+            diagnostics = {
+              globals = { 'vim' }, -- suppress 'undefined global vim' warnings
+              disable = { 'missing-fields' }, -- suppress noisy missing-fields warnings
+            },
+            hint = {
+              enable = true, -- inlay hints
+              arrayIndex = 'Disable', -- skip index hints in arrays (noisy)
+              setType = true, -- show type on variable assignment
+              paramName = 'Literal', -- show param names only for literals
+              paramType = true, -- show param types
+            },
+            telemetry = { enable = false },
           },
         },
       })
 
       vim.lsp.config('jdtls', {
         cmd = { 'jdtls' },
-        filetypes = { 'java' },
-        root_markers = { 'pom.xml', 'build.gradle', 'build.gradle.kts', 'settings.gradle', '.git' },
       })
 
       vim.lsp.config('yamlls', {
         cmd = { 'yaml-language-server', '--stdio' },
         filetypes = { 'yaml' },
-        root_markers = { '.git' },
-      })
-
-      vim.lsp.config('jsonls', {
-        cmd = { 'vscode-json-language-server', '--stdio' },
-        filetypes = { 'json', 'jsonc' },
         root_markers = { '.git' },
       })
 
