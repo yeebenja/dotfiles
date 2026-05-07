@@ -83,6 +83,7 @@ return {
           'jdtls',
           'yaml-language-server',
           'postgres-language-server',
+          'css-lsp',
         },
       }
 
@@ -189,7 +190,12 @@ return {
         root_markers = { 'postgres-language-server.jsonc', '.git' },
       })
 
-      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'jdtls' }
+      vim.lsp.config('cssls', {
+        filetypes = { 'css', 'scss', 'less' },
+        root_markers = { '.git' },
+      })
+
+      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'jdtls', 'cssls' }
     end,
   },
 }
