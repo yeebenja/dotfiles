@@ -84,6 +84,7 @@ return {
           'yaml-language-server',
           'postgres-language-server',
           'css-lsp',
+          'js-debug-adapter',
         },
       }
 
