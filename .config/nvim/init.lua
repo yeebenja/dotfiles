@@ -45,7 +45,7 @@ require('lazy').setup({
 -- lsp servers
 
 -- load colorscheme after lazy.nvim loads all plugins
-vim.cmd 'colorscheme tokyonight-moon'
+vim.cmd 'colorscheme rose-pine'
 
 -- Import keybindings
 require 'keybindings.vim-keybindings'
