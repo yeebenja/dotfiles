@@ -29,7 +29,7 @@ return {
       function()
         -- Snacks.notify.notify('Treesitter Context Toggled', 'info', { style = 'fancy' })
         Snacks.notifier.notify('Treesitter Context Toggled', 'info', { style = 'fancy', timeout = 3000, title = 'Snacks Notifier' })
-        vim.cmd 'TSContextToggle' -- Then toggle it
+        vim.cmd 'TSContext toggle' -- Then toggle it
       end,
       desc = 'Treesitter [C]ontext Toggle',
     },
