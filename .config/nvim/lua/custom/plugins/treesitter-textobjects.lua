@@ -136,7 +136,7 @@ return {
 
     -- Repeat movement with ; and ,
     -- ensure ; goes forward and , goes backward regardless of the last direction
-    vim.keymap.set({ 'n', 'x', 'o' }, ';', ts_repeat_move.repeat_last_move_next, { desc = 'Repeat last TS move (forward)' })
-    vim.keymap.set({ 'n', 'x', 'o' }, ',', ts_repeat_move.repeat_last_move_previous, { desc = 'Repeat last TS move (backward)' })
+    -- vim.keymap.set({ 'n', 'x', 'o' }, ';', ts_repeat_move.repeat_last_move_next, { desc = 'Repeat last TS move (forward)' })
+    -- vim.keymap.set({ 'n', 'x', 'o' }, ',', ts_repeat_move.repeat_last_move_previous, { desc = 'Repeat last TS move (backward)' })
   end,
 }

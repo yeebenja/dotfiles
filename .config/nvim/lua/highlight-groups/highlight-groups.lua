@@ -10,6 +10,8 @@ local function reapply_hl()
     bg = global_colors.colors.bg_original, -- or 'NONE'
     bold = true,
   })
+
+  vim.api.nvim_set_hl(0, 'MiniJump', { fg = '#ff9e64', bold = true })
 end
 
 reapply_hl()
