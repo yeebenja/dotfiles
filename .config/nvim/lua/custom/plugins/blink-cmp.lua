@@ -48,7 +48,7 @@ return {
         draw = {
           -- We don't need label_description now because label and label_description are already
           -- combined together in label by colorful-menu.nvim.
-          columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+          columns = { { 'kind_icon' }, { 'label', gap = 1 }, { 'kind', gap = 1, 'source_name' } },
           components = {
             label = {
               text = function(ctx)
@@ -56,6 +56,21 @@ return {
               end,
               highlight = function(ctx)
                 return require('colorful-menu').blink_components_highlight(ctx)
+              end,
+            },
+            source_name = {
+              text = function(ctx)
+                local name = ctx.item.client_name or ctx.source_name
+                return '[' .. name .. ']'
+              end,
+              highlight = function(ctx)
+                local hl_map = {
+                  Buffer   = 'Comment',
+                  Snippets = 'String',
+                  Path     = 'Directory',
+                }
+                local name = ctx.item.client_name or ctx.source_name
+                return hl_map[name] or 'BlinkCmpKindFunction'
               end,
             },
           },
