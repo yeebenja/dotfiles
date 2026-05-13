@@ -30,6 +30,9 @@ alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/l
 # clean all lazy plugins and enter neovim
 alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; nvim"
 
+# create simple react project quickly
+alias create-react="npm create vite@latest -- --template react-ts"
+
 # aerospace find windows
 ff() {
   local selected=$(aerospace list-windows --all | fzf --header='Select window to focus')
