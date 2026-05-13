@@ -18,6 +18,8 @@ alias gits="git status"
 alias gitf="git fetch"
 alias tm="tmux"
 alias tmuxs="tmux source-file ~/.tmux.conf" 
+# save tmux sessions and kill tmux server
+alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
 alias opc="opencode"
 
 # nukes nvim cache and removes all swap files
