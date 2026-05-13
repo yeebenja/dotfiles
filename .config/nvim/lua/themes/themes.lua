@@ -16,14 +16,23 @@ local themes = {
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     lazy = true,
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-storm'
+    config = function()
+      require('tokyonight').setup {
+        on_highlights = function(highlights)
+          -- DiagnosticUnnecessary default group too hard too see
+          -- made it brighter
+          highlights.DiagnosticUnnecessary = { fg = '#8b93cc' }
+          highlights.LineNrAbove = { fg = '#4e5575' } -- relative lines above cursor
+          highlights.LineNrBelow = { fg = '#4e5575' } -- relative lines below cursor
 
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+          -- make all highlight groups with fg=#3b4261 a different color
+          -- for name, hl in pairs(highlights) do
+          --   if hl.fg == '#3b4261' then
+          --     hl.fg = '#4e5575'
+          --   end
+          -- end
+        end,
+      }
     end,
   },
 
