@@ -481,22 +481,24 @@ return {
     -- Searches across current open buffers, recently visited files
     -- and all files in cwd (search in whatever directory I launched
     -- nvim from)
-    -- {
-    --   '<leader>e',
-    --   function()
-    --     Snacks.picker.smart {
-    --       multi = { 'buffers', 'recent', 'files' },
-    --       format = 'file', -- use `file` format for all sources
-    --       matcher = {
-    --         cwd_bonus = true, -- boost cwd matches
-    --         frecency = true, -- use frecency boosting
-    --         sort_empty = true, -- sort even when the filter is empty
-    --       },
-    --       transform = 'unique_file',
-    --     }
-    --   end,
-    --   desc = 'Smart Find Files',
-    -- },
+    {
+      '<leader>m',
+      function()
+        Snacks.picker.smart {
+          multi = { 'buffers', 'recent', 'files' },
+          format = 'file', -- use `file` format for all sources
+          ignored = true, -- ignore ignored files
+          hidden = true, -- include hidden files when searching
+          matcher = {
+            cwd_bonus = true, -- boost cwd matches
+            frecency = true, -- use frecency boosting
+            sort_empty = true, -- sort even when the filter is empty
+          },
+          transform = 'unique_file',
+        }
+      end,
+      desc = 'Smart Find Files',
+    },
     -- Buffer Picker
     {
       '<leader><leader>',

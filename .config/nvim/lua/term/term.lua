@@ -18,13 +18,13 @@ local scroll_to_bottom = function()
 end
 
 -- ls -a
-vim.keymap.set('n', '<leader>ml', function()
-  vim.fn.chansend(last_job_id, { 'ls -a\r\n' })
-  vim.schedule(scroll_to_bottom)
-end, { desc = 'ls -a' })
+-- vim.keymap.set('n', '<leader>ml', function()
+--   vim.fn.chansend(last_job_id, { 'ls -a\r\n' })
+--   vim.schedule(scroll_to_bottom)
+-- end, { desc = 'ls -a' })
 
 -- git status
-vim.keymap.set('n', '<leader>mg', function()
-  vim.fn.chansend(last_job_id, { 'git status\r\n' })
-  vim.schedule(scroll_to_bottom)
-end, { desc = 'git status' })
+-- vim.keymap.set('n', '<leader>mg', function()
+--   vim.fn.chansend(last_job_id, { 'git status\r\n' })
+--   vim.schedule(scroll_to_bottom)
+-- end, { desc = 'git status' })

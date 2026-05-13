@@ -42,7 +42,7 @@ return { -- Useful plugin to show you pending keybinds.
     -- Document existing key chains
     spec = {
       { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-      { '<leader>d', group = '[D]ocument' },
+      { '<leader>d', group = '[D]ate / Time' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]earch' },
       { '<leader>gw', group = 'Git [W]orktree' },
@@ -57,7 +57,6 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>1', group = '[1] Persistence (Sessions)' },
       -- { '<leader>k', group = '[K] Spectre' },
       { '<leader>2', group = '[2] LeetCode' },
-      { '<leader>m', group = '[m] Terminal Commands' },
     },
   },
 }
