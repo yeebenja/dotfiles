@@ -33,7 +33,7 @@ vim.keymap.set('n', '<leader>av', '<cmd>vert sb<CR>', { desc = '[V]ertical Split
 
 -- Switch/Split alternate buffers
 vim.keymap.set('n', '<leader>v', '<cmd>e #<CR>', { desc = 'Switch to Alternate Buffer' })
-vim.keymap.set('n', '<leader>V', '<cmd>bot sf #<CR>', { desc = 'Split Alternate Buffer' })
+vim.keymap.set('n', '<leader>V', '<cmd>bot vert sf #<CR>', { desc = 'Split Alternate Buffer' })
 
 -- Resize buffers
 vim.keymap.set('n', '<M-]>', ':vertical resize +5<CR>', { desc = 'Increase window width' })
