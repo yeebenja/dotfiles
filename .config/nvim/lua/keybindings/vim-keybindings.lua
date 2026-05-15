@@ -19,7 +19,6 @@ end, { desc = '[b]uffer [d]elete' })
 
 -- set description names for lsp keymaps
 vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
-vim.keymap.set({ 'n', 'x' }, 'gra', vim.lsp.buf.code_action, { desc = 'LSP: Code action' })
 
 -- Keybinds to make split navigation easier.
 -- Ctrl+<hjkl> to switch between windows
