@@ -57,7 +57,9 @@ vim.keymap.set('n', '<leader>3', function()
   vim.opt.relativenumber = enable_relative_numbers
 
   for _, win in ipairs(vim.api.nvim_list_wins()) do
-    vim.api.nvim_set_option_value('relativenumber', enable_relative_numbers, { win = win })
+    if vim.api.nvim_win_get_config(win).relative == '' then
+      vim.api.nvim_set_option_value('relativenumber', enable_relative_numbers, { win = win })
+    end
   end
 end, { desc = 'Toggle Relative Line Numbers' })
 
