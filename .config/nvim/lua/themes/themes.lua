@@ -22,6 +22,7 @@ local themes = {
           -- DiagnosticUnnecessary default group too hard too see
           -- made it brighter
           highlights.DiagnosticUnnecessary = { fg = '#8b93cc' }
+          highlights.LineNr = { fg = '#4e5575' }
           highlights.LineNrAbove = { fg = '#4e5575' } -- relative lines above cursor
           highlights.LineNrBelow = { fg = '#4e5575' } -- relative lines below cursor
 
@@ -35,7 +36,6 @@ local themes = {
       }
     end,
   },
-
   {
     'catppuccin/nvim',
     name = 'catppuccin',
