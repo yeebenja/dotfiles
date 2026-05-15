@@ -65,9 +65,9 @@ return {
               end,
               highlight = function(ctx)
                 local hl_map = {
-                  Buffer   = 'Comment',
+                  Buffer = 'Comment',
                   Snippets = 'String',
-                  Path     = 'Directory',
+                  Path = 'Directory',
                 }
                 local name = ctx.item.client_name or ctx.source_name
                 return hl_map[name] or 'BlinkCmpKindFunction'
