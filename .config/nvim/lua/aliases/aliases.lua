@@ -11,9 +11,9 @@ vim.cmd [[
 -- DiffviewOpen and DiffviewClose
 vim.cmd [[
   cnoreabbrev diffviewopen DiffviewOpen
-]]
-vim.cmd [[
+  cnoreabbrev dvo DiffviewOpen
   cnoreabbrev diffviewclose DiffviewClose
+  cnoreabbrev dvc DiffviewClose
 ]]
 
 -- GrugFar and GrugFarWithin
