@@ -453,6 +453,32 @@ return {
       end,
       desc = '[S]earch [K]eymaps',
     },
+
+    {
+      '<leader>sw',
+      function()
+        Snacks.picker.grep_word {
+          layout = 'ivy',
+          regex = true,
+          format = 'file',
+          show_empty = true,
+          live = true, -- live grep by default
+          supports_live = true,
+          hidden = true, -- grep in hidden files as well
+          ignored = false, -- don't grep in ignored files
+
+          ---@field dirs? string[] directories to search
+          -- ^^ from :h snacks (snacks help page)
+          -- grep in cwd and scratch buffers from scratch.nvim
+          dirs = {
+            vim.fn.getcwd(),
+            vim.fn.expand '~/.local/share/nvim-scratch',
+          },
+        }
+      end,
+      desc = 'Visual selection or word',
+      mode = { 'n', 'x' },
+    },
     -- Smart Picker
     -- Searches across current open buffers, recently visited files
     -- and all files in cwd (search in whatever directory I launched
