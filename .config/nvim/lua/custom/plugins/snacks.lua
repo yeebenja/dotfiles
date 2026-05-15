@@ -209,52 +209,28 @@ return {
       function()
         Snacks.picker.lsp_implementations()
       end,
-      desc = 'LSP: Go to Implementation (Snacks)',
+      desc = 'LSP: Go to Implementation',
     },
     {
       '<leader>sq',
       function()
         Snacks.picker.qflist()
       end,
-      desc = 'Quickfix List (Snacks)',
+      desc = 'Quickfix List',
     },
     {
       '<leader>sr',
       function()
         Snacks.picker.resume()
       end,
-      desc = 'Search Resume (Snacks)',
+      desc = '[S]earch [R]esume',
     },
-    {
-      ']]',
-      function()
-        ---@param count? number
-        ---@param cycle? boolean
-        -- Snacks.words.jump(count, cycle)
-        Snacks.words.jump(vim.v.count1, false)
-      end,
-      desc = 'Next Reference (Snacks.words)',
-      mode = 'n',
-    },
-    {
-      '[[',
-      function()
-        ---@param count? number
-        ---@param cycle? boolean
-        -- Snacks.words.jump(count, cycle)
-        Snacks.words.jump(-vim.v.count1, false)
-      end,
-      desc = 'Prev Reference (Snacks.words)',
-      mode = 'n',
-    },
-
-    -- search diagnostics
     {
       '<leader>sd',
       function()
         Snacks.picker.diagnostics()
       end,
-      desc = '[S]earch [D]iagnostics (Snacks)',
+      desc = '[S]earch [D]iagnostics',
     },
     {
       '<leader>sm',
@@ -262,7 +238,7 @@ return {
         local picker = require 'snacks.picker'
         picker.marks()
       end,
-      desc = '[S]earch [M]arks (Snacks)',
+      desc = '[S]earch [M]arks',
     },
     -- search lazy spec
     {
@@ -270,7 +246,7 @@ return {
       function()
         Snacks.picker.lazy()
       end,
-      desc = '[S]earch [L]azy Plugin Spec (Snacks)',
+      desc = '[S]earch [L]azy Plugin Spec',
     },
     -- search themes
     {
@@ -286,7 +262,7 @@ return {
       function()
         Snacks.picker.help()
       end,
-      desc = '[S]earch [H]elp (Snacks)',
+      desc = '[S]earch [H]elp',
     },
     -- LATER: figure out of neovim profiling works
     -- Snacks profiler
@@ -318,7 +294,7 @@ return {
       function()
         Snacks.picker.command_history()
       end,
-      desc = 'Search Command History (Snacks)',
+      desc = 'Search Command History',
     },
     -- TODO comment search
     {
@@ -326,7 +302,7 @@ return {
       function()
         Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
       end,
-      desc = 'Search TODO/FIX/FIXME (Snacks)',
+      desc = 'Search TODO/FIX/FIXME',
     },
     -- Workplace Symbols
     {
@@ -334,7 +310,7 @@ return {
       function()
         Snacks.picker.lsp_workspace_symbols()
       end,
-      desc = 'Workplace [S]ymbols (Snacks)',
+      desc = 'Workplace [S]ymbols',
     },
     -- Document Symbols
     {
@@ -342,7 +318,7 @@ return {
       function()
         Snacks.picker.lsp_symbols()
       end,
-      desc = 'Document [s]ymbols (Snacks)',
+      desc = 'Document [s]ymbols',
     },
     -- Goto Type Definition (via LSP)
     {
@@ -350,7 +326,7 @@ return {
       function()
         Snacks.picker.lsp_type_definitions()
       end,
-      desc = 'LSP: Goto Type [D]efinition (Snacks)',
+      desc = 'LSP: Goto Type [D]efinition',
     },
     -- Goto Definition (via LSP)
     {
@@ -358,7 +334,7 @@ return {
       function()
         Snacks.picker.lsp_definitions()
       end,
-      desc = '[G]oto [D]efinition (Snacks)',
+      desc = '[G]oto [D]efinition',
     },
     -- Goto Reference (via LSP)
     {
@@ -366,7 +342,7 @@ return {
       function()
         Snacks.picker.lsp_references()
       end,
-      desc = 'Goto Reference (Snacks)',
+      desc = 'Goto Reference',
     },
     -- Live Grep
     {
@@ -391,7 +367,7 @@ return {
           },
         }
       end,
-      desc = '[S]earch by [G]rep (Snacks)',
+      desc = '[S]earch by [G]rep',
     },
     -- Live Grep in Current File
     {
@@ -401,7 +377,7 @@ return {
           layout = 'ivy',
         }
       end,
-      desc = '[/] Grep in Current Buffer (Snacks)',
+      desc = '[/] Grep in Current Buffer',
     },
     -- Grep in Open Buffers
     {
@@ -412,7 +388,7 @@ return {
           supports_live = true,
         }
       end,
-      desc = '[/] Grep in Open Buffers (Snacks)',
+      desc = '[/] Grep in Open Buffers',
     },
     -- disabled git log in favor for gitgraph.nvim
     -- Git Log
@@ -430,25 +406,25 @@ return {
     --   desc = 'Git [L]og (Snacks)',
     -- },
     -- Git Branches
-    {
-      '<leader>gc',
-      function()
-        Snacks.picker.git_branches {
-          layout = 'select',
-        }
-      end,
-      desc = '[C]heckout Branches (Snacks)',
-    },
+    -- {
+    --   '<leader>gc',
+    --   function()
+    --     Snacks.picker.git_branches {
+    --       layout = 'select',
+    --     }
+    --   end,
+    --   desc = '[C]heckout Branches (Snacks)',
+    -- },
     -- Git Status
-    {
-      '<leader>gt',
-      function()
-        Snacks.picker.git_status {
-          layout = 'vertical',
-        }
-      end,
-      desc = 'Git S[T]atus (Snacks)',
-    },
+    -- {
+    --   '<leader>gt',
+    --   function()
+    --     Snacks.picker.git_status {
+    --       layout = 'vertical',
+    --     }
+    --   end,
+    --   desc = 'Git S[T]atus (Snacks)',
+    -- },
     -- Search Files
     {
       '<leader>sf',
@@ -465,7 +441,7 @@ return {
           history_bonus = true,
         }
       end,
-      desc = '[S]earch [F]iles (Snacks)',
+      desc = '[S]earch [F]iles',
     },
     -- Search Keymaps
     {
@@ -475,30 +451,30 @@ return {
           layout = 'vertical',
         }
       end,
-      desc = '[S]earch [K]eymaps (Snacks)',
+      desc = '[S]earch [K]eymaps',
     },
     -- Smart Picker
     -- Searches across current open buffers, recently visited files
     -- and all files in cwd (search in whatever directory I launched
     -- nvim from)
-    {
-      '<leader>m',
-      function()
-        Snacks.picker.smart {
-          multi = { 'buffers', 'recent', 'files' },
-          format = 'file', -- use `file` format for all sources
-          ignored = true, -- ignore ignored files
-          hidden = true, -- include hidden files when searching
-          matcher = {
-            cwd_bonus = true, -- boost cwd matches
-            frecency = true, -- use frecency boosting
-            sort_empty = true, -- sort even when the filter is empty
-          },
-          transform = 'unique_file',
-        }
-      end,
-      desc = 'Smart Find Files',
-    },
+    -- {
+    --   '<leader>m',
+    --   function()
+    --     Snacks.picker.smart {
+    --       multi = { 'buffers', 'recent', 'files' },
+    --       format = 'file', -- use `file` format for all sources
+    --       ignored = true, -- ignore ignored files
+    --       hidden = true, -- include hidden files when searching
+    --       matcher = {
+    --         cwd_bonus = true, -- boost cwd matches
+    --         frecency = true, -- use frecency boosting
+    --         sort_empty = true, -- sort even when the filter is empty
+    --       },
+    --       transform = 'unique_file',
+    --     }
+    --   end,
+    --   desc = 'Smart Find Files',
+    -- },
     -- Buffer Picker
     {
       '<leader><leader>',
