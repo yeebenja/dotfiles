@@ -75,7 +75,7 @@ return {
         -- ['<C-s>'] = { 'actions.select', opts = { vertical = true } },
         -- ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
         -- ['<C-t>'] = { 'actions.select', opts = { tab = true } },
-        -- ['<C-p>'] = 'actions.preview',
+        ['<C-p>'] = 'actions.preview',
         ['<leader>q'] = { 'actions.close', mode = 'n' },
         -- ['<C-l>'] = 'actions.refresh',
         ['-'] = { 'actions.parent', mode = 'n' },
