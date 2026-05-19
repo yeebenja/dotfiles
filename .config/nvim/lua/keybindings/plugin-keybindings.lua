@@ -51,16 +51,16 @@ end, {
 -- Leap
 vim.keymap.set({ 'n', 'x', 'o' }, '<leader>l', '<Plug>(leap)', { desc = '[l] Leap current window' })
 vim.keymap.set('n', '<leader>L', '<Plug>(leap-from-window)', { desc = '[L] Leap to another window' })
-vim.keymap.set({ 'n', 'o' }, 'gs', function()
-  require('leap.remote').action {
-    -- Automatically enter Visual mode when coming from Normal.
-    input = vim.fn.mode(true):match 'o' and '' or 'v',
-  }
-end, { desc = 'leap remote gs' })
--- Forced linewise version (`gS{leap}jjy`):
-vim.keymap.set({ 'n', 'o' }, 'gS', function()
-  require('leap.remote').action { input = 'V' }
-end, { desc = 'leap remote gS' })
+-- vim.keymap.set({ 'n', 'o' }, 'gs', function()
+--   require('leap.remote').action {
+--     -- Automatically enter Visual mode when coming from Normal.
+--     input = vim.fn.mode(true):match 'o' and '' or 'v',
+--   }
+-- end, { desc = 'leap remote gs' })
+-- -- Forced linewise version (`gS{leap}jjy`):
+-- vim.keymap.set({ 'n', 'o' }, 'gS', function()
+--   require('leap.remote').action { input = 'V' }
+-- end, { desc = 'leap remote gS' })
 
 -- leetcode.nvim
 vim.keymap.set('n', '<leader>2;', '<cmd>Leet run<CR>', { desc = '[;] LeetCode Run' })
