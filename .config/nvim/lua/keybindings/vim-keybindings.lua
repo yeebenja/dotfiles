@@ -51,7 +51,7 @@ end, { desc = '[D]ate/[T]ime Insert' })
 vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
 
 -- Toggle relative line numbers
-vim.keymap.set('n', '<leader>3', function()
+vim.keymap.set('n', '<leader>r', function()
   local enable_relative_numbers = not vim.wo.relativenumber
   vim.opt.relativenumber = enable_relative_numbers
 
