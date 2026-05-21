@@ -42,10 +42,10 @@ end, { desc = '[o]il' })
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
 
 -- tiny inclinde diagnostics
-vim.keymap.set('n', '<leader>a3', function()
+vim.keymap.set('n', '<leader>ad', function()
   vim.cmd 'TinyInlineDiag toggle'
 end, {
-  desc = 'Tiny Incline Diagnostics Toggle',
+  desc = 'Tiny Incline [D]iagnostics Toggle',
 })
 
 -- Leap

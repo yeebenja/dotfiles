@@ -62,22 +62,15 @@ vim.keymap.set('n', '<leader>r', function()
   end
 end, { desc = 'Toggle Relative Line Numbers' })
 
--- toggle diagnostics
-local isLspDiagnosticsVisible = true
-vim.keymap.set('n', '<leader>a4', function()
-  -- toggle the state
-  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
-
-  vim.diagnostic.config {
-    virtual_text = isLspDiagnosticsVisible,
-    underline = isLspDiagnosticsVisible,
-  }
-
-  if isLspDiagnosticsVisible then
-    Snacks.notifier.notify('Showing Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Diagnostics' })
+-- toggle lsp
+vim.keymap.set('n', '<leader>al', function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients { bufnr = bufnr }
+  if #clients > 0 then
+    for _, client in ipairs(clients) do
+      client:stop()
+    end
   else
-    Snacks.notifier.notify('Hiding Diagnostics', 'info', { style = 'compact', timeout = 2000, title = 'Diagnostics' })
+    vim.api.nvim_exec_autocmds('FileType', { buf = bufnr })
   end
-end, {
-  desc = 'Show/Hide Diagnostics Toggle',
-})
+end, { desc = '[L]SP Toggle' })
