@@ -41,20 +41,14 @@ return { -- Useful plugin to show you pending keybinds.
 
     -- Document existing key chains
     spec = {
-      { '<leader>d', group = '[D]ate / Time' },
-      { '<leader>r', group = '[R]ename' },
+      { '<leader>d', group = '[D]ate, Time' },
       { '<leader>s', group = '[S]earch' },
       { '<leader>gw', group = 'Git [W]orktree' },
       { '<leader>t', group = '[T]oggle' },
-      -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      -- Custom mappings I added
-      { '<leader>u', group = '[U]ndotree' },
-      { '<leader>h', group = '[H]arpoon' },
       { '<leader>g', group = '[G]it' },
-      { '<leader>a', group = '[A]uxillary Commands' },
+      { '<leader>a', group = '[A]uxillary' },
       { '<leader>x', group = '[X] Trouble' },
-      { '<leader>1', group = '[1] Persistence (Sessions)' },
-      -- { '<leader>k', group = '[K] Spectre' },
+      { '<leader>1', group = '[1] Sessions' },
       { '<leader>2', group = '[2] LeetCode' },
     },
   },

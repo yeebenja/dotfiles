@@ -294,7 +294,7 @@ return {
       function()
         Snacks.picker.command_history()
       end,
-      desc = 'Search Command History',
+      desc = 'Search [C]ommand History',
     },
     -- TODO comment search
     {
