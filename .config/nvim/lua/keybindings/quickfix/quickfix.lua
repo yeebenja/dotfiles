@@ -18,7 +18,7 @@
 -- end, { silent = true, desc = 'Quickfix Next' })
 
 -- Add file to Quickfix list
-vim.keymap.set('n', '<leader>aq', function()
+vim.keymap.set('n', '<leader>P', function()
   vim.fn.setqflist(
     {
       {
@@ -34,10 +34,10 @@ vim.keymap.set('n', '<leader>aq', function()
   require('keybindings.quickfix.quickfix-util.quickfix-update-signs').update_qf_signs()
   local notifier = require 'snacks.notifier'
   notifier.notify('Added Position to Quickfix List', 'info', { style = 'fancy', timeout = 2000, title = 'Quickfix' })
-end, { desc = 'Add Current Position to Quickfix List' })
+end, { desc = '[P] Add Current Position to Quickfix List' })
 
 -- Toggle Quickfix list
-vim.keymap.set('n', '<C-q>', function()
+vim.keymap.set('n', '<leader>p', function()
   local qf_exists = false
   for _, win in pairs(vim.fn.getwininfo()) do
     if win.quickfix == 1 then
@@ -51,7 +51,7 @@ vim.keymap.set('n', '<C-q>', function()
   else
     vim.cmd 'copen'
   end
-end, { silent = true, desc = 'Toggle Quickfix' })
+end, { silent = true, desc = '[p] Toggle Quickfix' })
 
 -- Allow list item deletion in Quickfix Buffer
 -- dd (delete selected item)
