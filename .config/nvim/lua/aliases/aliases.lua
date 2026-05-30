@@ -15,11 +15,3 @@ vim.cmd [[
   cnoreabbrev diffviewclose DiffviewClose
   cnoreabbrev dvc DiffviewClose
 ]]
-
--- GrugFar and GrugFarWithin
-vim.cmd [[
-  cnoreabbrev grugfar GrugFar
-]]
-vim.cmd [[
-  cnoreabbrev grugfarwithin GrugFarWithin
-]]
