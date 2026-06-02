@@ -74,3 +74,11 @@ vim.keymap.set('n', '<leader>al', function()
     vim.api.nvim_exec_autocmds('FileType', { buf = bufnr })
   end
 end, { desc = '[L]SP Toggle' })
+
+-- Clear highlights on search
+vim.keymap.set('n', '<Esc>', '<cmd>noh<CR>')
+
+-- Exit terminal mode
+-- NOTE: might not work in all terminals/tmux
+-- Use default keybind <C-\><C-n> to exit terminal mode
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

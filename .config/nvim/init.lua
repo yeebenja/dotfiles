@@ -50,7 +50,6 @@ vim.cmd 'colorscheme tokyonight-moon'
 -- Import keybindings
 require 'keybindings.vim-keybindings'
 require 'keybindings.plugin-keybindings'
-require 'keybindings.kickstart-keybindings'
 require 'keybindings.quickfix.quickfix'
 
 -- Import fold

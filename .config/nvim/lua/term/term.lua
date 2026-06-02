@@ -9,13 +9,13 @@ vim.keymap.set('n', '<leader>N', function()
 end, { desc = '[N]ew Terminal' })
 
 -- EFFECTS: Scrolls terminal buffer to bottom
-local scroll_to_bottom = function()
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    if vim.api.nvim_win_get_buf(win) == last_term_bufnr then
-      vim.api.nvim_win_set_cursor(win, { vim.api.nvim_buf_line_count(last_term_bufnr), 0 })
-    end
-  end
-end
+-- local scroll_to_bottom = function()
+--   for _, win in ipairs(vim.api.nvim_list_wins()) do
+--     if vim.api.nvim_win_get_buf(win) == last_term_bufnr then
+--       vim.api.nvim_win_set_cursor(win, { vim.api.nvim_buf_line_count(last_term_bufnr), 0 })
+--     end
+--   end
+-- end
 
 -- ls -a
 -- vim.keymap.set('n', '<leader>ml', function()
