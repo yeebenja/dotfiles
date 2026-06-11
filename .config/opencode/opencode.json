@@ -8,11 +8,22 @@
   },
   "agent": {
     "code reviewer": {
-      "description": "Reviews code for best practices and potential issues",
+      "description": "Reviews code for best practices, security, and potential issues — delegates security findings to the security engineer",
       "model": "opencode/big-pickle",
-      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability. If you identify any security vulnerabilities, input validation flaws, authentication issues, data exposure risks, or dependency vulnerabilities, delegate the remediation to @security engineer.",
       "permission": {
-        "edit": "deny"
+        "edit": "deny",
+        "task": "allow"
+      }
+    },
+    "security engineer": {
+      "description": "Analyzes and fixes security vulnerabilities in the codebase",
+      "mode": "subagent",
+      "model": "opencode/big-pickle",
+      "prompt": "You are a security engineer. You are called when the code reviewer identifies a security issue. Analyze the vulnerability thoroughly and implement fixes. Look for: input validation vulnerabilities, authentication/authorization flaws, data exposure risks, dependency vulnerabilities, injection flaws (SQL, XSS, command), insecure deserialization, and configuration security issues. Fix each issue with minimal, targeted changes.",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
       }
     },
     "commit": {
