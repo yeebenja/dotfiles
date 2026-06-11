@@ -27,7 +27,7 @@ return {
     {
       '<leader>ac',
       function()
-        -- Snacks.notify.notify('Treesitter Context Toggled', 'info', { style = 'fancy' })
+        local snacks = require 'snacks'
         Snacks.notifier.notify('Treesitter Context Toggled', 'info', { style = 'fancy', timeout = 3000, title = 'Snacks Notifier' })
         vim.cmd 'TSContext toggle' -- Then toggle it
       end,
