@@ -37,9 +37,6 @@ vim.opt.undodir = vim.fn.stdpath 'state' .. '/undo'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
-
 -- Decrease update time between when I stop typing to when Neovim triggers CursorHold event
 vim.opt.updatetime = 250
 
