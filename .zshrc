@@ -76,6 +76,11 @@ leet(){
   vi
 }
 
+# Enable Exa search tools for opencode
+export OPENCODE_ENABLE_EXA=1
+# Enable experimental LSP tool for opencode
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin:$PATH"

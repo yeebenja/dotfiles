@@ -8,6 +8,7 @@ kitty
 ghostty
 zsh
 flashspace
+opencode
 ```
 
 ## Install Programs and Plugins
