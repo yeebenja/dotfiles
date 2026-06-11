@@ -40,7 +40,6 @@ return { -- Collection of various small independent plugins/modules
     -- require('mini.animate').setup() -- Made me motion sick :|
     -- require('mini.basics').setup()
     -- require('mini.files').setup() -- Already have neo-tree
-    require('mini.surround').setup()
     -- require('mini.notify').setup()
     require('mini.jump').setup {
       -- Module mappings. Use `''` (empty string) to disable one.
