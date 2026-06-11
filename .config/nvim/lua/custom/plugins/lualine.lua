@@ -114,7 +114,7 @@ return {
             statusline = 100,
             tabline = 100,
             winbar = 100,
-            refresh_time = 16, -- ~60fps
+            refresh_time = 32, -- ~30fps
           },
         },
         sections = {
