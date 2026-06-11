@@ -31,22 +31,6 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
   return newVirtText
 end
 
--- NOTE: breaking changes here
--- Option 2: nvim lsp as LSP client
--- Tell the server the capability of foldingRange,
--- Neovim hasn't added foldingRange to default capabilities, users must add it manually
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
-for _, ls in ipairs(language_servers) do
-  require('lspconfig')[ls].setup {
-    capabilities = capabilities,
-    -- you can add other fields for setting up lsp server in this table
-  }
-end
 local ftMap = {
   vim = 'indent',
   python = { 'indent' },
@@ -89,10 +73,10 @@ require('ufo').setup {
   end,
 }
 -- keymaps for ufo
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = 'UFO: Open all folds' })
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds, { desc = 'UFO: Close all folds' })
-vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
-vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set('n', 'zR', function() require('ufo').openAllFolds() end, { desc = 'UFO: Open all folds' })
+vim.keymap.set('n', 'zM', function() require('ufo').closeAllFolds() end, { desc = 'UFO: Close all folds' })
+vim.keymap.set('n', 'zr', function() require('ufo').openFoldsExceptKinds() end)
+vim.keymap.set('n', 'zm', function() require('ufo').closeFoldsWith() end) -- closeAllFolds == closeFoldsWith(0)
 vim.keymap.set('n', 'zK', function()
   local winid = require('ufo').peekFoldedLinesUnderCursor()
   if not winid then

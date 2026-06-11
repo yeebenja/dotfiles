@@ -89,8 +89,13 @@ return {
       }
 
       -- Broadcast blink.cmp capabilities to every server
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
       vim.lsp.config('*', {
-        capabilities = vim.tbl_deep_extend('force', vim.lsp.protocol.make_client_capabilities(), require('blink.cmp').get_lsp_capabilities()),
+        capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities()),
       })
 
       -- ── Server configurations ──────────────────────────────────────────────
