@@ -20,7 +20,7 @@ alias tm="tmux"
 alias tmuxs="tmux source-file ~/.tmux.conf" 
 # save tmux sessions and kill tmux server
 alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
-alias opc="opencode"
+alias oc="opencode"
 
 # nukes nvim cache and removes all swap files
 alias nuke="rm -rfv ~/.local/state/nvim/swap/*"
@@ -165,11 +165,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
  
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR='nvim'
  
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
