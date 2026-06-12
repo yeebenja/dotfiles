@@ -9,6 +9,7 @@ window-padding-y = 0
 window-padding-balance = true
 auto-update = check
 macos-option-as-alt = true
+window-vsync = false
 
 # Shaders
 # Some shaders can be found in this repo, they're usually uploaded to discord
