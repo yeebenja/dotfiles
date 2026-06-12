@@ -5,7 +5,18 @@ return {
     dependencies = {
       { 'neovim/nvim-lspconfig' },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      'j-hui/fidget.nvim',
+      {
+        'j-hui/fidget.nvim',
+        event = 'LspAttach',
+        config = function()
+          require('fidget').setup {
+            progress = {
+              suppress_on_insert = true,
+              ignore = { 'pyright' },
+            },
+          }
+        end,
+      },
     },
     lazy = false,
     config = function()
