@@ -7,7 +7,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'j-hui/fidget.nvim',
     },
-    event = { 'BufReadPre', 'BufNewFile' },
+    lazy = false,
     config = function()
       -- Keymaps / autocmds wired up whenever any LSP attaches to a buffer
       vim.api.nvim_create_autocmd('LspAttach', {

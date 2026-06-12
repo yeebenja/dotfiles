@@ -26,9 +26,9 @@ alias oc="opencode"
 alias nuke="rm -rfv ~/.local/state/nvim/swap/*"
 
 # clean all lazy plugins
-alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim;"
+alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason "
 # clean all lazy plugins and enter neovim
-alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; nvim"
+alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; nvim"
 
 # create simple react project quickly
 alias create-react="npm create vite@latest -- --template react-ts"
