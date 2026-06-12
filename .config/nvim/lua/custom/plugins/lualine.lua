@@ -1,20 +1,3 @@
--- EFFECTS: fetches worktree devicon symbol and current git worktree
-local function git_worktree_with_icon()
-  local handle = io.popen 'git rev-parse --show-toplevel 2>/dev/null'
-  if not handle then
-    return ''
-  end
-  local result = handle:read '*a'
-  handle:close()
-  if not result or result == '' then
-    return ''
-  end
-  local worktree = result:gsub('\n', '')
-  local name = worktree:match '[^/]+$'
-  local icon = '󱁕' -- (git worktree icon)
-  return string.format('%s %s', icon, name)
-end
-
 -- EFFECTS: shows if "format-on-save" is enabled/disabled
 local function format_on_save_status()
   if vim.g.disable_autoformat then
