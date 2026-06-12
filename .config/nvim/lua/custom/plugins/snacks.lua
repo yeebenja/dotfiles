@@ -480,9 +480,7 @@ return {
       mode = { 'n', 'x' },
     },
     -- Smart Picker
-    -- Searches across current open buffers, recently visited files
-    -- and all files in cwd (search in whatever directory I launched
-    -- nvim from)
+    -- Combined buffers + recent + files (in cwd) in one picker
     -- {
     --   '<leader>m',
     --   function()
@@ -532,6 +530,22 @@ return {
         }
       end,
       desc = 'Buffer Picker',
+    },
+    -- Notification History
+    {
+      '<leader>sn',
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = 'Search [N]otifications',
+    },
+    -- Highlights
+    {
+      '<leader>sH',
+      function()
+        Snacks.picker.highlights()
+      end,
+      desc = 'Search [H]ighlights',
     },
   },
 }
