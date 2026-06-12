@@ -38,6 +38,21 @@ vim.keymap.set('n', '<leader>o', function()
   vim.cmd ':Oil'
 end, { desc = '[o]il' })
 
+vim.keymap.set('n', '<leader>O', function()
+  local dirs = vim.fn.systemlist 'fd --type d --hidden --exclude .git --exclude node_modules'
+  if #dirs == 0 then
+    vim.notify('No directories found (is `fd` installed?)', vim.log.levels.WARN)
+    return
+  end
+  vim.ui.select(dirs, {
+    prompt = 'Select Directory:',
+  }, function(choice)
+    if choice then
+      require('oil').open(choice)
+    end
+  end)
+end, { desc = 'Open Directory in [O]il' })
+
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
 
