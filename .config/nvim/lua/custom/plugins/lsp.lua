@@ -2,9 +2,40 @@
 return {
   {
     'williamboman/mason.nvim',
+    lazy = false,
     dependencies = {
-      { 'neovim/nvim-lspconfig' },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+    },
+    config = function()
+      require('mason').setup()
+      require('mason-tool-installer').setup {
+        ensure_installed = {
+          'stylua',
+          'lua-language-server',
+          'markdownlint',
+          'typescript-language-server',
+          'pyright',
+          'codelldb',
+          'debugpy',
+          'clangd',
+          'json-lsp',
+          'prettierd',
+          'prettier',
+          'isort',
+          'black',
+          'jdtls',
+          'yaml-language-server',
+          'postgres-language-server',
+          'css-lsp',
+          'js-debug-adapter',
+        },
+      }
+    end,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
       {
         'j-hui/fidget.nvim',
         event = 'LspAttach',
@@ -18,7 +49,6 @@ return {
         end,
       },
     },
-    lazy = false,
     config = function()
       -- Keymaps / autocmds wired up whenever any LSP attaches to a buffer
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -29,7 +59,9 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gI', function()
+            require('telescope.builtin').lsp_implementations()
+          end, '[G]oto [I]mplementation')
           -- map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
@@ -73,31 +105,6 @@ return {
         end
         vim.diagnostic.config { signs = { text = diagnostic_signs } }
       end
-
-      -- Install LSP servers and formatters/linters via mason
-      require('mason').setup()
-      require('mason-tool-installer').setup {
-        ensure_installed = {
-          'stylua',
-          'lua-language-server',
-          'markdownlint',
-          'typescript-language-server',
-          'pyright',
-          'codelldb',
-          'debugpy',
-          'clangd',
-          'json-lsp',
-          'prettierd',
-          'prettier',
-          'isort',
-          'black',
-          'jdtls',
-          'yaml-language-server',
-          'postgres-language-server',
-          'css-lsp',
-          'js-debug-adapter',
-        },
-      }
 
       -- Broadcast blink.cmp capabilities to every server
       local capabilities = vim.lsp.protocol.make_client_capabilities()
