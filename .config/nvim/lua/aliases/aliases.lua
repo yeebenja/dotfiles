@@ -15,3 +15,7 @@ vim.cmd [[
   cnoreabbrev diffviewclose DiffviewClose
   cnoreabbrev dvc DiffviewClose
 ]]
+
+vim.cmd [[
+  cnoreabbrev json Videre
+]]
