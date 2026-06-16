@@ -1,3 +1,36 @@
+-- function for grep in changed, uncommited files
+local function grep_changed_files(opts)
+  opts = opts or {}
+  local root = vim.fn.systemlist({ 'git', 'rev-parse', '--show-toplevel' })[1]
+  if not root or root == '' then
+    vim.notify('Not inside a git repo', vim.log.levels.WARN)
+    return
+  end
+
+  -- tracked files with staged or unstaged changes (working tree vs HEAD)
+  local files = vim.fn.systemlist { 'git', '-C', root, 'diff', '--name-only', 'HEAD' }
+
+  -- also include new, untracked files
+  vim.list_extend(files, vim.fn.systemlist { 'git', '-C', root, 'ls-files', '--others', '--exclude-standard' })
+
+  files = vim.tbl_map(
+    function(f)
+      return root .. '/' .. f
+    end,
+    vim.tbl_filter(function(f)
+      return f ~= ''
+    end, files)
+  )
+
+  if #files == 0 then
+    vim.notify('No changed files to grep', vim.log.levels.INFO)
+    return
+  end
+
+  Snacks.picker.grep(vim.tbl_extend('force', { dirs = files }, opts))
+end
+
+-- keymap
 return {
   'folke/snacks.nvim',
   priority = 1000,
@@ -546,6 +579,14 @@ return {
         Snacks.picker.highlights()
       end,
       desc = 'Search [H]ighlights',
+    },
+    -- Grep Changed Files
+    {
+      '<leader>su',
+      function()
+        grep_changed_files()
+      end,
+      desc = 'Search [U]ncommitted',
     },
   },
 }
