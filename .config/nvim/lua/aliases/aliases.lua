@@ -19,3 +19,7 @@ vim.cmd [[
 vim.cmd [[
   cnoreabbrev json Videre
 ]]
+
+vim.cmd [[
+  cnoreabbrev mason Mason
+]]
