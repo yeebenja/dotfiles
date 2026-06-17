@@ -41,11 +41,11 @@ end, { desc = '[o]il' })
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndotree' })
 
--- tiny inclinde diagnostics
+-- tiny inline diagnostics
 vim.keymap.set('n', '<leader>ad', function()
   vim.cmd 'TinyInlineDiag toggle'
 end, {
-  desc = 'Tiny Incline [D]iagnostics Toggle',
+  desc = 'Tiny Inline [D]iagnostics Toggle',
 })
 
 -- Leap

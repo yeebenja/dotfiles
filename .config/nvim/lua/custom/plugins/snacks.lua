@@ -586,7 +586,7 @@ return {
       function()
         grep_changed_files()
       end,
-      desc = 'Search [U]ncommitted',
+      desc = 'Search [U]ncommitted by Grep',
     },
   },
 }

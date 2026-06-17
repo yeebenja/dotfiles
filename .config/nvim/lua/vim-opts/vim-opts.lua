@@ -87,7 +87,7 @@ vim.keymap.del({ 'i', 's' }, '<S-Tab>')
 vim.opt.winborder = 'rounded'
 
 -- timeout for syntax highlighting
-vim.opt.redrawtime = 10000
+vim.opt.redrawtime = 3000
 
 -- set signcolumn width
 vim.opt.signcolumn = 'yes:2'
