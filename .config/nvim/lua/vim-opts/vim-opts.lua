@@ -94,3 +94,5 @@ vim.opt.signcolumn = 'yes:2'
 
 -- make diff look simpler
 vim.o.diffopt = 'internal,filler,closeoff'
+
+require('vim._core.ui2').enable {}
