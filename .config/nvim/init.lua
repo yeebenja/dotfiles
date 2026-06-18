@@ -44,28 +44,13 @@ require('lazy').setup({
 -- load colorscheme after lazy.nvim loads all plugins
 vim.cmd 'colorscheme tokyonight-moon'
 
--- Import keybindings
 require 'keybindings.vim-keybindings'
 require 'keybindings.plugin-keybindings'
 require 'keybindings.quickfix.quickfix'
-
--- Import fold
 require 'nvim-ufo-config.nvim-fold-config'
-
--- Import highlight groups
 require 'highlight-groups.highlight-groups'
-
--- import autocmds
 require 'autocmds.autocmds'
-
--- import aliases
 require 'aliases.aliases'
-
--- import term
 require 'term.term'
-
--- import user-commands
 require 'user-commands.user-commands'
-
--- import pack add (native nvim plugins)
 require 'packadd.packadd'

@@ -22,13 +22,10 @@ alias tmuxs="tmux source-file ~/.tmux.conf"
 alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
 alias oc="opencode"
 
-# nukes nvim cache and removes all swap files
-alias nuke="rm -rfv ~/.local/state/nvim/swap/*"
-
 # clean all lazy plugins
-alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason "
+alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site"
 # clean all lazy plugins and enter neovim
-alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; nvim"
+alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site; nvim"
 
 # create simple react project quickly
 alias create-react="npm create vite@latest -- --template react-ts"
