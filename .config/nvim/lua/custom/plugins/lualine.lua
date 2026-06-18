@@ -23,7 +23,7 @@ end
 -- EFFECTS: creates custom theme from current highlight groups
 local function get_custom_theme()
   local function get_hl(name)
-    local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+    local hl = vim.api.nvim_get_hl(0, { name = name })
     return {
       fg = hl.fg and string.format('#%06x', hl.fg) or nil,
       bg = hl.bg and string.format('#%06x', hl.bg) or nil,
@@ -35,10 +35,10 @@ local function get_custom_theme()
   local statusline = get_hl 'StatusLine'
   local statusline_nc = get_hl 'StatusLineNC'
   local mode_normal = get_hl '@variable'
-  local mode_insert = get_hl '@keyword'
-  local mode_visual = get_hl '@keyword.function'
+  local mode_insert = get_hl '@property'
+  local mode_visual = get_hl '@keyword'
   local mode_replace = get_hl 'Constant'
-  local mode_command = get_hl 'Function'
+  local mode_command = get_hl '@variable.builtin'
   local diff_add = get_hl 'DiffAdd'
   local diff_change = get_hl 'DiffChange'
   local diff_delete = get_hl 'DiffDelete'
