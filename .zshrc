@@ -31,6 +31,7 @@ alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; 
 # create simple react project quickly
 alias create-react="npm create vite@latest -- --template react-ts"
 
+
 # instantly edit my nvim configuation
 viedit() {
     cd ~/dotfiles/.config/nvim || return
@@ -44,7 +45,7 @@ dotedit() {
 }
 
 # instantly edit .zshrc
-zshedit() {
+zedit() {
     cd ~/dotfiles || return
     vi .zshrc
 }
