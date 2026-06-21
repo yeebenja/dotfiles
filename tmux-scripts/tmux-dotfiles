@@ -1,5 +1,5 @@
 #!/bin/bash
-SESSION="dotfiles-session"
+SESSION="dotfiles"
 
 if ! tmux has-session -t "$SESSION" 2>/dev/null; then
     tmux new-session -d -s "$SESSION" -c ~/dotfiles -n nvim
