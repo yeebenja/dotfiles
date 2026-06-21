@@ -1,0 +1,10 @@
+#!/bin/bash
+SESSION="dotfiles-session"
+
+if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+    tmux new-session -d -s "$SESSION" -c ~/dotfiles -n nvim
+    tmux new-window -t "$SESSION" -c ~/dotfiles -n opencode
+    tmux new-window -t "$SESSION" -c ~/dotfiles
+fi
+tmux select-window -t "$SESSION":1
+tmux attach -t "$SESSION"

@@ -21,6 +21,7 @@ alias tmuxs="tmux source-file ~/.tmux.conf"
 # save tmux sessions and kill tmux server
 alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
 alias oc="opencode"
+alias tmuxdot="chmod +x $HOME/dotfiles/tmux-scripts/tmux-dotfiles; $HOME/dotfiles/tmux-scripts/tmux-dotfiles"
 
 # clean all lazy plugins
 alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site"
@@ -29,15 +30,6 @@ alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; 
 
 # create simple react project quickly
 alias create-react="npm create vite@latest -- --template react-ts"
-
-# aerospace find windows
-ff() {
-  local selected=$(aerospace list-windows --all | fzf --header='Select window to focus')
-  if [ -n "$selected" ]; then
-    local window_id=$(echo "$selected" | awk '{print $1}')
-    aerospace focus --window-id "$window_id"
-  fi
-}
 
 # instantly edit my nvim configuation
 viedit() {
@@ -197,12 +189,6 @@ function act() {
 # Show IP Address and copy to clipboard
 function getip() {
   ip=$(ipconfig getifaddr en0)
-  printf "%s" "$ip" | tee >(pbcopy)
-}
-
-# Show Seal's static IP Address for Backend server and copy to clipboard
-function sealip() {
-  ip=10.1.1.242
   printf "%s" "$ip" | tee >(pbcopy)
 }
 
