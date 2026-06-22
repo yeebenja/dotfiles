@@ -1,5 +1,6 @@
 return {
   'isakbm/gitgraph.nvim',
+  dependencies = { 'echasnovski/mini.nvim', 'arnamak/stay-centered.nvim' },
   opts = {
     git_cmd = 'git',
     -- NOTE: using kitty specific symbols for gitgraph
