@@ -61,6 +61,18 @@ return {
     vim.api.nvim_set_hl(0, 'GitGraphBranchName', { link = 'Keyword' }) -- or 'Function', 'Type'
     vim.api.nvim_set_hl(0, 'GitGraphBranchTag', { link = 'Tag' }) -- or 'Constant', 'Special'
     vim.api.nvim_set_hl(0, 'GitGraphBranchMsg', { link = 'Normal' }) -- or 'String', 'Title'
+
+    local augroup = vim.api.nvim_create_augroup('GitGraphRelNumber', { clear = true })
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'gitgraph',
+      group = augroup,
+      callback = function()
+        vim.schedule(function()
+          vim.wo.relativenumber = true
+          vim.wo.number = true
+        end)
+      end,
+    })
   end,
   keys = {
     {
