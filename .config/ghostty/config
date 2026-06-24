@@ -1,4 +1,11 @@
-font-family = "JetBrainsMono Nerd Font Mono"
+font-family = JetBrainsMono Nerd Font Mono
+font-style = SemiBold
+font-family-italic = JetBrainsMono Nerd Font Mono
+font-style-italic = SemiBold Italic
+font-family-bold = JetBrainsMono Nerd Font Mono
+font-style-bold = ExtraBold
+font-family-bold-italic = JetBrainsMono Nerd Font Mono
+font-style-bold-italic = ExtraBold Italic
 font-size = 14
 theme = cyberpunk
 shell-integration-features = no-cursor
