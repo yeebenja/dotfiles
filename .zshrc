@@ -21,7 +21,6 @@ alias tmuxs="tmux source-file ~/.tmux.conf"
 # save tmux sessions and kill tmux server
 alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
 alias oc="opencode"
-alias ghostty='/Applications/Ghostty.app/Contents/MacOS/ghostty'
 alias tmuxdot="chmod +x $HOME/dotfiles/tmux-scripts/tmux-dotfiles; $HOME/dotfiles/tmux-scripts/tmux-dotfiles"
 
 # clean all lazy plugins
