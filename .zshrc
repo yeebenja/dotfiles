@@ -73,7 +73,6 @@ export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/opt/homebrew/bin:$PATH"
  
 # NOTE: ZSH Theme:
 # Set name of the theme to load --- if set to "random", it will
@@ -137,7 +136,8 @@ HIST_STAMPS="mm/dd/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
  
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # NOTE:: Plugins
@@ -146,7 +146,7 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions fast-syntax-highlighting zsh-autocomplete)
+plugins=(fzf-tab zsh-autosuggestions fast-syntax-highlighting)
  
 source $ZSH/oh-my-zsh.sh
  
@@ -227,3 +227,4 @@ gitw() {
 # starship
 eval "$(starship init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
