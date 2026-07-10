@@ -175,11 +175,10 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# fzf
 [ -f "$(brew --prefix fzf)/shell/key-bindings.zsh" ] && source "$(brew --prefix fzf)/shell/key-bindings.zsh"
+# ^R to start history search
 
-# ctrl + r shows fuzzy command history
-bindkey '^R' fzf-history-widget
-# TODO: learn more about what I can do with fzf in terminal
 
 # source virtual environment shortcut
 function act() {
