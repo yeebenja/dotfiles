@@ -140,13 +140,14 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/bd
 # NOTE:: Plugins
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf-tab zsh-autosuggestions fast-syntax-highlighting)
+plugins=(zsh-autosuggestions fast-syntax-highlighting bd fzf-tab)
  
 source $ZSH/oh-my-zsh.sh
  
@@ -179,6 +180,11 @@ export EDITOR='nvim'
 [ -f "$(brew --prefix fzf)/shell/key-bindings.zsh" ] && source "$(brew --prefix fzf)/shell/key-bindings.zsh"
 # ^R to start history search
 
+# required for fzf-tab to actually activate
+zstyle ':completion:*' menu no
+
+# include hidden files/dirs in completion
+setopt globdots
 
 # source virtual environment shortcut
 function act() {
