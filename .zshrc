@@ -136,19 +136,13 @@ HIST_STAMPS="mm/dd/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
  
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/bd
 # NOTE:: Plugins
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions fast-syntax-highlighting bd fzf-tab)
- 
+plugins=(zsh-completions zsh-autosuggestions fast-syntax-highlighting bd git-extras copypath fzf-tab)
 source $ZSH/oh-my-zsh.sh
  
 # User configuration

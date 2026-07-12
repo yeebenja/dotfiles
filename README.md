@@ -38,10 +38,8 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ${ZSH_CU
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 git clone https://github.com/Tarrasch/zsh-bd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/bd
+brew install git-extras
 
-# Goofing off
-brew tap real-aazam/homebrew-aazam
-brew install hollywood
 # npm dependencies
 npm install -g markdownlint-cli # for linting markdown files
 # tmux plugin manager
