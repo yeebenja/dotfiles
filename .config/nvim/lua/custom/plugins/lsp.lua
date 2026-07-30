@@ -28,6 +28,7 @@ return {
           'postgres-language-server',
           'css-lsp',
           'js-debug-adapter',
+          'lemminx',
         },
       }
     end,
@@ -197,10 +198,6 @@ return {
         },
       })
 
-      vim.lsp.config('jdtls', {
-        cmd = { 'jdtls' },
-      })
-
       vim.lsp.config('yamlls', {
         cmd = { 'yaml-language-server', '--stdio' },
         filetypes = { 'yaml' },
@@ -219,7 +216,13 @@ return {
         root_markers = { '.git' },
       })
 
-      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'jdtls', 'cssls' }
+      vim.lsp.config('lemminx', {
+        filetypes = { 'xml', 'xhtml', 'xsd', 'xsl', 'xslt', 'svg' },
+        root_markers = { '.git' },
+      })
+
+      -- jdtls is started per-project by after/ftplugin/java.lua (via nvim-jdtls), not here
+      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'cssls', 'lemminx' }
     end,
   },
 }
