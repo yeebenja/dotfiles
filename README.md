@@ -99,10 +99,12 @@ Use OpenCode
 brew install opencode
 ```
 
-## Browser Extensions
+## Google Chrome Extensions
 * [Redux DevTools][redux-devtools]
+* [GraphQL Network Inspector][graphql-network-inspector]
 
 [redux-devtools]: https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+[graphql-network-inspector]: https://chromewebstore.google.com/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln
 
 ## Remapping MacBook Internal Keyboard
 ```bash
