@@ -22,6 +22,7 @@ require('lazy').setup({
   { import = 'themes.themes' }, -- import themes
 }, {
   ui = {
+    border = 'rounded',
     icons = vim.g.have_nerd_font and {} or {
       -- if not using nerd font: fallback on these icons
       cmd = '⌘',
