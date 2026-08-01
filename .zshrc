@@ -1,184 +1,76 @@
 # .zshrc
+setopt IGNORE_EOF # prevents from automatically exiting shell
 
-# prevents from automatically exiting shell
-setopt IGNORE_EOF
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
- 
-# NOTE: Aliases:
+# Aliases and Cmds:
+# --- vim ---
 alias vi="nvim"
 alias vim="nvim"
-# alias gitl = 'git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)''
+alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site" # clean all lazy plugins
+alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site; nvim" # clean all lazy plugins and enter neovim
+# instantly edit my nvim configuation
+viedit() {
+    cd ~/dotfiles/.config/nvim || return
+    vi
+}
+# instantly cd into nvim config
+vigo() {
+    cd ~/dotfiles/.config/nvim || return
+}
+# --- dotfiles ---
+# instantly edit dotfiles
+dotedit() {
+    cd ~/dotfiles || return
+    vi
+}
+# instantly cd into dotfiles
+dotgo() {
+    cd ~/dotfiles || return
+}
+# -- zsh ---
+# instantly edit .zshrc
+zedit() {
+    cd ~/dotfiles || return
+    vi .zshrc
+}
+# --- git ---
 alias gitl="nvim -c \"lua require('gitgraph').draw({}, { all = true, max_count = 5000 })\""
 alias gitl1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
 alias gitl2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
 alias gitl3="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
 alias gits="git status"
 alias gitf="git fetch"
-alias tm="tmux"
-alias tmuxs="tmux source-file ~/.tmux.conf" 
-# save tmux sessions and kill tmux server
-alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
+# --- opencode ---
 alias oc="opencode"
-alias tmuxdot="chmod +x $HOME/dotfiles/tmux-scripts/tmux-dotfiles; $HOME/dotfiles/tmux-scripts/tmux-dotfiles"
-
-# clean all lazy plugins
-alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site"
-# clean all lazy plugins and enter neovim
-alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site; nvim"
-
-# create simple react project quickly
-alias create-react="npm create vite@latest -- --template react-ts"
-
-
-# instantly edit my nvim configuation
-viedit() {
-    cd ~/dotfiles/.config/nvim || return
-    vi
+# --- tmux ---
+alias tmuxs="tmux source-file ~/.tmux.conf" 
+alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server" # save tmux sessions and kill tmux server
+# --- tmuxp ---
+# NOTE:
+# tmuxp freeze (saves current session)
+# tmuxp load session_name.yaml (loads session)
+alias tp="tmuxp"
+# instantly cd into ~/dotfiles/.tmuxp/
+tpgo() {
+    cd ~/dotfiles/.tmuxp/ || return
 }
-
-# instantly edit dotfiles
-dotedit() {
-    cd ~/dotfiles || return
-    vi
-}
-
-# instantly edit .zshrc
-zedit() {
-    cd ~/dotfiles || return
-    vi .zshrc
-}
-
-# instantly cd into dotfiles
-dotgo() {
-    cd ~/dotfiles || return
-}
-
-# instantly cd into nvim config
-vigo() {
-    cd ~/dotfiles/.config/nvim || return
-}
-
+# --- leetcode ---
 # leetcode scratchpad
 leet(){
   cd ~/dotfiles/leet || return
   vi
 }
 
-# Enable Exa search tools for opencode
-export OPENCODE_ENABLE_EXA=1
-# Enable experimental LSP tool for opencode
-export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
-
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
- 
-# NOTE: ZSH Theme:
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+export ZSH="$HOME/.oh-my-zsh" # Path to your Oh My Zsh installation.
 ZSH_THEME="clean"
- 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
- 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
- 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
- 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
- 
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
- 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
- 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
- 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
- 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
- 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
- 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
- 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
 HIST_STAMPS="mm/dd/yyyy"
- 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
- 
-# NOTE:: Plugins
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-completions zsh-autosuggestions fast-syntax-highlighting bd git-extras copypath fzf-tab)
 source $ZSH/oh-my-zsh.sh
- 
-# User configuration
- 
-# export MANPATH="/usr/local/man:$MANPATH"
- 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
- 
-# Preferred editor for local and remote sessions
-export EDITOR='nvim'
- 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
- 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# fzf
-[ -f "$(brew --prefix fzf)/shell/key-bindings.zsh" ] && source "$(brew --prefix fzf)/shell/key-bindings.zsh"
-# ^R to start history search
-
-# required for fzf-tab to actually activate
-zstyle ':completion:*' menu no
-
-# include hidden files/dirs in completion
-setopt globdots
+ 
+# --- fzf ---
+[ -f "$(brew --prefix fzf)/shell/key-bindings.zsh" ] && source "$(brew --prefix fzf)/shell/key-bindings.zsh" # ^R to start history search
+zstyle ':completion:*' menu no # required for fzf-tab to actually activate
+setopt globdots # include hidden files/dirs in completion
 
 # source virtual environment shortcut
 function act() {
@@ -195,35 +87,12 @@ function getip() {
   printf "%s" "$ip" | tee >(pbcopy)
 }
 
-# pve alias creates python virtual environment
-# EXAMPLE: "pve venv" will create a virtual environment called venv in python3
-pve() {
-  if [ -z "$1" ]; then
-    echo "Usage: pve <env_name>"
-    return 1
-  fi
-  python3 -m venv "$1"
-}
-
-pve311() {
-  if [ -z "$1" ]; then
-    echo "Usage: pve311 <env_name>"
-    return 1
-  fi
-  python3.11 -m venv "$1"
-}
-
-# gitw -> runs "git worktree list"
-# gitw (arguments) -> runs "git worktree (with arguments)"
-gitw() {
-    if [[ $# -eq 0 ]]; then
-        git worktree list
-    else
-        git worktree "$@"
-    fi
-}
-
-# starship
+# --- starship ---
 eval "$(starship init zsh)"
+
+# --- exports ---
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+export EDITOR='nvim'
+export OPENCODE_ENABLE_EXA=1 # Enable Exa search tools for opencode
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true # Enable experimental LSP tool for opencode

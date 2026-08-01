@@ -1,0 +1,27 @@
+session_name: dotfiles
+windows:
+- layout: 5913,177x50,0,0,14
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: nvim
+  start_directory: /Users/benjaminyee/dotfiles
+  window_name: nvim
+- layout: 5914,177x50,0,0,15
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: opencode.exe
+  start_directory: /Users/benjaminyee/dotfiles
+  window_name: opencode
+- focus: 'true'
+  layout: 5915,177x50,0,0,16
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: Python
+  start_directory: /Users/benjaminyee/dotfiles
+  window_name: zsh

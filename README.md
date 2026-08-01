@@ -13,12 +13,8 @@ opencode
 
 ## Install Programs and Plugins
 ```bash
-brew install neovim tree-sitter-cli
-# neovim NEEDS tree-sitter-cli in order to install parsers correctly
-brew install --cask kitty
-brew install --cask ghostty
-brew install flashspace
-brew install starship        # CLI Plugin
+# neovim
+brew install neovim tree-sitter-cli # neovim NEEDS tree-sitter-cli in order to install parsers correctly
 brew install ripgrep
 brew install zsh
 brew install fzf             # For fuzzy search in command line
@@ -27,25 +23,29 @@ brew install mermaid-cli     # For Mermaid diagrams in snacks.image
 brew install tectonic        # For LaTeX rendering in snacks.image
 brew install ghostscript     # PDF rendering for snacks.image
 brew install imagemagick     # For image.nvim
+brew install node # Node is needed for some LSPs in nvim
+npm install -g markdownlint-cli # for linting markdown files
 
-# Node is needed for some LSPs in nvim
-brew install node
-# Oh-my-zsh
+# terminals
+brew install --cask ghostty
+brew install --cask kitty 
+
+# tmux
+brew install tmux tmuxp fzf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux plugin manager
+
+# oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# Oh-my-zsh plugins
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 git clone https://github.com/Tarrasch/zsh-bd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/bd
 brew install git-extras
+brew install starship
 
-# npm dependencies
-npm install -g markdownlint-cli # for linting markdown files
-# tmux plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# for tmux-session-dispensary
-brew install fd sk
+# misc.
+brew install flashspace
 ```
 
 ## GNU Stow Install
