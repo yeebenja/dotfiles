@@ -132,7 +132,7 @@ vim.keymap.set('n', '<leader>f', function()
   local snacks = require 'snacks'
   snacks.notifier.notify('Formatted Buffer', 'info', { style = 'compact', timeout = 2000, title = 'Conform.nvim' })
   print 'Formatted Buffer'
-end, { desc = '[F]ormat Buffer' })
+end, { desc = '[f]ormat Buffer' })
 
 vim.keymap.set('n', '<leader>F', function()
   vim.g.disable_autoformat = not vim.g.disable_autoformat
