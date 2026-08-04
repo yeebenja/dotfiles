@@ -7,8 +7,6 @@
 *.py
 # Except for iterm2kitty.py
 !iterm2kitty.py
-# Except for .pdbrc.py
-!.pdbrc.py
 # ignore notes
 TODO.md
 JOB_RESPONSES.md
