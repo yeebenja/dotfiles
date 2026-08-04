@@ -1,0 +1,53 @@
+let mapleader = " "
+
+" Options
+set relativenumber
+set number
+set ignorecase
+set smartcase
+set scrolloff=999
+set incsearch
+set clipboard+=unnamed
+
+" Plugins
+set NERDTree
+set which-key
+
+" Window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Clear search highlights
+nnoremap <Esc> :noh<CR>
+
+" Write / quit
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :qa<CR>
+
+" LSP
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap grr :action FindUsages<CR>
+nnoremap gI :action GotoImplementation<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
+nnoremap grn :action RenameElement<CR>
+nnoremap K :action QuickJavaDoc<CR>
+
+" File navigation
+nnoremap <leader>o :NERDTreeToggle<CR>
+nnoremap <leader>sf :action GotoFile<CR>
+nnoremap <leader>sa :action SearchEverywhere<CR>
+
+" Search
+nnoremap <leader>sg :action FindInPath<CR>
+nnoremap <leader>ss :action GotoSymbol<CR>
+
+" Splits
+nnoremap <leader>ah :split<CR>
+nnoremap <leader>av :vsplit<CR>
+
+" Move lines in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv

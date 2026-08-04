@@ -45,6 +45,11 @@
               "bundleIdentifier" : "com.apple.mail",
               "iconPath" : "/System/Applications/Mail.app/Contents/Resources/ApplicationIcon.icns",
               "name" : "Mail"
+            },
+            {
+              "bundleIdentifier" : "com.jetbrains.intellij",
+              "iconPath" : "/Applications/IntelliJ IDEA.app/Contents/Resources/idea.icns",
+              "name" : "IntelliJ IDEA"
             }
           ],
           "assignAppShortcut" : "opt+shift+3",
