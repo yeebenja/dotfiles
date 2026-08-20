@@ -90,7 +90,7 @@ vim.opt.winborder = 'rounded'
 vim.opt.redrawtime = 3000
 
 -- set signcolumn width
-vim.opt.signcolumn = 'yes:2'
+vim.opt.signcolumn = 'yes:1'
 
 -- make diff look simpler
 vim.o.diffopt = 'internal,filler,closeoff'
