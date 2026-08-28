@@ -146,3 +146,10 @@ brew install --cask colemak-dh
 
 ## Debugging Javascript in Browser
 In a browser, use Cmd + P to search for file. Then, add breakpoints. For debugging, I usually use Chrome because the debugger UI is intuitive.
+
+## Getting Images to Work Inside Neovim
+```bash
+brew install luarocks
+npm install -g @mermaid-js/mermaid-cli
+brew install imagemagick
+```
