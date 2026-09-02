@@ -153,3 +153,8 @@ brew install luarocks
 npm install -g @mermaid-js/mermaid-cli
 brew install imagemagick
 ```
+
+## zoxide
+```bash
+brew install zoxide
+```

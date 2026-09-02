@@ -2,6 +2,8 @@
 setopt IGNORE_EOF # prevents from automatically exiting shell
 
 # Aliases and Cmds:
+# --- cd ---
+alias cd="z"
 # --- vim ---
 alias vi="nvim"
 alias vim="nvim"
@@ -89,6 +91,9 @@ function getip() {
 
 # --- starship ---
 eval "$(starship init zsh)"
+
+# --- zoxide ---
+eval "$(zoxide init zsh)"
 
 # --- exports ---
 export PATH="$HOME/.local/bin:$PATH"
