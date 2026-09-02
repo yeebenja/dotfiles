@@ -9,6 +9,7 @@ ghostty
 zsh
 flashspace
 opencode
+atuin
 ```
 
 ## Install Programs and Plugins
@@ -43,6 +44,7 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 git clone https://github.com/Tarrasch/zsh-bd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/bd
 brew install git-extras
 brew install starship
+brew install atuin
 
 # misc.
 brew install flashspace
@@ -157,4 +159,10 @@ brew install imagemagick
 ## zoxide
 ```bash
 brew install zoxide
+```
+
+## atuin
+```bash
+brew install atuin
+atuin setup # disable AI, enable daemon
 ```

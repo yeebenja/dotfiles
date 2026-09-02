@@ -70,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 
  
 # --- fzf ---
-[ -f "$(brew --prefix fzf)/shell/key-bindings.zsh" ] && source "$(brew --prefix fzf)/shell/key-bindings.zsh" # ^R to start history search
+[ -f "$(brew --prefix fzf)/shell/completion.zsh" ] && source "$(brew --prefix fzf)/shell/completion.zsh"
 zstyle ':completion:*' menu no # required for fzf-tab to actually activate
 setopt globdots # include hidden files/dirs in completion
 
@@ -88,6 +88,9 @@ function getip() {
   ip=$(ipconfig getifaddr en0)
   printf "%s" "$ip" | tee >(pbcopy)
 }
+
+# --- atuin ---
+eval "$(atuin init zsh)"
 
 # --- starship ---
 eval "$(starship init zsh)"
