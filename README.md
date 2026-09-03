@@ -166,3 +166,11 @@ brew install zoxide
 brew install atuin
 atuin setup # disable AI, enable daemon
 ```
+
+## gh
+Github command line
+```bash
+brew install gh
+gh auth login
+gh extension install dlvhdr/gh-dash
+```
