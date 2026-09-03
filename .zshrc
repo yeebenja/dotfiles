@@ -55,6 +55,15 @@ alias tp="tmuxp"
 tpgo() {
     cd ~/dotfiles/.tmuxp/ || return
 }
+
+# -- github ---
+# prints current repo link and copies to clipboard
+ghrepo() {
+  local url=$(gh repo view --json url -q .url)
+  echo "$url" | pbcopy
+  echo "$url"
+}
+
 # --- leetcode ---
 # leetcode scratchpad
 leet(){
