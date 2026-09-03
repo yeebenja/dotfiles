@@ -110,6 +110,7 @@ eval "$(zoxide init zsh)"
 # --- exports ---
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR='nvim'
 export OPENCODE_ENABLE_EXA=1 # Enable Exa search tools for opencode
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=true # Enable experimental LSP tool for opencode
