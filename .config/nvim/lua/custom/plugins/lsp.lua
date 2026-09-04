@@ -12,7 +12,6 @@ return {
         ensure_installed = {
           'stylua',
           'lua-language-server',
-          'markdownlint',
           'typescript-language-server',
           'pyright',
           'codelldb',
