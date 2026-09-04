@@ -174,6 +174,11 @@ brew install gh
 gh auth login
 gh extension install dlvhdr/gh-dash
 brew install diffnav
-
-
 ```
+
+## Obsidian
+Obsidian.nvim is configured as well. Link [here](https://github.com/obsidian-nvim/obsidian.nvim).
+```bash
+brew install --cask obsidian
+```
+
