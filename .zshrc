@@ -42,6 +42,7 @@ alias gitl3="git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 alias gits="git status"
 alias gitf="git fetch"
 alias gitb="git branch"
+alias gitr="git reset --soft HEAD~1"
 alias ghd="gh dash"
 # --- opencode ---
 alias oc="opencode"
