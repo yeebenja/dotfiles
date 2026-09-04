@@ -173,4 +173,7 @@ Github command line
 brew install gh
 gh auth login
 gh extension install dlvhdr/gh-dash
+brew install diffnav
+
+
 ```
