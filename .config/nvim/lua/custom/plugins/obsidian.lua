@@ -2,6 +2,7 @@ return {
   'obsidian-nvim/obsidian.nvim',
   version = '*', -- use latest release, remove to use latest commit
   ft = 'markdown', -- lazy load on markdown files
+  cmd = 'Obsidian',
   ---@module 'obsidian'
   ---@type obsidian.config
   opts = {
