@@ -501,6 +501,32 @@ return {
       desc = 'Visual selection or word',
       mode = { 'n', 'x' },
     },
+    -- Live Grep in Specific Path
+    {
+      '<leader>sP',
+      function()
+        vim.ui.input({
+          prompt = 'Grep in dir: ',
+          default = vim.fn.getcwd() .. '/',
+          completion = 'dir',
+        }, function(dir)
+          if not dir or dir == '' then
+            return
+          end
+          Snacks.picker.grep {
+            layout = 'ivy',
+            regex = true,
+            format = 'file',
+            show_empty = true,
+            live = true,
+            supports_live = true,
+            hidden = true,
+            dirs = { vim.fn.fnamemodify(dir, ':p') },
+          }
+        end)
+      end,
+      desc = '[S]earch Grep in [P]ath',
+    },
     -- Smart Picker
     -- Combined buffers + recent + files (in cwd) in one picker
     -- {
