@@ -1,41 +1,50 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "plan",
-  "lsp": true,
-  "autoupdate": true,
-  "permission": {
-    "websearch": "allow",
-    "lsp": "allow"
-  },
   "agent": {
     "code reviewer": {
       "description": "Reviews code for best practices, security, and potential issues — delegates security findings to the security engineer",
       "model": "opencode/big-pickle",
-      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability. If you identify any security vulnerabilities, input validation flaws, authentication issues, data exposure risks, or dependency vulnerabilities, delegate the remediation to @security engineer.",
       "permission": {
         "edit": "deny",
         "task": "allow"
-      }
+      },
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability. If you identify any security vulnerabilities, input validation flaws, authentication issues, data exposure risks, or dependency vulnerabilities, delegate the remediation to @security engineer."
+    },
+    "commit": {
+      "description": "Generates conventional commit messages from git diff",
+      "mode": "subagent",
+      "permission": {
+        "bash": "allow",
+        "edit": "deny",
+        "write": "deny"
+      },
+      "prompt": "You are a commit message generator following Conventional Commits. Given a git diff, generate a concise subject line (type(scope): description, under 72 chars) followed by a blank line and a brief body explaining what and why. Types: feat, fix, chore, docs, refactor, style, test, perf, ci, build, revert. Use the git history to infer the project's conventions."
     },
     "security engineer": {
       "description": "Analyzes and fixes security vulnerabilities in the codebase",
       "mode": "subagent",
       "model": "opencode/big-pickle",
-      "prompt": "You are a security engineer. You are called when the code reviewer identifies a security issue. Analyze the vulnerability thoroughly and implement fixes. Look for: input validation vulnerabilities, authentication/authorization flaws, data exposure risks, dependency vulnerabilities, injection flaws (SQL, XSS, command), insecure deserialization, and configuration security issues. Fix each issue with minimal, targeted changes.",
-      "permission": {
-        "edit": "allow",
-        "bash": "allow"
-      }
-    },
-    "commit": {
-      "description": "Generates conventional commit messages from git diff",
-      "mode": "subagent",
-      "prompt": "You are a commit message generator following Conventional Commits. Given a git diff, generate a concise subject line (type(scope): description, under 72 chars) followed by a blank line and a brief body explaining what and why. Types: feat, fix, chore, docs, refactor, style, test, perf, ci, build, revert. Use the git history to infer the project's conventions.",
       "permission": {
         "bash": "allow",
-        "edit": "deny",
-        "write": "deny"
-      }
+        "edit": "allow"
+      },
+      "prompt": "You are a security engineer. You are called when the code reviewer identifies a security issue. Analyze the vulnerability thoroughly and implement fixes. Look for: input validation vulnerabilities, authentication/authorization flaws, data exposure risks, dependency vulnerabilities, injection flaws (SQL, XSS, command), insecure deserialization, and configuration security issues. Fix each issue with minimal, targeted changes."
     }
+  },
+  "autoupdate": true,
+  "default_agent": "plan",
+  "lsp": true,
+  "mcp": {
+    "tilth": {
+      "command": [
+        "/Users/benjaminyee/.cargo/bin/tilth",
+        "--mcp"
+      ],
+      "type": "local"
+    }
+  },
+  "permission": {
+    "lsp": "allow",
+    "websearch": "allow"
   }
 }
