@@ -20,10 +20,9 @@ brew install ripgrep
 brew install zsh
 brew install fzf             # For fuzzy search in command line
 brew install fd              # For better file searching in snacks.picker
-brew install mermaid-cli     # For Mermaid diagrams in snacks.image
 brew install tectonic        # For LaTeX rendering in snacks.image
 brew install ghostscript     # PDF rendering for snacks.image
-brew install imagemagick     # For image.nvim
+brew install imagemagick     # For snacks.image
 brew install node # Node is needed for some LSPs in nvim
 npm install -g markdownlint-cli # for linting markdown files
 
@@ -149,13 +148,6 @@ brew install --cask colemak-dh
 ## Debugging Javascript in Browser
 In a browser, use Cmd + P to search for file. Then, add breakpoints. For debugging, I usually use Chrome because the debugger UI is intuitive.
 
-## Getting Images to Work Inside Neovim
-```bash
-brew install luarocks
-npm install -g @mermaid-js/mermaid-cli
-brew install imagemagick
-```
-
 ## zoxide
 ```bash
 brew install zoxide
@@ -180,5 +172,6 @@ brew install diffnav
 Obsidian.nvim is configured as well. Link [here](https://github.com/obsidian-nvim/obsidian.nvim).
 ```bash
 brew install --cask obsidian
+brew install pngpaste
 ```
 

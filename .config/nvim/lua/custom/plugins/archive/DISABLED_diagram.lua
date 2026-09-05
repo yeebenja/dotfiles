@@ -1,0 +1,61 @@
+return {
+  -- '3rd/diagram.nvim',
+  -- dependencies = {
+  --   '3rd/image.nvim',
+  --   -- only loaded as a dependency of diagram.nvim; snacks.image handles markdown rendering
+  --   lazy = true,
+  --   build = false, -- build is broken: https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+  --   opts = {
+  --     backend = 'kitty',
+  --     processor = 'magick_cli',
+  --     integrations = {
+  --       markdown = { enabled = false },
+  --       asciidoc = { enabled = false },
+  --       typst = { enabled = false },
+  --       neorg = { enabled = false },
+  --       syslang = { enabled = false },
+  --       html = { enabled = false },
+  --       css = { enabled = false },
+  --       org = { enabled = false },
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     require('image').setup(opts)
+  --   end,
+  -- }, -- diagram requires the `image` module at init
+  -- event = { 'InsertLeave', 'BufWinEnter', 'TextChanged', 'BufLeave' },
+  -- opts = { -- you can just pass {}, defaults below
+  --   events = {
+  --     render_buffer = { 'InsertLeave', 'BufWinEnter', 'TextChanged' },
+  --     clear_buffer = { 'BufLeave' },
+  --   },
+  --   renderer_options = {
+  --     mermaid = {
+  --       background = nil, -- nil | "transparent" | "white" | "#hex"
+  --       theme = nil, -- nil | "default" | "dark" | "forest" | "neutral"
+  --       scale = 3, -- nil | 1 (default) | 2  | 3 | ...
+  --       width = nil, -- nil | 800 | 400 | ...
+  --       height = nil, -- nil | 600 | 300 | ...
+  --       cli_args = nil, -- nil | { "--no-sandbox" } | { "-p", "/path/to/puppeteer" } | ...
+  --     },
+  --     plantuml = {
+  --       charset = nil,
+  --       cli_args = nil, -- nil | { "-Djava.awt.headless=true" } | ...
+  --     },
+  --     d2 = {
+  --       theme_id = nil,
+  --       dark_theme_id = nil,
+  --       scale = nil,
+  --       layout = nil,
+  --       sketch = nil,
+  --       cli_args = nil, -- nil | { "--pad", "0" } | ...
+  --     },
+  --     gnuplot = {
+  --       size = nil, -- nil | "800,600" | ...
+  --       font = nil, -- nil | "Arial,12" | ...
+  --       theme = nil, -- nil | "light" | "dark" | custom theme string
+  --       cli_args = nil, -- nil | { "-p" } | { "-c", "config.plt" } | ...
+  --     },
+  --   },
+  -- },
+}

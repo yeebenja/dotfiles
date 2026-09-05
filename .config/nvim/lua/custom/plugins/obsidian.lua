@@ -13,6 +13,9 @@ return {
         path = os.getenv 'HOME' .. '/Documents/vault_ben',
       },
     },
+    attachments = {
+      folder = 'images/', -- relative to your vault root
+    },
   },
   config = function(_, opts)
     require('obsidian').setup(opts)
