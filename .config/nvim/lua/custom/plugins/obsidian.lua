@@ -16,6 +16,9 @@ return {
     attachments = {
       folder = 'images/', -- relative to your vault root
     },
+    ui = {
+      enable = false,
+    },
   },
   config = function(_, opts)
     require('obsidian').setup(opts)
