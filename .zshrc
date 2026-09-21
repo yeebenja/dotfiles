@@ -47,6 +47,9 @@ alias ghd="gh dash"
 # --- opencode ---
 alias oc="opencode"
 alias occ="opencode run --agent build \"commit staged\""
+# --- claude ---
+alias claudeyolo="claude --permission-mode bypassPermissions"
+
 # --- tmux ---
 alias tmuxs="tmux source-file ~/.tmux.conf" 
 alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server" # save tmux sessions and kill tmux server
