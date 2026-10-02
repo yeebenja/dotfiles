@@ -81,7 +81,23 @@ defaults:
                 width: 20
                 hidden: true
     refetchIntervalMinutes: 30
-keybindings: {}
+keybindings:
+    prs:
+        - key: O
+          builtin: checkout
+        - key: v
+          name: approve
+          command: >
+              gh pr review --repo {{.RepoName}} --approve --body "$(gum input --prompt='Approval Comment: ')" {{.PrNumber}}
+        - key: E
+          name: Edit PR Title
+          command: >
+              gh pr edit {{.PrNumber}} --title "$(gum input --prompt 'New PR Title: ')"
+        - key: e
+          name: Edit PR Description
+          command: >
+              gh pr edit {{.PrNumber}} --body "$(gum write --placeholder 'PR Description')"
+
 repoPaths: {}
 theme:
     ui:
