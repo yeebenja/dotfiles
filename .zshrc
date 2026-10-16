@@ -78,6 +78,8 @@ leet(){
   vi
 }
 
+alias create-react="npm create vite@latest -- --template react-ts"
+
 export ZSH="$HOME/.oh-my-zsh" # Path to your Oh My Zsh installation.
 ZSH_THEME="clean"
 HIST_STAMPS="mm/dd/yyyy"
