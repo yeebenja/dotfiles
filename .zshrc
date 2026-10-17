@@ -43,6 +43,7 @@ alias gits="git status"
 alias gitf="git fetch"
 alias gitb="git branch"
 alias gitr="git reset --soft HEAD~1"
+alias gitw="git worktree"
 alias ghd="gh dash"
 # --- opencode ---
 alias oc="opencode"
