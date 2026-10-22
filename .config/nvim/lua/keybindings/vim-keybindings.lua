@@ -85,3 +85,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 -- Always search with very magic mode
 vim.keymap.set({ 'n', 'v' }, '/', '/\\v', { desc = 'Search with very magic' })
+
+-- tabs
+vim.keymap.set('n', '<Tab>', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
+vim.keymap.set('n', '<S-Tab>', '<cmd>tabprevious<CR>', { desc = 'Previous Tab' })

@@ -90,3 +90,24 @@ vim.opt.signcolumn = 'yes:1'
 vim.o.diffopt = 'internal,filler,closeoff'
 
 require('vim._core.ui2').enable {}
+
+function _G.my_tabline()
+  local s = ''
+  for i = 1, vim.fn.tabpagenr '$' do
+    local buflist = vim.fn.tabpagebuflist(i)
+    local bufnr = buflist[vim.fn.tabpagewinnr(i)]
+    local name = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ':t')
+    if name == '' then
+      name = '[No Name]'
+    end
+    local mod = vim.fn.getbufvar(bufnr, '&modified') == 1 and ' +' or ''
+    local hl = (i == vim.fn.tabpagenr()) and '%#TabLineSel#' or '%#TabLine#'
+    s = s .. hl .. '%' .. i .. 'T ' .. i .. ' ' .. name .. mod .. ' '
+  end
+  return s .. '%#TabLineFill#%T'
+end
+
+vim.o.tabline = '%!v:lua.my_tabline()'
+
+-- when closing a tab page (e.g. neogit closing its own tab), focus the tab to the left
+vim.opt.tabclose = 'left'
