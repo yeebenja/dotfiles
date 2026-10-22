@@ -77,12 +77,6 @@ vim.keymap.set({ 'v', 'x' }, 'K', ":m '<-2<CR>gv=gv")
 -- global statusline
 vim.opt.laststatus = 3
 
--- no snippet default maps
--- NOTE: should fix bug when pressing <Tab> and
--- cursor randomly jumps somewhere
-vim.keymap.del({ 'i', 's' }, '<Tab>')
-vim.keymap.del({ 'i', 's' }, '<S-Tab>')
-
 -- rounded borders for cmd + K
 vim.opt.winborder = 'rounded'
 
