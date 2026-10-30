@@ -20,8 +20,15 @@ local function modified_buffers_count()
   return string.format('● %d', modified_buffers)
 end
 
--- EFFECTS: creates custom theme from current highlight groups
+-- returns exactly what lualine uses for theme = 'auto'
+local function get_auto_theme()
+  local ok, theme = pcall(require('lualine.utils.loader').load_theme, 'auto')
+  return ok and theme or nil
+end
+
 local function get_custom_theme()
+  local theme = get_auto_theme() or {}
+
   local function get_hl(name)
     local hl = vim.api.nvim_get_hl(0, { name = name })
     return {
@@ -32,41 +39,37 @@ local function get_custom_theme()
   end
 
   local normal = get_hl 'Normal'
-  local statusline = get_hl 'StatusLine'
   local statusline_nc = get_hl 'StatusLineNC'
-  local mode_normal = get_hl '@variable'
-  local mode_insert = get_hl '@property'
-  local mode_visual = get_hl '@keyword'
-  local mode_replace = get_hl 'Constant'
-  local mode_command = get_hl '@variable.builtin'
-  local diff_add = get_hl 'DiffAdd'
-  local diff_change = get_hl 'DiffChange'
-  local diff_delete = get_hl 'DiffDelete'
 
-  return {
-    normal = {
-      a = { fg = normal.bg, bg = mode_normal.fg, gui = 'bold' },
-      b = { fg = normal.fg, bg = normal.bg },
-      c = { fg = normal.fg, bg = normal.bg },
-    },
-    insert = {
-      a = { fg = statusline.bg or normal.bg, bg = mode_insert.fg, gui = 'bold' },
-    },
-    visual = {
-      a = { fg = statusline.bg or normal.bg, bg = mode_visual.fg, gui = 'bold' },
-    },
-    replace = {
-      a = { fg = statusline.bg or normal.bg, bg = mode_replace.fg, gui = 'bold' },
-    },
-    command = {
-      a = { fg = statusline.bg or normal.bg, bg = mode_command.fg, gui = 'bold' },
-    },
-    inactive = {
-      a = { fg = statusline_nc.fg, bg = statusline_nc.bg },
-      b = { fg = statusline_nc.fg, bg = statusline_nc.bg },
-      c = { fg = statusline_nc.fg, bg = statusline_nc.bg },
-    },
+  -- merge only the pieces you want to change; everything else
+  -- (including auto's mode colors) is inherited
+  theme.normal = vim.tbl_deep_extend('force', theme.normal or {}, {
+    a = { fg = normal.bg, bg = get_hl('@variable').fg, gui = 'bold' },
+  })
+
+  -- lualine_b (branch/diff/diagnostics) and lualine_y (progress) use the `b`
+  -- colors: keep their background equal to the middle section (c) and their
+  -- text equal to the NORMAL mode indicator's background
+  local normal_a = theme.normal.a or {}
+  local normal_b = theme.normal.b or {}
+  local normal_c = theme.normal.c or {}
+  for _, mode in ipairs { 'normal', 'insert', 'visual', 'replace', 'command', 'terminal' } do
+    local section = theme[mode]
+    if section then
+      if section.a then
+        section.a.gui = 'bold'
+      end
+      section.b = { fg = normal_a.bg, bg = normal_c.bg or normal_b.bg }
+    end
+  end
+
+  theme.inactive = {
+    a = { fg = statusline_nc.fg, bg = statusline_nc.bg },
+    b = { fg = statusline_nc.fg, bg = statusline_nc.bg },
+    c = { fg = statusline_nc.fg, bg = statusline_nc.bg },
   }
+
+  return theme
 end
 
 return {
