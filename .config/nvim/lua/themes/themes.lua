@@ -246,7 +246,14 @@ local themes = {
     lazy = true,
     priority = 1000,
     config = function()
-      require('vague').setup {}
+      require('vague').setup {
+        on_highlights = function(hl, colors)
+          hl.CurSearch = {
+            bg = '#f7c67f',
+            fg = '#1a1c2c',
+          }
+        end,
+      }
     end,
   },
   {
