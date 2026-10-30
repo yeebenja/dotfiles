@@ -246,9 +246,7 @@ local themes = {
     lazy = true,
     priority = 1000,
     config = function()
-      require('vague').setup {
-        -- optional config
-      }
+      require('vague').setup {}
     end,
   },
   {
