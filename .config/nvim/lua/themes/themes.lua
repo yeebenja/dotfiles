@@ -295,5 +295,12 @@ local themes = {
       require('github-theme').setup {}
     end,
   },
+  {
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000,
+    lazy = true,
+    config = function() end,
+    opts = {},
+  },
 }
 return themes
