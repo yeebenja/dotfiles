@@ -302,5 +302,10 @@ local themes = {
     config = function() end,
     opts = {},
   },
+  {
+    'olimorris/onedarkpro.nvim',
+    priority = 1000,
+    lazy = true,
+  },
 }
 return themes
