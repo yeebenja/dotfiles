@@ -43,7 +43,7 @@ require('lazy').setup({
 })
 
 -- load colorscheme after lazy.nvim loads all plugins
-vim.cmd 'colorscheme tokyonight-moon'
+vim.cmd 'colorscheme vague'
 
 require 'keybindings.vim-keybindings'
 require 'keybindings.plugin-keybindings'
