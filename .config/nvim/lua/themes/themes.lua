@@ -286,5 +286,14 @@ local themes = {
       vim.g.everforest_enable_italic = 1
     end,
   },
+  {
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require('github-theme').setup {}
+    end,
+  },
 }
 return themes
