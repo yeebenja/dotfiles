@@ -89,3 +89,7 @@ vim.keymap.set({ 'n', 'v' }, '/', '/\\v', { desc = 'Search with very magic' })
 -- tabs
 vim.keymap.set('n', '<Tab>', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
 vim.keymap.set('n', '<S-Tab>', '<cmd>tabprevious<CR>', { desc = 'Previous Tab' })
+
+-- jumplist
+vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Jumplist prev' })
+vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jumplist next' })
