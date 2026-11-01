@@ -6,8 +6,8 @@
 
 local function reapply_hl()
   vim.api.nvim_set_hl(0, 'YankHighlight', {
-    fg = global_colors.colors.fg_original, -- or 'NONE'
-    bg = global_colors.colors.bg_original, -- or 'NONE'
+    fg = global_colors.colors.fg_yank_highlight,
+    bg = global_colors.colors.bg_yank_highlight,
     bold = true,
   })
 
