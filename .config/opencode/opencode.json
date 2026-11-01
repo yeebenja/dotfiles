@@ -34,15 +34,7 @@
   "autoupdate": true,
   "default_agent": "plan",
   "lsp": true,
-  "mcp": {
-    "tilth": {
-      "command": [
-        "/Users/benjaminyee/.cargo/bin/tilth",
-        "--mcp"
-      ],
-      "type": "local"
-    }
-  },
+  "mcp": {},
   "permission": {
     "lsp": "allow",
     "websearch": "allow"
