@@ -6,6 +6,7 @@ C.colors = {
   eldritch_red = '#f364b5',
   fg_yank_highlight = '#1a1c2c',
   bg_yank_highlight = '#f7c67f',
+  fg_mini_jump = '#ff9e64',
 }
 
 return C

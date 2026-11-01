@@ -11,7 +11,7 @@ local function reapply_hl()
     bold = true,
   })
 
-  vim.api.nvim_set_hl(0, 'MiniJump', { fg = '#ff9e64', bold = true })
+  vim.api.nvim_set_hl(0, 'MiniJump', { fg = global_colors.colors.fg_mini_jump, bold = true })
 end
 
 reapply_hl()
