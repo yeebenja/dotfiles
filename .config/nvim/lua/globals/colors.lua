@@ -1,4 +1,4 @@
--- Global colors
+-- colors.lua
 local C = {}
 
 C.colors = {
