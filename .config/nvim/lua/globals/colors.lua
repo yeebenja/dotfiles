@@ -7,6 +7,8 @@ C.colors = {
   fg_yank_highlight = '#1a1c2c',
   bg_yank_highlight = '#f7c67f',
   fg_mini_jump = '#ff9e64',
+  bg_CurSearch_vague = '#f7c67f',
+  fg_CurSearch_vague = '#1a1c2c',
 }
 
 return C

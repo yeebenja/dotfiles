@@ -249,8 +249,8 @@ local themes = {
       require('vague').setup {
         on_highlights = function(hl, colors)
           hl.CurSearch = {
-            bg = '#f7c67f',
-            fg = '#1a1c2c',
+            bg = global_colors.colors.bg_CurSearch_vague,
+            fg = global_colors.colors.fg_CurSearch_vague,
           }
         end,
       }
