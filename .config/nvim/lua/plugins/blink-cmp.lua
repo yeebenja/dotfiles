@@ -1,5 +1,35 @@
 -- NOTE: Reference video of setting up blink.nvim
 -- https://www.youtube.com/watch?v=Q0cvzaPJJas
+
+-- Highlight group colorful-menu.nvim picked for the item's name (the first
+-- highlight chunk, which always starts at offset 0). Returns nil for items
+-- without an LSP semantic highlight (buffer, path, snippets, ...).
+local function item_name_hl(ctx)
+  local ok, colorful = pcall(require, 'colorful-menu')
+  if not ok then
+    return nil
+  end
+  local ok2, info = pcall(colorful.blink_highlights, ctx)
+  if not ok2 or not info then
+    return nil
+  end
+  for _, hl in ipairs(info.highlights or {}) do
+    if hl[1] <= 0 and hl[2] > 0 then
+      return hl.group
+    end
+  end
+end
+
+-- Unique color per completion provider. Keyed by `ctx.source_name` so every
+-- LSP client (lua_ls, gopls, ...) shares the LSP color instead of using the
+-- client name.
+local source_hl = {
+  LSP = 'Function',
+  Buffer = 'Comment',
+  Path = 'Directory',
+  Snippets = 'String',
+}
+
 return {
   'saghen/blink.cmp',
   event = { 'InsertEnter', 'CmdlineEnter' }, -- Load when entering insert mode or entering cmdline
@@ -64,13 +94,12 @@ return {
                 return '[' .. name .. ']'
               end,
               highlight = function(ctx)
-                local hl_map = {
-                  Buffer = 'Comment',
-                  Snippets = 'String',
-                  Path = 'Directory',
-                }
-                local name = ctx.item.client_name or ctx.source_name
-                return hl_map[name] or 'BlinkCmpKindFunction'
+                return source_hl[ctx.source_name] or 'BlinkCmpSource'
+              end,
+            },
+            kind = {
+              highlight = function(ctx)
+                return item_name_hl(ctx) or ctx.kind_hl
               end,
             },
           },
