@@ -9,6 +9,8 @@ C.colors = {
   fg_mini_jump = '#ff9e64',
   bg_CurSearch_vague = '#f7c67f',
   fg_CurSearch_vague = '#1a1c2c',
+  bg_DiffChange_vague = '#2a2520',
+  bg_DiffText_vague = '#4c402f',
 }
 
 return C

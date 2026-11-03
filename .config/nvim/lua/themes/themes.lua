@@ -252,6 +252,8 @@ local themes = {
             bg = global_colors.colors.bg_CurSearch_vague,
             fg = global_colors.colors.fg_CurSearch_vague,
           }
+          hl.DiffChange = { bg = global_colors.colors.bg_DiffChange_vague }
+          hl.DiffText = { bg = global_colors.colors.bg_DiffText_vague }
         end,
       }
     end,
