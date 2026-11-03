@@ -149,3 +149,24 @@ end, { desc = 'Toggle [F]ormat-On-Save for all Buffers' })
 -- scratch.nvim
 vim.keymap.set('n', '<leader>\\', '<cmd>Scratch<cr>', { desc = 'New Scratch Buffer' })
 vim.keymap.set('n', '<leader>|', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratch Buffers' })
+-- Diffview
+vim.keymap.set('n', '<leader>d', function()
+  local lib = require 'diffview.lib'
+
+  -- in a diffview tab: close it
+  if lib.get_current_view() then
+    vim.cmd 'DiffviewClose'
+    return
+  end
+
+  -- a diffview is open in some other tab: jump there and close it
+  for _, view in ipairs(lib.views) do
+    if view.tabpage and vim.api.nvim_tabpage_is_valid(view.tabpage) then
+      vim.api.nvim_set_current_tabpage(view.tabpage)
+      vim.cmd 'DiffviewClose'
+      return
+    end
+  end
+
+  vim.cmd 'DiffviewOpen'
+end, { desc = '[D]iffview Toggle' })
