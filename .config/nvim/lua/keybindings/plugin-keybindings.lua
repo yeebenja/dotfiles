@@ -144,6 +144,27 @@ end, { desc = 'Toggle [F]ormat-On-Save for all Buffers' })
 -- scratch.nvim
 vim.keymap.set('n', '<leader>\\', '<cmd>Scratch<cr>', { desc = 'New Scratch Buffer' })
 vim.keymap.set('n', '<leader>|', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratch Buffers' })
+
+-- Gitsigns
+-- Gitsigns Set Base
+vim.keymap.set('n', '<leader>gB', function()
+  Snacks.picker.git_branches {
+    confirm = function(picker, item)
+      picker:close()
+      if not item then
+        return
+      end
+
+      require('gitsigns').change_base(item.branch, true)
+      Snacks.notifier.notify('Changed base to ' .. item.branch, 'info', {
+        style = 'compact',
+        timeout = 2000,
+        title = 'Gitsigns',
+      })
+    end,
+  }
+end, { desc = '[G]itsigns Set Base' })
+
 -- Blame toggle
 vim.keymap.set('n', '<leader>gb', function()
   -- close the blame split if it's open
