@@ -163,7 +163,7 @@ vim.keymap.set('n', '<leader>gB', function()
       })
     end,
   }
-end, { desc = '[G]itsigns Set Base' })
+end, { desc = 'Gitsigns Set [B]ase' })
 
 -- Blame toggle
 vim.keymap.set('n', '<leader>gb', function()
@@ -176,7 +176,7 @@ vim.keymap.set('n', '<leader>gb', function()
     end
   end
   require('gitsigns').blame()
-end, { desc = 'Git [B]lame Toggle' })
+end, { desc = 'Git [b]lame Toggle' })
 
 -- Diffview
 vim.keymap.set('n', '<leader>d', function()
