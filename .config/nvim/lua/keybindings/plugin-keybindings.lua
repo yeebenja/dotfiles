@@ -85,11 +85,6 @@ vim.cmd [[
   cnoreabbrev bdelete Bd
 ]]
 
--- blame.nvim
-vim.keymap.set({ 'n' }, '<leader>gb', function()
-  vim.cmd ':BlameToggle window'
-end, { desc = 'Git [B]lame Toggle' })
-
 -- git-worktree
 vim.keymap.set('n', '<leader>gwa', function()
   require('telescope').extensions.git_worktree.create_git_worktree()
@@ -149,6 +144,19 @@ end, { desc = 'Toggle [F]ormat-On-Save for all Buffers' })
 -- scratch.nvim
 vim.keymap.set('n', '<leader>\\', '<cmd>Scratch<cr>', { desc = 'New Scratch Buffer' })
 vim.keymap.set('n', '<leader>|', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratch Buffers' })
+-- Blame toggle
+vim.keymap.set('n', '<leader>gb', function()
+  -- close the blame split if it's open
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].filetype == 'gitsigns-blame' then
+      vim.api.nvim_win_close(win, true)
+      return
+    end
+  end
+  require('gitsigns').blame()
+end, { desc = 'Git [B]lame Toggle' })
+
 -- Diffview
 vim.keymap.set('n', '<leader>d', function()
   local lib = require 'diffview.lib'
