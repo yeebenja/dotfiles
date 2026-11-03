@@ -44,18 +44,6 @@ vim.keymap.set('n', '<M-{>', ':resize -2<CR>', { desc = 'Decrease window height'
 -- Toggle wrapping text
 vim.keymap.set('n', '<leader>aw', '<cmd>set wrap!<CR>', { desc = '[W]rap Text Toggle' })
 
--- Toggle relative line numbers
-vim.keymap.set('n', '<leader>r', function()
-  local enable_relative_numbers = not vim.wo.relativenumber
-  vim.opt.relativenumber = enable_relative_numbers
-
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    if vim.api.nvim_win_get_config(win).relative == '' then
-      vim.api.nvim_set_option_value('relativenumber', enable_relative_numbers, { win = win })
-    end
-  end
-end, { desc = 'Toggle Relative Line Numbers' })
-
 -- toggle lsp
 vim.keymap.set('n', '<leader>al', function()
   local bufnr = vim.api.nvim_get_current_buf()
