@@ -28,6 +28,7 @@ local source_hl = {
   Buffer = 'Comment',
   Path = 'Directory',
   Snippets = 'String',
+  Cmdline = 'Type',
 }
 
 return {
@@ -85,7 +86,13 @@ return {
                 return require('colorful-menu').blink_components_text(ctx)
               end,
               highlight = function(ctx)
-                return require('colorful-menu').blink_components_highlight(ctx)
+                local highlights = require('colorful-menu').blink_components_highlight(ctx)
+                -- cmdline items have no semantic highlight from colorful-menu,
+                -- so tint the label to match their Property kind/icon
+                if ctx.source_name == 'Cmdline' then
+                  table.insert(highlights, 1, { 0, #ctx.label, group = '@property' })
+                end
+                return highlights
               end,
             },
             source_name = {
@@ -100,6 +107,12 @@ return {
             kind = {
               highlight = function(ctx)
                 return item_name_hl(ctx) or ctx.kind_hl
+              end,
+            },
+            kind_icon = {
+              highlight = function(ctx)
+                -- high priority so the cursorline highlight doesn't override it
+                return { { group = item_name_hl(ctx) or ctx.kind_hl, priority = 20000 } }
               end,
             },
           },

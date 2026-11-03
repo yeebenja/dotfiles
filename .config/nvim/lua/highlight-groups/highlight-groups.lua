@@ -16,6 +16,13 @@ local function reapply_hl()
     if visual_bg then
       vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { bg = visual_bg })
     end
+
+    -- fuzzy-matched letters in the blink completion menu
+    vim.api.nvim_set_hl(0, 'BlinkCmpLabelMatch', { link = 'CmpItemAbbrMatch' })
+
+    -- cmdline items are all CompletionItemKind.Property; give that kind/icon
+    -- vague's property color
+    vim.api.nvim_set_hl(0, 'BlinkCmpKindProperty', { link = '@property' })
   end
 end
 
