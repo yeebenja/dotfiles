@@ -23,6 +23,9 @@ local function reapply_hl()
     -- cmdline items are all CompletionItemKind.Property; give that kind/icon
     -- vague's property color
     vim.api.nvim_set_hl(0, 'BlinkCmpKindProperty', { link = '@property' })
+
+    vim.api.nvim_set_hl(0, 'DiffviewFilePanelInsertions', { link = 'Added' })
+    vim.api.nvim_set_hl(0, 'DiffviewFilePanelDeletions', { link = 'Removed' })
   end
 end
 
