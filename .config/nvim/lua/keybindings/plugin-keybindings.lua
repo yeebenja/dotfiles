@@ -149,6 +149,7 @@ vim.keymap.set('n', '<leader>|', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratc
 -- Gitsigns Set Base
 vim.keymap.set('n', '<leader>gB', function()
   Snacks.picker.git_branches {
+    all = true,
     confirm = function(picker, item)
       picker:close()
       if not item then
