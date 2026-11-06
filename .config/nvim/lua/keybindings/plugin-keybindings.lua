@@ -150,6 +150,10 @@ vim.keymap.set('n', '<leader>|', '<cmd>ScratchOpen<cr>', { desc = 'Search Scratc
 vim.keymap.set('n', '<leader>gB', function()
   Snacks.picker.git_branches {
     all = true,
+    layout = 'vscode',
+    format = function(item)
+      return { { item.branch or item.text, 'SnacksPickerGitBranch' } }
+    end,
     confirm = function(picker, item)
       picker:close()
       if not item then
