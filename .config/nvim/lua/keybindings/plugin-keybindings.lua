@@ -85,19 +85,6 @@ vim.cmd [[
   cnoreabbrev bdelete Bd
 ]]
 
--- git-worktree
-vim.keymap.set('n', '<leader>gwa', function()
-  require('telescope').extensions.git_worktree.create_git_worktree()
-end, { desc = 'Git Worktree [A]dd' })
-
-vim.keymap.set('n', '<leader>gwd', function()
-  require('telescope').extensions.git_worktree.git_worktrees()
-  -- NOTE:
-  -- <Enter> - switches to that worktree
-  -- <c-d> - deletes that worktree
-  -- <c-f> - toggles forcing of the next deletion
-end, { desc = 'Git Worktree Switch/[D]elete' })
-
 -- nvim-dap
 vim.keymap.set('n', '<F5>', function()
   require('dap').continue()
