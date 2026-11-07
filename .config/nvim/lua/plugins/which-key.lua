@@ -41,7 +41,7 @@ return { -- Useful plugin to show you pending keybinds.
 
     -- Document existing key chains
     spec = {
-      { '<leader>d', group = '[D]ate, Time' },
+      { '<leader>d', group = '[D]iffview' },
       { '<leader>s', group = '[S]earch' },
       { '<leader>gw', group = 'Git [W]orktree' },
       { '<leader>t', group = '[T]oggle' },
