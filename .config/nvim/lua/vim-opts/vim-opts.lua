@@ -86,8 +86,10 @@ vim.opt.redrawtime = 3000
 -- set signcolumn width
 vim.opt.signcolumn = 'yes:1'
 
--- make diff look simpler
-vim.o.diffopt = 'internal,filler,closeoff'
+-- diff settings
+vim.o.diffopt = 'internal,filler,closeoff,algorithm:histogram,linematch:60,indent-heuristic,inline:char,context:8'
+-- removes the dotted filler lines, which is the biggest visual cleanup
+vim.opt.fillchars:append { diff = ' ' }
 
 require('vim._core.ui2').enable {}
 

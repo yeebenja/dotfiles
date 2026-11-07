@@ -84,12 +84,12 @@ vim.keymap.set('n', 'zK', function()
   end
 end, { desc = 'UFO: Peek Fold' })
 
--- custom symbols for column status line
-vim.opt.fillchars = {
+-- custom fold symbols. Use :append so we don't clobber other fillchars
+-- (notably `diff`, which is owned by vim-opts and set to a blank space).
+vim.opt.fillchars:append {
   foldopen = '▼',
   foldclose = '▶',
   fold = ' ',
   foldsep = ' ',
-  diff = '╱',
   eob = ' ',
 }
