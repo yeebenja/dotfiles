@@ -42,6 +42,17 @@ return {
       use_focus = true,
     },
     current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
+    blame_formatter = function(_, info, ctx)
+      local author = info.author
+      local padding = string.rep(' ', math.max(0, ctx.max_author_width - vim.fn.strdisplaywidth(author)))
+      return {
+        { info.abbrev_sha, ctx.hash_hl_group },
+        { ' ' },
+        { author .. padding },
+        { ' ' },
+        { require('gitsigns.util').get_relative_time(info.author_time) },
+      }
+    end,
     sign_priority = 6,
     update_debounce = 100,
     status_formatter = nil, -- Use default
