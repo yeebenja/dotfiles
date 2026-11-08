@@ -1,5 +1,4 @@
--- function for grep in changed, uncommited files
-local function grep_changed_files(opts)
+local function grep_in_uncommitted_files(opts)
   opts = opts or {}
   local root = vim.fn.systemlist({ 'git', 'rev-parse', '--show-toplevel' })[1]
   if not root or root == '' then
@@ -34,16 +33,9 @@ end
 return {
   'folke/snacks.nvim',
   priority = 1000,
-  lazy = false, -- should be loaded upon startup b/c notifier is needed upon startup
+  lazy = false,
   ---@type snacks.Config
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-    -- bigfile = { enabled = true },
-    -- dashboard = { enabled = true },
-    -- indent = { enabled = true },
-    -- input = { enabled = true },
     image = {
       resolve = function(path, src)
         local api = require 'obsidian.api'
@@ -54,13 +46,10 @@ return {
     },
     profiler = {},
     notifier = {
-      -- NOTE: https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md
-      -- ^^ Documentation for notifier
       enabled = true,
-      timeout = 3000, -- default timeout in ms
+      timeout = 3000,
       width = { min = 40, max = 0.4 },
       height = { min = 1, max = 0.6 },
-      -- editor margin to keep free. tabline and statusline are taken into account automatically
       margin = { top = 0, right = 1, bottom = 0 },
       padding = true, -- add 1 cell of left/right padding to the notification window
       sort = { 'level', 'added' }, -- sort by level and time
@@ -79,14 +68,14 @@ return {
       end,
       ---@type snacks.notifier.style
       style = 'fancy', -- 'compact' || 'minimal' || 'fancy'
-      top_down = true, -- place notifications from top to bottom
-      date_format = '%R', -- time format for notifications
+      top_down = true,
+      date_format = '%R',
       -- format for footer when more lines are available
       -- `%d` is replaced with the number of lines.
       -- only works for styles with a border
       ---@type string|boolean
       more_format = ' ↓ %d lines ',
-      refresh = 50, -- refresh at most every 50ms
+      refresh = 50,
     },
     picker = {
       -- NOTE:
@@ -115,13 +104,9 @@ return {
         -- end
         return item
       end,
-      -- In case you want to make sure that the score manipulation above works
-      -- or if you want to check the score of each file
       debug = {
         scores = false, -- show scores in the list
       },
-      -- I like the "ivy" layout, so I set it as the default globaly, you can
-      -- still override it in different keymaps
       layout = {
         preset = 'ivy',
         -- When reaching the bottom of the results in the picker, I don't want
@@ -129,11 +114,6 @@ return {
         cycle = false,
       },
       layouts = {
-        -- I wanted to modify the ivy layout height and preview pane width,
-        -- this is the only way I was able to do it
-        -- NOTE: I don't think this is the right way as I'm declaring all the
-        -- other values below, if you know a better way, let me know
-        --
         -- Then call this layout in the keymaps above
         -- got example from here
         -- https://github.com/folke/snacks.nvim/discussions/468
@@ -193,10 +173,7 @@ return {
       win = {
         input = {
           keys = {
-            -- to close the picker on ESC instead of going to normal mode,
-            -- add the following keymap to your config
             ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
-            -- I'm used to scrolling like this in LazyGit
             ['J'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
             ['K'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
             ['H'] = { 'preview_scroll_left', mode = { 'i', 'n' } },
@@ -211,27 +188,6 @@ return {
         },
       },
     },
-    -- quickfile = { enabled = true },
-    -- scroll = { enabled = true },
-    -- statuscolumn = { enabled = true },
-    -- words = { enabled = true },
-    -- terminal = { enabled = true },
-    ---@class snacks.picker.grep.Config: snacks.picker.proc.Config
-    ---@field cmd? string
-    ---@field hidden? boolean show hidden files
-    ---@field ignored? boolean show ignored files
-    ---@field dirs? string[] directories to search
-    ---@field follow? boolean follow symlinks
-    ---@field glob? string|string[] glob file pattern(s)
-    ---@field ft? string|string[] ripgrep file type(s). See `rg --type-list`
-    ---@field regex? boolean use regex search pattern (defaults to `true`)
-    ---@field buffers? boolean search in open buffers
-    ---@field need_search? boolean require a search pattern
-    ---@field exclude? string[] exclude patterns
-    ---@field args? string[] additional arguments
-    ---@field rtp? boolean search in runtimepath
-    --- NOTE: ? means that the fiield is optional in the configuration table
-    --- so, hidden? means that hidden is an optional field
   },
   keys = {
     {
@@ -294,30 +250,6 @@ return {
       end,
       desc = '[S]earch [H]elp',
     },
-    -- LATER: figure out of neovim profiling works
-    -- Snacks profiler
-    -- {
-    --   '<leader>pp',
-    --   function()
-    --     Snacks.toggle.profiler()
-    --   end,
-    --   desc = 'Toggle Profiler',
-    -- },
-    -- {
-    --   '<leader>ph',
-    --   function()
-    --     Snacks.toggle.profiler_highlights()
-    --   end,
-    --   desc = 'Toggle Profiler Highlights',
-    -- },
-    -- -- Your existing scratch buffer keymap
-    -- {
-    --   '<leader>ps',
-    --   function()
-    --     Snacks.profiler.scratch()
-    --   end,
-    --   desc = 'Profiler Scratch Buffer',
-    -- },
     -- Command History
     {
       '<leader>sc',
@@ -420,31 +352,6 @@ return {
       end,
       desc = '[/] Grep in Open Buffers',
     },
-    -- disabled git log in favor for gitgraph.nvim
-    -- Git Log
-    -- {
-    --   '<leader>gl',
-    --   function()
-    --     Snacks.picker.git_log {
-    --       finder = 'git_log',
-    --       format = 'git_log',
-    --       preview = 'git_show',
-    --       confirm = 'git_checkout',
-    --       layout = 'vertical',
-    --     }
-    --   end,
-    --   desc = 'Git [L]og (Snacks)',
-    -- },
-    -- Git Branches
-    -- {
-    --   '<leader>gc',
-    --   function()
-    --     Snacks.picker.git_branches {
-    --       layout = 'select',
-    --     }
-    --   end,
-    --   desc = '[C]heckout Branches (Snacks)',
-    -- },
     -- Git Status
     {
       '<leader>gs',
@@ -535,27 +442,6 @@ return {
       end,
       desc = '[S]earch Grep in [P]ath',
     },
-    -- Smart Picker
-    -- Combined buffers + recent + files (in cwd) in one picker
-    -- {
-    --   '<leader>m',
-    --   function()
-    --     Snacks.picker.smart {
-    --       multi = { 'buffers', 'recent', 'files' },
-    --       format = 'file', -- use `file` format for all sources
-    --       ignored = true, -- ignore ignored files
-    --       hidden = true, -- include hidden files when searching
-    --       matcher = {
-    --         cwd_bonus = true, -- boost cwd matches
-    --         frecency = true, -- use frecency boosting
-    --         sort_empty = true, -- sort even when the filter is empty
-    --       },
-    --       transform = 'unique_file',
-    --     }
-    --   end,
-    --   desc = 'Smart Find Files',
-    -- },
-    -- Buffer Picker
     {
       '<leader><leader>',
       function()
@@ -607,7 +493,7 @@ return {
     {
       '<leader>su',
       function()
-        grep_changed_files()
+        grep_in_uncommitted_files()
       end,
       desc = 'Search [U]ncommitted by Grep',
     },
