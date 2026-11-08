@@ -446,15 +446,15 @@ return {
     --   desc = '[C]heckout Branches (Snacks)',
     -- },
     -- Git Status
-    -- {
-    --   '<leader>gt',
-    --   function()
-    --     Snacks.picker.git_status {
-    --       layout = 'vertical',
-    --     }
-    --   end,
-    --   desc = 'Git S[T]atus (Snacks)',
-    -- },
+    {
+      '<leader>gs',
+      function()
+        Snacks.picker.git_status {
+          layout = 'vertical',
+        }
+      end,
+      desc = 'Git [S]tatus',
+    },
     -- Search Files
     {
       '<leader>sf',
