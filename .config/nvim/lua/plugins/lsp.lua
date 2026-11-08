@@ -196,10 +196,6 @@ return {
         },
       })
 
-      vim.lsp.config('jdtls', {
-        cmd = { 'jdtls' },
-      })
-
       vim.lsp.config('yamlls', {
         cmd = { 'yaml-language-server', '--stdio' },
         filetypes = { 'yaml' },
@@ -218,7 +214,7 @@ return {
         root_markers = { '.git' },
       })
 
-      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'jdtls', 'cssls' }
+      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'cssls' }
     end,
   },
 }
