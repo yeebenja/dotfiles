@@ -160,24 +160,55 @@ vim.keymap.set('n', '<leader>gb', function()
   require('gitsigns').blame()
 end, { desc = 'Git [b]lame Toggle' })
 
+-- Focus the working-tree side of a Diffview (right diff window) instead of
+-- the file panel.
+local function focus_diffview_working_tree(view)
+  vim.schedule(function()
+    view = view or require('diffview.lib').get_current_view()
+    if not (view and view.cur_layout) then
+      return
+    end
+    if view.cur_layout:is_focused() then
+      return
+    end
+
+    local win = view.cur_layout:get_main_win()
+    if win and vim.api.nvim_win_is_valid(win.id) then
+      vim.api.nvim_set_current_win(win.id)
+    end
+  end)
+end
+
 -- Diffview
 vim.keymap.set('n', '<leader>d', function()
   local lib = require 'diffview.lib'
 
-  -- in a diffview tab: close it
+  -- in a diffview tab (i.e. it's the focused tab): close it
   if lib.get_current_view() then
     vim.cmd 'DiffviewClose'
     return
   end
 
-  -- a diffview is open in some other tab: jump there and close it
+  -- a diffview is open in some other tab: just jump to it; it's only closed
+  -- when invoked from within the diffview tab itself (above)
   for _, view in ipairs(lib.views) do
     if view.tabpage and vim.api.nvim_tabpage_is_valid(view.tabpage) then
       vim.api.nvim_set_current_tabpage(view.tabpage)
-      vim.cmd 'DiffviewClose'
+      focus_diffview_working_tree(view)
       return
     end
   end
 
   vim.cmd 'DiffviewOpen'
-end, { desc = '[D]iffview Toggle' })
+
+  local view = lib.get_current_view()
+  if view then
+    focus_diffview_working_tree(view)
+
+    -- Re-apply after the first file loads, in case Diffview swaps layouts
+    -- (for example during a merge conflict).
+    view.emitter:once('file_open_post', function()
+      focus_diffview_working_tree(view)
+    end)
+  end
+end, { desc = '[D]iffview Toggle/Focus' })
