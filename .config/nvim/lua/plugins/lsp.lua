@@ -27,6 +27,7 @@ return {
           'postgres-language-server',
           'css-lsp',
           'js-debug-adapter',
+          'buf',
         },
       }
     end,
@@ -214,7 +215,21 @@ return {
         root_markers = { '.git' },
       })
 
-      vim.lsp.enable { 'clangd', 'pyright', 'ts_ls', 'lua_ls', 'postgres_lsp', 'jsonls', 'yamlls', 'cssls' }
+      vim.lsp.config('buf_ls', {
+        root_markers = { 'buf.work.yaml', 'buf.yaml', '.git' },
+      })
+
+      vim.lsp.enable {
+        'clangd',
+        'pyright',
+        'ts_ls',
+        'lua_ls',
+        'postgres_lsp',
+        'jsonls',
+        'yamlls',
+        'cssls',
+        'buf_ls',
+      }
     end,
   },
 }
