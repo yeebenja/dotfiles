@@ -49,7 +49,9 @@ alias ghd="gh dash"
 alias oc="opencode"
 alias occ="opencode run --agent build \"commit staged\""
 # --- claude ---
-alias claudeyolo="claude --permission-mode bypassPermissions"
+alias cl="claude"
+alias clup="claude update && claude"
+alias clyolo="claude --permission-mode bypassPermissions"
 
 # --- tmux ---
 alias tmuxs="tmux source-file ~/.tmux.conf" 
