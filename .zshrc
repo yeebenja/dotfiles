@@ -1,40 +1,37 @@
 # .zshrc
 setopt IGNORE_EOF # prevents from automatically exiting shell
 
-# Aliases and Cmds:
-# --- cd ---
 alias cd="z"
-# --- vim ---
+
 alias vi="nvim"
 alias vim="nvim"
 alias vilazyclear="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site" # clean all lazy plugins
 alias vilazy="rm -rf ~/.local/share/nvim/lazy; rm -rf ~/.local/state/nvim/lazy; rm -rf ~/.cache/nvim; rm -rf ~/.local/share/nvim/mason; rm -rf ~/.local/share/nvim/site; nvim" # clean all lazy plugins and enter neovim
-# instantly edit my nvim configuation
+
 viedit() {
     cd ~/dotfiles/.config/nvim || return
     vi
 }
-# instantly cd into nvim config
+
 vigo() {
     cd ~/dotfiles/.config/nvim || return
 }
-# --- dotfiles ---
-# instantly edit dotfiles
+
 dotedit() {
     cd ~/dotfiles || return
     vi
 }
-# instantly cd into dotfiles
+
 dotgo() {
     cd ~/dotfiles || return
 }
-# -- zsh ---
+#
 # instantly edit .zshrc
 zedit() {
     cd ~/dotfiles || return
     vi .zshrc
 }
-# --- git ---
+
 alias gitl="nvim -c \"lua require('gitgraph').draw({}, { all = true, max_count = 5000 })\""
 alias gitl1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
 alias gitl2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
@@ -44,29 +41,29 @@ alias gitf="git fetch"
 alias gitb="git branch"
 alias gitr="git reset --soft HEAD~1"
 alias gitw="git worktree"
+
 alias ghd="gh dash"
-# --- opencode ---
 alias oc="opencode"
 alias occ="opencode run --agent build \"commit staged\""
-# --- claude ---
+
 alias cl="claude"
 alias clup="claude update && claude"
 alias clyolo="claude --permission-mode bypassPermissions"
 
-# --- tmux ---
 alias tmuxs="tmux source-file ~/.tmux.conf" 
-alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server" # save tmux sessions and kill tmux server
-# --- tmuxp ---
+# save tmux sessions and kill tmux server
+alias tmuxq="tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh && tmux kill-server"
+
 # NOTE:
 # tmuxp freeze (saves current session)
 # tmuxp load session_name.yaml (loads session)
 alias tp="tmuxp"
+
 # instantly cd into ~/dotfiles/.tmuxp/
 tpgo() {
     cd ~/dotfiles/.tmuxp/ || return
 }
 
-# -- github ---
 # prints current repo link and copies to clipboard
 ghrepo() {
   local url=$(gh repo view --json url -q .url)
@@ -74,8 +71,6 @@ ghrepo() {
   echo "$url"
 }
 
-# --- leetcode ---
-# leetcode scratchpad
 leet(){
   cd ~/dotfiles/leet || return
   vi
@@ -104,22 +99,15 @@ function act() {
   fi
 }
 
-# Show IP Address and copy to clipboard
 function getip() {
   ip=$(ipconfig getifaddr en0)
   printf "%s" "$ip" | tee >(pbcopy)
 }
 
-# --- atuin ---
 eval "$(atuin init zsh)"
-
-# --- starship ---
 eval "$(starship init zsh)"
-
-# --- zoxide ---
 eval "$(zoxide init zsh)"
 
-# --- exports ---
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
